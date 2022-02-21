@@ -13,6 +13,8 @@
 		F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
 		F8FBF7F827C3269300571A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
 		F8FBF7F927C3269300571A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
+		F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
+		F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		F8FBF7EB27C3269300571A32 /* TapOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FBF7F127C3269300571A32 /* TapOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FBF7F327C3269300571A32 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F8FBF80227C343A000571A32 /* TOUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 				F8FBF7E427C3269200571A32 /* TapOrderApp.swift */,
 				F8FBF7E527C3269200571A32 /* ContentView.swift */,
 				F8FBF7E627C3269300571A32 /* Assets.xcassets */,
+				F8FBF80227C343A000571A32 /* TOUtils.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -177,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
+				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
+				F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */,
 				F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
