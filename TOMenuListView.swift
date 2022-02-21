@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TOMenuListView: View {
     let myList: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
-    let headerHeight = CGFloat(50)
+    let headerHeight = CGFloat(120)
     private var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
     private var oneColumnGrid = [GridItem(.flexible())]
     private var twoColumnGrid = [GridItem(.flexible()),GridItem(.flexible())]
@@ -21,34 +21,33 @@ struct TOMenuListView: View {
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: oneColumnGrid) {
                         // Display the item
-                        ForEach((0...10), id: \.self) {
-                            Image(systemName: symbols[$0 % symbols.count])
-                                .font(.system(size: 30))
-                                .frame(width: 60, height: 60)
-                                .padding(10)
-                                .background(colors[$0 % colors.count])
-                                .cornerRadius(10)
+                        ForEach((0...10), id: \.self) {_ in
+                            TOMenuCategoryCell()
+//                            Image(systemName: symbols[$0 % symbols.count])
+//                                .font(.system(size: 30))
+//                                .frame(width: 60, height: 60)
+//                                .padding(10)
+//                                .background(colors[$0 % colors.count])
+//                                .cornerRadius(10)
                         }
                     }
                 }
                 .zIndex(1)
                 .frame(height: headerHeight)
+                .padding(20)
                 .background(.white)
                 
                 ScrollView(.vertical) {
-                    Color.clear
-                        .frame(height: headerHeight)
-                    LazyVGrid(columns: twoColumnGrid) {
+                    Color.purple
+                        .frame(height: headerHeight + 40)
+                    LazyVGrid(columns: twoColumnGrid,spacing: 40) {
                         // Display the item
-                        ForEach((0...10), id: \.self) {
-                            Image(systemName: symbols[$0 % symbols.count])
-                                .font(.system(size: 30))
-                                .frame(width: 154, height: 214)
-                                .background(colors[$0 % colors.count])
-                                .cornerRadius(10)
+                        ForEach((0...10), id: \.self) {_ in
+                            TOMenuListCell()
                         }
                     }
                 }
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .navigationTitle("Menu")
                 .toolbar {
                     Text("no.0001")

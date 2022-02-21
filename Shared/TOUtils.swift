@@ -39,4 +39,17 @@ extension Color {
     static var normalGray: Color {
         return Color(uiColor: UIColor(rgb: 0xeeeeee))
     }
+    static var normalGreen: Color {
+        return Color(uiColor: UIColor(rgb: 0x18794B))
+    }
 }
+
+extension CGFloat {
+    static var SCREENWIDTH: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    static var TOMenuCardWidth: CGFloat {
+        return ( SCREENWIDTH - 40 * 3 ) * 0.5
+    }
+}
+    
