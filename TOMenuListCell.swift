@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct TOMenuListCell: View {
-    var imgName = "keyboard"
-    var catName = "keyboardwoedf"
+    var imgName = "chicken"
+    var catName = "chicken\nbugger"
     var priceName = "20"
 
     var body: some View {
         
         VStack {
-            Image(systemName: imgName)
+            Image(imgName)
+                .resizable()
                 .font(.system(size: 30))
                 .frame(width: .TOMenuCardWidth - 20, height: 90)
                 .scaledToFit()
-                .background(Color.themeColor)
+                //.background(Color.themeColor)
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
             Text(catName)
@@ -44,7 +45,7 @@ struct TOMenuListCell: View {
 
             }.padding(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 10))
         }
-        .frame(width: .infinity, height: 210, alignment: .top)
+        .frame(maxWidth: .infinity, minHeight: 210, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0xe8e8e8)), Color(uiColor:UIColor(rgb: 0xe4e4e4).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
     }

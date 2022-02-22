@@ -21,6 +21,10 @@
 		F8FBF81027C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */; };
 		F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
 		F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
+		F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
+		F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
+		F8FBF81827C47F2D00571A32 /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
+		F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,8 @@
 		F8FBF80B27C363F700571A32 /* TOMenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListView.swift; sourceTree = "<group>"; };
 		F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuCategoryCell.swift; sourceTree = "<group>"; };
 		F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListCell.swift; sourceTree = "<group>"; };
+		F8FBF81427C472E500571A32 /* TOMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMainView.swift; sourceTree = "<group>"; };
+		F8FBF81727C47F2D00571A32 /* TOStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOStartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,8 @@
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
+				F8FBF81727C47F2D00571A32 /* TOStartView.swift */,
+				F8FBF81427C472E500571A32 /* TOMainView.swift */,
 				F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */,
 				F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */,
 				F8FBF80B27C363F700571A32 /* TOMenuListView.swift */,
@@ -192,8 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FBF81827C47F2D00571A32 /* TOStartView.swift in Sources */,
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
 				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
+				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
 				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
 				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
@@ -205,8 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */,
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
 				F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */,
+				F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */,
 				F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */,
 				F8FBF80D27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8FBF81027C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,

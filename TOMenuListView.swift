@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TOMenuListView: View {
-    let myList: [String] = ["1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
+    let myList: [String] = ["1", "2"]//, "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
     let headerHeight = CGFloat(150)
     private var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
     private var oneColumnGrid = [GridItem(.flexible())]
@@ -24,7 +24,7 @@ struct TOMenuListView: View {
         }
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: twoColumnGrid,spacing: 40,pinnedViews: [.sectionHeaders]) {
                     Section {
@@ -54,12 +54,12 @@ struct TOMenuListView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
-            .navigationTitle("Menu")
-            .toolbar {
-                Text("no.0001")
-            }
+            //.navigationTitle("Menu")
+            //.toolbar {
+            //    Text("no.0001")
+            //}
             
-        }
+        //}
     }
     
     struct TOMenuListView_Previews: PreviewProvider {

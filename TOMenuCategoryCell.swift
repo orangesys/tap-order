@@ -9,18 +9,19 @@ import SwiftUI
 
 struct TOMenuCategoryCell: View {
     private var colors: [Color] = [.yellow, .purple, .green]
-    var imgName = "keyboard"
-    var catName = "keyboard"
+    var imgName = "bugger"
+    var catName = "bugger"
     var isSelected = false
 
     var body: some View {
         
         VStack {
-            Image(systemName: imgName)
+            Image(imgName)
+                .resizable()
                 .font(.system(size: 30))
-                .frame(width: .TOMenuCatgoryWidth - 20, height: .TOMenuCatgoryWidth - 20)
+                .frame(width: .TOMenuCatgoryWidth , height: .TOMenuCatgoryWidth )
                 .scaledToFit()
-                .padding(10)
+                .padding(3)
                 .background(isSelected ? Color.themeColor : Color.normalGray)
             .cornerRadius(20)
             Text(catName)
