@@ -18,7 +18,7 @@ struct TOMenuCategoryCell: View {
         VStack {
             Image(systemName: imgName)
                 .font(.system(size: 30))
-                .frame(width: 60, height: 60)
+                .frame(width: .TOMenuCatgoryWidth - 20, height: .TOMenuCatgoryWidth - 20)
                 .scaledToFit()
                 .padding(10)
                 .background(isSelected ? Color.themeColor : Color.normalGray)

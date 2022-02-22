@@ -44,7 +44,7 @@ struct TOMenuListCell: View {
 
             }.padding(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 10))
         }
-        .frame(width: .TOMenuCardWidth, height: 210, alignment: .top)
+        .frame(width: .infinity, height: 210, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0xe8e8e8)), Color(uiColor:UIColor(rgb: 0xe4e4e4).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
     }

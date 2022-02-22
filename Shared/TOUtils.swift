@@ -45,11 +45,17 @@ extension Color {
 }
 
 extension CGFloat {
+    static let menuListPadding = CGFloat(40)
+    private static let menuListCatgoryPadding = CGFloat(14)
+    
     static var SCREENWIDTH: CGFloat {
         return UIScreen.main.bounds.width
     }
     static var TOMenuCardWidth: CGFloat {
-        return ( SCREENWIDTH - 40 * 3 ) * 0.5
+        return ( SCREENWIDTH - menuListPadding * 3 ) * 0.5
+    }
+    static var TOMenuCatgoryWidth: CGFloat {
+        return ((SCREENWIDTH - menuListPadding * 2 - menuListCatgoryPadding * 3) / 4)
     }
 }
     
