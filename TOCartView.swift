@@ -9,6 +9,11 @@ import SwiftUI
 
 struct TOCartView: View {
     let dataList = [1,2,3]
+    
+    init() {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+    }
+    
     var body: some View {
         //NavigationView {
         
@@ -16,6 +21,7 @@ struct TOCartView: View {
             List {
                 ForEach(dataList, id:\.self) { _ in
                     TOCartCell()
+                        .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         .listRowSeparator(.hidden)
                 }
@@ -45,6 +51,7 @@ struct TOCartView: View {
                     }
                 }
                 .background(.white)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
             }
         }
         .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
