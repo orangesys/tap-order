@@ -53,7 +53,7 @@ struct TOMenuListView: View {
                     }
                 }
             }
-            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+            .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
             //.navigationTitle("Menu")
             //.toolbar {
             //    Text("no.0001")

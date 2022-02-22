@@ -42,6 +42,12 @@ extension Color {
     static var normalGreen: Color {
         return Color(uiColor: UIColor(rgb: 0x18794B))
     }
+    static var normalYellow: Color {
+        return Color(uiColor: UIColor(rgb: 0xDCB21C))
+    }
+    static var normalRed: Color {
+        return Color(uiColor: UIColor(rgb: 0xBD2727))
+    }
 }
 
 extension CGFloat {

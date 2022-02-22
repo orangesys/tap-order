@@ -13,38 +13,34 @@ struct TOMainView: View {
     }
     var body: some View {
         TabView {
+            // menu
             NavigationView{
                 TOMenuListView()
-                    //.navigationBarTitle("Menu", displayMode: .large)  // << !!
+                //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                     .navigationTitle("Menu")
                     .toolbar {
                         Text("no.0001")
                     }
             }
             .tabItem {
-                //VStack{
-                    Image(systemName: "house.fill")
-                        .foregroundColor(Color.themeColor)
-                        
-                        
-                    //Text("Home")
-                //}
+                Image(systemName: "house.fill")
+                    .foregroundColor(Color.themeColor)
             }
-            
+            // cart
             NavigationView{
-                TOMenuListView()
-                    //.navigationBarTitle("Second", displayMode: .inline) // << !!
+                TOCartView()
+                .navigationBarTitle("2 items in cart", displayMode: .large) // << !!
             }
             .tabItem {
-                    Image(systemName: "cart.fill")
-            }
-            
+                Image(systemName: "cart.fill")
+            }.badge(2)
+            // order list
             NavigationView{
-                TOMenuListView()
-                    .navigationBarTitle("Order list", displayMode: .inline) // << !!
+                TOOrderListView()
+                    .navigationBarTitle("Order list", displayMode: .large) // << !!
             }
             .tabItem {
-                    Image(systemName: "person.fill")
+                Image(systemName: "person.fill")
             }
         }
         .accentColor(.themeColor)
