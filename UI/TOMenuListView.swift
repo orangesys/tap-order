@@ -16,12 +16,12 @@ struct TOMenuListView: View {
     private var colors: [Color] = [.yellow, .purple, .green]
     
     @ObservedObject var viewModel = TOMenuListViewModel()
-
+    @State var selCatItemId: Int
     
     init() {
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36)]
-
+        selCatItemId = 0
             //Use this if NavigationBarTitle is with displayMode = .inline
             //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
         }
@@ -35,16 +35,16 @@ struct TOMenuListView: View {
 //                        ForEach((0...10), id: \.self) {_ in
 //                            TOMenuListCell()
 //                        }
-                        ForEach(self.viewModel.foodList) { one in
-                            TOMenuListCell()
+                        ForEach(self.viewModel.foodList, id:\.foodId) { one in
+                            TOMenuListCell(item: one)
                         }
                     } header: {
                         VStack(alignment:.leading) {
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: oneColumnGrid) {
                                     // Display the item
-                                    ForEach((0...10), id: \.self) {_ in
-                                        TOMenuCategoryCell()
+                                    ForEach(self.viewModel.catList, id: \.catgoryId) {one in
+                                        TOMenuCategoryCell(item:one, selItemId:$selCatItemId)
                                     }
                                 }
                             }
@@ -56,6 +56,9 @@ struct TOMenuListView: View {
                         .frame(height: headerHeight)
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                         .background(.white)
+                        .onChange(of: selCatItemId) { newValue in
+                            self.viewModel.switchCat(catId: newValue)
+                        }
                     }
                 }
             }

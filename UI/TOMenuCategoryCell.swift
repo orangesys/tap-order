@@ -8,31 +8,36 @@
 import SwiftUI
 
 struct TOMenuCategoryCell: View {
-    private var colors: [Color] = [.yellow, .purple, .green]
     var imgName = "bugger"
     var catName = "bugger"
     var isSelected = false
+    
+    var item: TOFoodsCatItem
+    @Binding var selItemId: Int
 
     var body: some View {
         
         VStack {
-            Image(imgName)
-                .resizable()
-                .font(.system(size: 30))
-                .frame(width: .TOMenuCatgoryWidth , height: .TOMenuCatgoryWidth )
-                .scaledToFit()
-                .padding(3)
-                .background(isSelected ? Color.themeColor : Color.normalGray)
-            .cornerRadius(20)
-            Text(catName)
+            Button {
+                selItemId = item.catgoryId
+            } label: {
+                Image(imgName)
+                    .resizable()
+                    .frame(width: .TOMenuCatgoryWidth , height: .TOMenuCatgoryWidth )
+                    .scaledToFit()
+                    .padding(3)
+                    .background(item.catgoryId == selItemId ? Color.themeColor : Color.normalGray)
+                .cornerRadius(20)
+            }
+            Text(item.catgoryName)
                 .font(.system(size: 17))
                 .foregroundColor(.themeColor)
         }
     }
 }
 
-struct TOMenuCategoryCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TOMenuCategoryCell()
-    }
-}
+//struct TOMenuCategoryCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TOMenuCategoryCell()
+//    }
+//}

@@ -11,6 +11,8 @@ struct TOMenuListCell: View {
     var imgName = "chicken"
     var catName = "chicken\nbugger"
     var priceName = "20"
+    
+    var item:TOFoodsItem
 
     var body: some View {
         
@@ -53,6 +55,6 @@ struct TOMenuListCell: View {
 
 struct TOMenuListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOMenuListCell()
+        TOMenuListCell(item: TOFoodsItem(foodName: "chickent", foodPic: "one", foodId: 123, foodPrice: 20))
     }
 }

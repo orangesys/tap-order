@@ -9,20 +9,23 @@ import Foundation
 
 struct TOFoodsResposne: Codable {
     let code: Int
-
-    let data: [TOFoodsResposneItem]
     let err: String
+    
+    let data: [TOFoodsCatItem]
     let msg: String
 }
 
-struct TOFoodsResposneItem: Codable,Identifiable {
-    let id = UUID()
+struct TOFoodsCatItem: Codable {
+    let catgoryId: Int
     let catgoryName: String
     let catgoryPic: String
-    struct Foods: Codable {
-        let foodName: String
-        let foodPic: String
-        let foodPrice: String
-    }
-    let foods: [Foods]
+    
+    let foods: [TOFoodsItem]
+}
+
+struct TOFoodsItem: Codable {
+    let foodName: String
+    let foodPic: String
+    let foodId: Int
+    let foodPrice: Double
 }
