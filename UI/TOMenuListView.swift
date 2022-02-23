@@ -15,6 +15,9 @@ struct TOMenuListView: View {
     private var twoColumnGrid = [GridItem(.flexible(),spacing: .menuListPadding),GridItem(.flexible(),spacing: .menuListPadding)]
     private var colors: [Color] = [.yellow, .purple, .green]
     
+    @ObservedObject var viewModel = TOMenuListViewModel()
+
+    
     init() {
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36)]
@@ -29,7 +32,10 @@ struct TOMenuListView: View {
                 LazyVGrid(columns: twoColumnGrid,spacing: 40,pinnedViews: [.sectionHeaders]) {
                     Section {
                         // Display the item
-                        ForEach((0...10), id: \.self) {_ in
+//                        ForEach((0...10), id: \.self) {_ in
+//                            TOMenuListCell()
+//                        }
+                        ForEach(self.viewModel.foodList) { one in
                             TOMenuListCell()
                         }
                     } header: {
@@ -58,6 +64,9 @@ struct TOMenuListView: View {
             //.toolbar {
             //    Text("no.0001")
             //}
+            .onAppear {
+                self.viewModel.getFoodsList()
+            }
             
         //}
     }
