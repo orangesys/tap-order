@@ -19,15 +19,18 @@ struct TOMenuListView: View {
     @State var selCatItemId: Int
     
     init() {
-            //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36)]
+        //Use this if NavigationBarTitle is with Large Font
+        let style = NSMutableParagraphStyle()
+        style.alignment = .justified
+        style.firstLineHeadIndent = 20
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36),.paragraphStyle: style]
         selCatItemId = 0
-            //Use this if NavigationBarTitle is with displayMode = .inline
-            //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
-        }
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+    }
     
     var body: some View {
-        //NavigationView {
+        ZStack {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: twoColumnGrid,spacing: 40,pinnedViews: [.sectionHeaders]) {
                     Section {
@@ -38,6 +41,7 @@ struct TOMenuListView: View {
                         ForEach(self.viewModel.foodList, id:\.foodId) { one in
                             TOMenuListCell(item: one)
                         }
+                        .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
                     } header: {
                         VStack(alignment:.leading) {
                             ScrollView(.horizontal) {
@@ -46,6 +50,7 @@ struct TOMenuListView: View {
                                     ForEach(self.viewModel.catList, id: \.catgoryId) {one in
                                         TOMenuCategoryCell(item:one, selItemId:$selCatItemId)
                                     }
+                                    .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
                                 }
                             }
                             .frame(height: 110)
@@ -71,7 +76,10 @@ struct TOMenuListView: View {
                 self.viewModel.getFoodsList()
             }
             
-        //}
+            if viewModel.isLoading {
+              ProgressView()
+            }
+        }
     }
     
     struct TOMenuListView_Previews: PreviewProvider {

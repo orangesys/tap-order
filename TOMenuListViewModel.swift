@@ -14,6 +14,7 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
     var orginalList = [TOFoodsCatItem]()
     @Published var foodList = [TOFoodsItem]()
     @Published var catList = [TOFoodsCatItem]()
+    @Published var isLoading = true
 
     var cancellables = Set<AnyCancellable>()
     
@@ -26,6 +27,7 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
             .sink(receiveCompletion: { result in
                 switch result {
                 case .failure(let error):
+                    self.isLoading = false
                     print("Handle error: \(error)")
                 case .finished:
                     break
@@ -36,11 +38,14 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
                 for one in rst.data {
                     allFoods.append(contentsOf: one.foods)
                 }
-                self.foodList = allFoods
                 // insert all cat
                 self.orginalList.append(TOFoodsCatItem(catgoryId: 0, catgoryName: "All", catgoryPic: "image", foods: allFoods))
                 self.orginalList.append(contentsOf: rst.data)
-                self.catList = self.orginalList
+                withAnimation {
+                    self.foodList = allFoods
+                    self.catList = self.orginalList
+                }
+                self.isLoading = false
         }
         cancellables.insert(cancellable)
     }
@@ -52,7 +57,9 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
             if one.catgoryId == catId {
                 //isAllCat = false
                 childFoods.append(contentsOf: one.foods)
-                self.foodList = childFoods
+                withAnimation {
+                    self.foodList = childFoods
+                }
                 break
             }
         }
