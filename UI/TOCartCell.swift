@@ -15,7 +15,6 @@ struct TOCartCell: View {
                 .scaledToFit()
                 .frame(width: 100, height: 130, alignment: .center)
                 .background(Color.normalGray)
-                .padding(3)
                 .cornerRadius(20)
             VStack(alignment:.leading,spacing: 15){
                 HStack {

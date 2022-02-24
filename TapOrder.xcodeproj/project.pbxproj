@@ -13,6 +13,7 @@
 		F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
 		F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
 		F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
+		F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TOTestView.swift */; };
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
 		F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
@@ -49,6 +50,7 @@
 		F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOFoodsResponse.swift; sourceTree = "<group>"; };
 		F8639CB127C618EC00CDE134 /* TOAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIService.swift; sourceTree = "<group>"; };
 		F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListViewModel.swift; sourceTree = "<group>"; };
+		F8639CB727C74B5700CDE134 /* TOTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTestView.swift; sourceTree = "<group>"; };
 		F8A57CD327C6091900138905 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F8A57CD527C6098000138905 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		F8A57CD727C611BB00138905 /* TOAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIRequest.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */,
+				F8639CB727C74B5700CDE134 /* TOTestView.swift */,
 				F8639CB127C618EC00CDE134 /* TOAPIService.swift */,
 				F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */,
 				F8A57CD727C611BB00138905 /* TOAPIRequest.swift */,
@@ -268,6 +271,7 @@
 				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
+				F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */,
 				F8A57CD427C6091900138905 /* API.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
 				F8FBF81E27C4A06C00571A32 /* TOOrderListView.swift in Sources */,

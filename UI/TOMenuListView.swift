@@ -27,6 +27,9 @@ struct TOMenuListView: View {
             placeholderFoods.append(TOFoodsItem(foodName: "chicken", foodPic: "image", foodId: 10 + one, foodPrice: 100))
             placeholderCats.append(TOFoodsCatItem(catgoryId: 20 + one, catgoryName: "cat", catgoryPic: "image", foods: []))
         }
+        
+        self.viewModel.isLoading = true
+        self.viewModel.getFoodsList()
     }
     
     var body: some View {
@@ -41,7 +44,7 @@ struct TOMenuListView: View {
                     } header: {
                         VStack(alignment:.leading) {
                             ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHGrid(rows: oneColumnGrid) {
+                                LazyHGrid(rows: oneColumnGrid, spacing: .menuListCatgoryPadding) {
                                     // Display the item
                                     ForEach(self.viewModel.isLoading ? placeholderCats : self.viewModel.catList, id: \.catgoryId) {one in
                                         TOMenuCategoryCell(item:one, selItemId:$selCatItemId)
@@ -64,12 +67,6 @@ struct TOMenuListView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
-            .onAppear {
-                if !self.viewModel.isLoading {
-                    self.viewModel.isLoading = true
-                    self.viewModel.getFoodsList()
-                }
-            }
             
             if viewModel.isLoading {
               ProgressView()
