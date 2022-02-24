@@ -23,7 +23,7 @@ struct TOMenuCategoryCell: View {
             } label: {
                 Image(imgName)
                     .resizable()
-                    .frame(width: .TOMenuCatgoryWidth , height: .TOMenuCatgoryWidth )
+                    .frame(width: .TOMenuCatgoryWidth, height: .TOMenuCatgoryWidth )
                     .scaledToFit()
                     .padding(3)
                     .background(item.catgoryId == selItemId ? Color.themeColor : Color.normalGray)

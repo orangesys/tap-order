@@ -19,18 +19,10 @@ struct TOMenuListView: View {
     private var placeholderCats = [TOFoodsCatItem]()
     
     @ObservedObject var viewModel = TOMenuListViewModel()
-    @State var selCatItemId: Int
+    //which cat is selected
+    @State var selCatItemId: Int = 0
     
     init() {
-        //Use this if NavigationBarTitle is with Large Font
-        //set large title padding
-        let style = NSMutableParagraphStyle()
-        style.alignment = .justified
-        style.firstLineHeadIndent = 20
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36),.paragraphStyle: style]
-        //which cat is selected
-        selCatItemId = 0
-        
         for one in 0...4 {
             placeholderFoods.append(TOFoodsItem(foodName: "chicken", foodPic: "image", foodId: 10 + one, foodPrice: 100))
             placeholderCats.append(TOFoodsCatItem(catgoryId: 20 + one, catgoryName: "cat", catgoryPic: "image", foods: []))
@@ -42,17 +34,13 @@ struct TOMenuListView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: twoColumnGrid,spacing: 40,pinnedViews: [.sectionHeaders]) {
                     Section {
-                        // Display the item
-//                        ForEach((0...10), id: \.self) {_ in
-//                            TOMenuListCell()
-//                        }
                         ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.foodId) { one in
                             TOMenuListCell(item: one)
                         }
                         .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
                     } header: {
                         VStack(alignment:.leading) {
-                            ScrollView(.horizontal) {
+                            ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHGrid(rows: oneColumnGrid) {
                                     // Display the item
                                     ForEach(self.viewModel.isLoading ? placeholderCats : self.viewModel.catList, id: \.catgoryId) {one in
@@ -76,12 +64,11 @@ struct TOMenuListView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
-            //.navigationTitle("Menu")
-            //.toolbar {
-            //    Text("no.0001")
-            //}
             .onAppear {
-                self.viewModel.getFoodsList()
+                if !self.viewModel.isLoading {
+                    self.viewModel.isLoading = true
+                    self.viewModel.getFoodsList()
+                }
             }
             
             if viewModel.isLoading {

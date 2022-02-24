@@ -14,7 +14,7 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
     var orginalList = [TOFoodsCatItem]()
     @Published var foodList = [TOFoodsItem]()
     @Published var catList = [TOFoodsCatItem]()
-    @Published var isLoading = true
+    @Published var isLoading = false
 
     var cancellables = Set<AnyCancellable>()
     
@@ -25,9 +25,9 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
     func getFoodsList() {
         let cancellable = self.getFoodsList()
             .sink(receiveCompletion: { result in
+                self.isLoading = false
                 switch result {
                 case .failure(let error):
-                    self.isLoading = false
                     print("Handle error: \(error)")
                 case .finished:
                     break
