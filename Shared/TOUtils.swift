@@ -64,7 +64,7 @@ extension CGFloat {
         return ceil(( SCREENWIDTH - menuListPadding * 3 ) * 0.5)
     }
     static var TOMenuCatgoryWidth: CGFloat {
-        return 67 //ceil((SCREENWIDTH - menuListPadding * 2 - menuListCatgoryPadding * 3) / 4)
+        return ceil((SCREENWIDTH - menuListPadding * 2 - menuListCatgoryPadding * 3) / 4)
     }
 }
     

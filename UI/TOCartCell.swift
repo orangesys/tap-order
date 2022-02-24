@@ -26,7 +26,7 @@ struct TOCartCell: View {
                     } label: {
                         Image(systemName: "xmark.circle")
                             .foregroundColor(Color.normalRed)
-                            .font(.system(size: 25))
+                            .font(.system(size: 20))
                     }
 
                 }
@@ -39,7 +39,7 @@ struct TOCartCell: View {
                     } label: {
                         Image(systemName: "minus.circle")
                             .foregroundColor(Color.themeColor)
-                            .font(.system(size: 25))
+                            .font(.system(size: 20))
                     }
                     Text("1")
                         .font(.system(size: 20, weight: .medium))
@@ -49,7 +49,7 @@ struct TOCartCell: View {
                     } label: {
                         Image(systemName: "plus.circle")
                             .foregroundColor(Color.themeColor)
-                            .font(.system(size: 25))
+                            .font(.system(size: 20))
                     }
                 }
             }

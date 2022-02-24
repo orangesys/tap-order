@@ -18,7 +18,10 @@ struct TOMenuListView: View {
     private var placeholderFoods =  [TOFoodsItem]()
     private var placeholderCats = [TOFoodsCatItem]()
     
-    @ObservedObject var viewModel = TOMenuListViewModel()
+    // environment变量导致强制刷新
+    // @ObservedObject变量不保存数据
+    // 替换成stateobject
+    @StateObject var viewModel = TOMenuListViewModel()
     //which cat is selected
     @State var selCatItemId: Int = 0
     
@@ -28,8 +31,9 @@ struct TOMenuListView: View {
             placeholderCats.append(TOFoodsCatItem(catgoryId: 20 + one, catgoryName: "cat", catgoryPic: "image", foods: []))
         }
         
-        self.viewModel.isLoading = true
-        self.viewModel.getFoodsList()
+        // environment之后改变
+        // self.viewModel.isLoading = true
+        // self.viewModel.getFoodsList()
     }
     
     var body: some View {
@@ -70,6 +74,14 @@ struct TOMenuListView: View {
             
             if viewModel.isLoading {
               ProgressView()
+            }
+        }
+        .onAppear {
+            // 本来已经放到init，毕竟init更像viewdidload
+            // 但是environment变量强制刷，改进
+            if viewModel.foodList.count <= 0 {
+                self.viewModel.isLoading = true
+                self.viewModel.getFoodsList()
             }
         }
     }

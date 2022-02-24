@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TOMainView: View {
+    @StateObject var globalCartList = TOCartViewModel()
+    
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color.themeColor.opacity(0.4))
         //Use this if NavigationBarTitle is with Large Font
@@ -36,11 +38,11 @@ struct TOMainView: View {
             // cart
             NavigationView{
                 TOCartView()
-                .navigationBarTitle("2 items in cart", displayMode: .large) // << !!
+                    .navigationBarTitle("\(globalCartList.cartList.count) items in cart", displayMode: .large) // << !!
             }
             .tabItem {
                 Image(systemName: "cart.fill")
-            }.badge(2)
+            }.badge(globalCartList.cartList.count)
             // order list
             NavigationView{
                 TOOrderListView()
@@ -51,6 +53,7 @@ struct TOMainView: View {
             }
         }
         .accentColor(.themeColor)
+        .environmentObject(globalCartList)
     }
 }
 

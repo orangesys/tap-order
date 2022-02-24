@@ -13,6 +13,8 @@ struct TOMenuListCell: View {
     var priceName = "20"
     
     var item:TOFoodsItem
+    
+    @EnvironmentObject var globalCart: TOCartViewModel
 
     var body: some View {
         
@@ -38,7 +40,7 @@ struct TOMenuListCell: View {
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()
                 Button {
-                    
+                    self.globalCart.cartList.append(item)
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
 		F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7927C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7B27C5223700D80724 /* FirebaseAnalytics */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartViewModel.swift; sourceTree = "<group>"; };
 		F8252A7727C5202B00D80724 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOFoodsResponse.swift; sourceTree = "<group>"; };
 		F8639CB127C618EC00CDE134 /* TOAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
+				F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */,
 				F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */,
 				F8639CB727C74B5700CDE134 /* TOTestView.swift */,
 				F8639CB127C618EC00CDE134 /* TOAPIService.swift */,
@@ -264,6 +267,7 @@
 				F8A57CD627C6098000138905 /* APISession.swift in Sources */,
 				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */,
+				F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */,
 				F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */,
 				F8FBF82127C4AFCB00571A32 /* TOCartCell.swift in Sources */,
 				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
