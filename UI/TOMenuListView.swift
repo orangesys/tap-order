@@ -15,18 +15,26 @@ struct TOMenuListView: View {
     private var twoColumnGrid = [GridItem(.flexible(),spacing: .menuListPadding),GridItem(.flexible(),spacing: .menuListPadding)]
     private var colors: [Color] = [.yellow, .purple, .green]
     
+    private var placeholderFoods =  [TOFoodsItem]()
+    private var placeholderCats = [TOFoodsCatItem]()
+    
     @ObservedObject var viewModel = TOMenuListViewModel()
     @State var selCatItemId: Int
     
     init() {
         //Use this if NavigationBarTitle is with Large Font
+        //set large title padding
         let style = NSMutableParagraphStyle()
         style.alignment = .justified
         style.firstLineHeadIndent = 20
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36),.paragraphStyle: style]
+        //which cat is selected
         selCatItemId = 0
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        //UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        
+        for one in 0...4 {
+            placeholderFoods.append(TOFoodsItem(foodName: "chicken", foodPic: "image", foodId: 10 + one, foodPrice: 100))
+            placeholderCats.append(TOFoodsCatItem(catgoryId: 20 + one, catgoryName: "cat", catgoryPic: "image", foods: []))
+        }
     }
     
     var body: some View {
@@ -38,7 +46,7 @@ struct TOMenuListView: View {
 //                        ForEach((0...10), id: \.self) {_ in
 //                            TOMenuListCell()
 //                        }
-                        ForEach(self.viewModel.foodList, id:\.foodId) { one in
+                        ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.foodId) { one in
                             TOMenuListCell(item: one)
                         }
                         .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
@@ -47,7 +55,7 @@ struct TOMenuListView: View {
                             ScrollView(.horizontal) {
                                 LazyHGrid(rows: oneColumnGrid) {
                                     // Display the item
-                                    ForEach(self.viewModel.catList, id: \.catgoryId) {one in
+                                    ForEach(self.viewModel.isLoading ? placeholderCats : self.viewModel.catList, id: \.catgoryId) {one in
                                         TOMenuCategoryCell(item:one, selItemId:$selCatItemId)
                                     }
                                     .redacted(reason: self.viewModel.isLoading ? .placeholder : [])

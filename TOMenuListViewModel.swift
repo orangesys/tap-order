@@ -57,20 +57,11 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
             if one.catgoryId == catId {
                 //isAllCat = false
                 childFoods.append(contentsOf: one.foods)
-                withAnimation {
+                
                     self.foodList = childFoods
-                }
+                
                 break
             }
         }
-//        if childFoods.count == 0 {
-//            var allFoods = [TOFoodsItem]()
-//            for one in orginalList {
-//                allFoods.append(contentsOf: one.foods)
-//            }
-//            self.foodList = allFoods
-//        } else {
-//            self.foodList = childFoods
-//        }
     }
 }

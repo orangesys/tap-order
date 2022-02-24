@@ -17,7 +17,7 @@ struct TOMenuListCell: View {
     var body: some View {
         
         VStack {
-            Image(imgName)
+            Image("\(imgName)")
                 .resizable()
                 .font(.system(size: 30))
                 .frame(width: .TOMenuCardWidth - 20, height: 90)
@@ -25,7 +25,7 @@ struct TOMenuListCell: View {
                 //.background(Color.themeColor)
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-            Text(catName)
+            Text("\(item.foodName)")
                 .font(.system(size: 20))
                 .foregroundColor(.black)
                 .lineLimit(2)
