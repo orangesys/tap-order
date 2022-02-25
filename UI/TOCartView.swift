@@ -14,13 +14,15 @@ struct TOCartView: View {
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
     
+    @EnvironmentObject var globalCart: TOCartViewModel
+    
     var body: some View {
         //NavigationView {
         
         VStack {
             List {
-                ForEach(dataList, id:\.self) { _ in
-                    TOCartCell()
+                ForEach(self.globalCart.cartList, id:\.first!.delId) { one in
+                    TOCartCell(model: one)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         .listRowSeparator(.hidden)

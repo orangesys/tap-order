@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct TOMainView: View {
     @StateObject var globalCartList = TOCartViewModel()
@@ -38,11 +39,11 @@ struct TOMainView: View {
             // cart
             NavigationView{
                 TOCartView()
-                    .navigationBarTitle("\(globalCartList.cartList.count) items in cart", displayMode: .large) // << !!
+                    .navigationBarTitle("\(globalCartList.badgeNum) items in cart", displayMode: .large) // << !!
             }
             .tabItem {
                 Image(systemName: "cart.fill")
-            }.badge(globalCartList.cartList.count)
+            }.badge(globalCartList.badgeNum)
             // order list
             NavigationView{
                 TOOrderListView()
@@ -56,6 +57,9 @@ struct TOMainView: View {
         .environmentObject(globalCartList)
         .onAppear {
             self.globalCartList.getCartList2()
+        }
+        .popup(isPresented: $globalCartList.isError, type:.floater(verticalPadding: .TopSafePadding), position: .top, autohideIn: 2) {
+            TOToastView(content: self.globalCartList.errorStr)
         }
     }
 }

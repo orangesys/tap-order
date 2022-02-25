@@ -40,7 +40,7 @@ struct TOMenuListCell: View {
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()
                 Button {
-                    self.globalCart.cartList.append(item)
+                    self.globalCart.badgeNum = self.globalCart.badgeNum + 1
                     self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
                 } label: {
                     Image(systemName: "plus.circle.fill")

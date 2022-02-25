@@ -14,7 +14,8 @@ protocol TOAPIService {
     
     func getFoodsList() -> AnyPublisher<TOFoodsResposne, APIError>
     func postCart(cartSend:TOCartItemSend) -> AnyPublisher<[String:String], APIError>
-    func getCartList2() -> AnyPublisher<[String:[String:TOCartItem]], APIError>
+    //func getCartList2() -> AnyPublisher<[String:[String:TOCartItem]], APIError>
+    func getCartList2() -> AnyPublisher<[String:TOCartItem], APIError>
 }
 
 extension TOAPIService {
@@ -27,7 +28,7 @@ extension TOAPIService {
         return apiSession.request(with: TOAPIRequest.postCart(cartSend))
             .eraseToAnyPublisher()
     }
-    func getCartList2() -> AnyPublisher<[String : [String : TOCartItem]], APIError> {
+    func getCartList2() -> AnyPublisher<[String : TOCartItem], APIError> {
         return apiSession.request(with: TOAPIRequest.cartList2)
             .eraseToAnyPublisher()
     }

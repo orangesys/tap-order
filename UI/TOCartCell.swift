@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TOCartCell: View {
+    var model = [TOCartItemForDel]()
+    
     var body: some View {
         HStack {
             Image("chicken")
@@ -18,7 +20,7 @@ struct TOCartCell: View {
                 .cornerRadius(20)
             VStack(alignment:.leading,spacing: 15){
                 HStack {
-                    Text("Noodles")
+                    Text("\((model[0] as TOCartItemForDel).item.foodName)")
                         .font(.system(size: 16, weight: .medium))
                     Spacer()
                     Button {
@@ -41,7 +43,7 @@ struct TOCartCell: View {
                             .foregroundColor(Color.themeColor)
                             .font(.system(size: 20))
                     }
-                    Text("1")
+                    Text("\(model.count)")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.themeColor)
                     Button {

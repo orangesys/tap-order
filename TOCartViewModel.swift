@@ -13,8 +13,11 @@ class TOCartViewModel: ObservableObject, TOAPIService {
     
     var apiSession: APIService
     
-    @Published var cartList = [TOFoodsItem]()
+    @Published var cartList =  [[TOCartItemForDel]]() // extraordinary
+    @Published var badgeNum = 0
     @Published var isLoading = false
+    @Published var isError = false
+    var errorStr = ""
 
     var cancellables = Set<AnyCancellable>()
     
@@ -28,23 +31,14 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                 self.isLoading = false
                 switch result {
                 case .failure(let error):
+                    self.isError = true
+                    self.errorStr = "\(error)"
                     print("Handle error: \(error)")
                 case .finished:
                     break
                 }
                 
             }) { (rst) in
-//                var allFoods = [TOFoodsItem]()
-//                for one in rst.data {
-//                    allFoods.append(contentsOf: one.foods)
-//                }
-//                // insert all cat
-//                self.orginalList.append(TOFoodsCatItem(catgoryId: 0, catgoryName: "All", catgoryPic: "image", foods: allFoods))
-//                self.orginalList.append(contentsOf: rst.data)
-//                withAnimation {
-//                    self.foodList = allFoods
-//                    self.catList = self.orginalList
-//                }
                 self.isLoading = false
         }
         cancellables.insert(cancellable)
@@ -56,23 +50,27 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                 self.isLoading = false
                 switch result {
                 case .failure(let error):
+                    self.isError = true
+                    self.errorStr = "\(error)"
                     print("Handle error: \(error)")
                 case .finished:
                     break
                 }
                 
             }) { (rst) in
-//                var allFoods = [TOFoodsItem]()
-//                for one in rst.data {
-//                    allFoods.append(contentsOf: one.foods)
-//                }
-//                // insert all cat
-//                self.orginalList.append(TOFoodsCatItem(catgoryId: 0, catgoryName: "All", catgoryPic: "image", foods: allFoods))
-//                self.orginalList.append(contentsOf: rst.data)
-//                withAnimation {
-//                    self.foodList = allFoods
-//                    self.catList = self.orginalList
-//                }
+                self.badgeNum = rst.count
+                var tmp = [TOCartItemForDel]()
+                for delId in rst.keys {
+                    tmp.append(TOCartItemForDel(item: rst[delId]!, delId: delId))
+                }
+                let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}
+                var groupFoodArr = [[TOCartItemForDel]]()
+                for arr in groupUserDic.values {
+                    let groupFoodDic = Dictionary(grouping: arr) { $0.item.foodId}
+                    groupFoodArr.append(contentsOf: groupFoodDic.values )
+                    
+                }
+                self.cartList = groupFoodArr
                 self.isLoading = false
         }
         cancellables.insert(cancellable)

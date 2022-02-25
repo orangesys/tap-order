@@ -48,6 +48,9 @@ extension Color {
     static var normalRed: Color {
         return Color(uiColor: UIColor(rgb: 0xBD2727))
     }
+    static var toastRed: Color {
+        return Color(uiColor: UIColor(rgb: 0xDA615C))
+    }
 }
 
 extension CGFloat {
@@ -65,6 +68,13 @@ extension CGFloat {
     }
     static var TOMenuCatgoryWidth: CGFloat {
         return ((SCREENWIDTH - menuListPadding * 2 - menuListCatgoryPadding * 3) / 4)
+    }
+    static var TopSafePadding: CGFloat {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        
+        return window?.safeAreaInsets.top ?? 44.0
     }
 }
     

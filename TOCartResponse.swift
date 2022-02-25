@@ -26,6 +26,11 @@ struct TOCartItem: Codable {
     let userId: String
 }
 
+struct TOCartItemForDel {
+    let item: TOCartItem
+    var delId: String? // 为了firebase的删除
+}
+
 struct TOCartItemSend: Codable {
     let foodName: String
     let foodId: Int
