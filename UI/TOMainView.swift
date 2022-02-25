@@ -54,6 +54,9 @@ struct TOMainView: View {
         }
         .accentColor(.themeColor)
         .environmentObject(globalCartList)
+        .onAppear {
+            self.globalCartList.getCartList2()
+        }
     }
 }
 

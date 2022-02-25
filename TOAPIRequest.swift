@@ -10,7 +10,8 @@ import Foundation
 
 enum TOAPIRequest {
     case foodList
-    case pokemonDetail(String)
+    case postCart(TOCartItemSend)
+    case cartList2
 }
 
 extension TOAPIRequest: RequestBuilder {
@@ -22,9 +23,28 @@ extension TOAPIRequest: RequestBuilder {
                 else {preconditionFailure("Invalid URL format")}
             let request = URLRequest(url: url)
             return request
-        case .pokemonDetail(let pokemonURL):
+        case .postCart(let one):
             
-            guard let url = URL(string: pokemonURL)
+            guard let url = URL(string: "https://tap-open-default-rtdb.asia-southeast1.firebasedatabase.app/postCart.json")
+                else {preconditionFailure("Invalid URL format")}
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "Post"
+            // Set HTTP Request Header
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            do {
+                let jsonData = try JSONEncoder().encode(one)
+                request.httpBody = jsonData
+            }catch let jsonErr{
+                print(jsonErr)
+            }
+
+            return request
+        case .cartList2:
+            
+            guard let url = URL(string: "https://tap-open-default-rtdb.asia-southeast1.firebasedatabase.app/postCart.json")
                 else {preconditionFailure("Invalid URL format")}
             
             let request = URLRequest(url: url)

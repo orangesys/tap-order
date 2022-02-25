@@ -29,7 +29,7 @@ struct TOCartView: View {
             .listStyle(.plain)
             
             ZStack(alignment: .bottom) {
-                VStack(spacing:40) {
+                VStack(spacing:.menuListPadding) {
                     HStack {
                         Text("Total:")
                             .font(.system(size: 22, weight: .semibold))

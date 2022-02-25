@@ -39,7 +39,7 @@ struct TOMenuListView: View {
     var body: some View {
         ZStack {
             ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: twoColumnGrid,spacing: 40,pinnedViews: [.sectionHeaders]) {
+                LazyVGrid(columns: twoColumnGrid,spacing: .menuListPadding,pinnedViews: [.sectionHeaders]) {
                     Section {
                         ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.foodId) { one in
                             TOMenuListCell(item: one)
