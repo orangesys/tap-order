@@ -13,6 +13,8 @@
 		F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7927C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7B27C5223700D80724 /* FirebaseAnalytics */; };
+		F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7E27C8DDF900D80724 /* PopupView */; };
+		F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A8127C8DE7900D80724 /* Kingfisher */; };
 		F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
 		F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
 		F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
@@ -83,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
+				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
 				F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +184,8 @@
 			name = "TapOrder (iOS)";
 			packageProductDependencies = (
 				F8252A7B27C5223700D80724 /* FirebaseAnalytics */,
+				F8252A7E27C8DDF900D80724 /* PopupView */,
+				F8252A8127C8DE7900D80724 /* Kingfisher */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -231,6 +237,8 @@
 			mainGroup = F8FBF7DE27C3269100571A32;
 			packageReferences = (
 				F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */,
+				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -586,6 +594,22 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -593,6 +617,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		F8252A7E27C8DDF900D80724 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+		F8252A8127C8DE7900D80724 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
