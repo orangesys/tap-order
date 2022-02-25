@@ -41,6 +41,7 @@ struct TOMenuListCell: View {
                 Spacer()
                 Button {
                     self.globalCart.cartList.append(item)
+                    self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)

@@ -22,8 +22,8 @@ class TOCartViewModel: ObservableObject, TOAPIService {
         self.apiSession = apiSession
     }
     
-    func getCartList() {
-        let cancellable = self.getCartList()
+    func postCart(item:TOCartItemSend) {
+        let cancellable = self.postCart(cartSend: item)
             .sink(receiveCompletion: { result in
                 self.isLoading = false
                 switch result {

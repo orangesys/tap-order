@@ -18,12 +18,21 @@ import Foundation
 //}
 
 struct TOCartItem: Codable {
-            let foodName: String
-            let foodId: Int
-            let foodPrice: Double
-            let foodPic: String
-            let createAt: Date
-            let userId: String
+    let foodName: String
+    let foodId: Int
+    let foodPrice: Double
+    let foodPic: String
+    let createAt: Date
+    let userId: String
+}
+
+struct TOCartItemSend: Codable {
+    let foodName: String
+    let foodId: Int
+    let foodPrice: Double
+    let foodPic: String
+    let createAt: [String:String] //[".sv":"timestamp"]
+    let userId: String
 }
 
 struct TOCartResponse: Codable {
