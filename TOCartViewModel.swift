@@ -19,6 +19,7 @@ class TOCartViewModel: ObservableObject, TOAPIService {
     @Published var isError = false
     @Published var totalStr = ""
     var errorStr = ""
+    var isBackgroundLoading = false
 
     var cancellables = Set<AnyCancellable>()
     
@@ -29,32 +30,59 @@ class TOCartViewModel: ObservableObject, TOAPIService {
     func postCart(item:TOCartItemSend) {
         let cancellable = self.postCart(cartSend: item)
             .sink(receiveCompletion: { result in
-                self.isLoading = false
+                
+                self.getCartList2()
+                
                 switch result {
                 case .failure(let error):
                     self.isError = true
                     self.errorStr = "\(error)"
                     print("Handle error: \(error)")
                 case .finished:
+                    print("finish: ")
                     break
                 }
                 
             }) { (rst) in
-                self.isLoading = false
+                self.isLoading = true // 还要fetch
         }
         cancellables.insert(cancellable)
     }
     
-    func getCartList2() {
-        let cancellable = self.getCartList2()
+    func delCart(delId:String) {
+        let cancellable = self.delCart(delId: delId)
             .sink(receiveCompletion: { result in
-                self.isLoading = false
+                
+                self.getCartList2()
+                
                 switch result {
                 case .failure(let error):
                     self.isError = true
                     self.errorStr = "\(error)"
                     print("Handle error: \(error)")
                 case .finished:
+                    print("finish: ")
+                    break
+                }
+                
+            }) { (rst) in
+                self.isLoading = true // 还要fetch
+        }
+        cancellables.insert(cancellable)
+    }
+
+    func getCartList2() {
+        let cancellable = self.getCartList2()
+            .sink(receiveCompletion: { result in
+                self.isLoading = false
+                self.isBackgroundLoading = false
+                switch result {
+                case .failure(let error):
+                    self.isError = true
+                    self.errorStr = "\(error)"
+                    print("Handle error: \(error)")
+                case .finished:
+                    print("finish: ")
                     break
                 }
                 
@@ -78,11 +106,12 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                     groupFoodArr.append(contentsOf: foodArraySorted )
                     
                 }
-                withAnimation {
+                //withAnimation {
                     self.totalStr = totoalNum.round2Str()
                     self.cartList = groupFoodArr
-                }
+                //}
                 self.isLoading = false
+                self.isBackgroundLoading = false
         }
         cancellables.insert(cancellable)
     }

@@ -66,11 +66,12 @@ struct TOMainView: View {
             TOLoadingView()
                 .opacity(self.globalCartList.isLoading ? 1 : 0)
         )
-//        .onReceive(timer) { time in
-//            if !self.globalCartList.isLoading {
-//                self.globalCartList.getCartList2()
-//            }
-//        }
+        .onReceive(timer) { time in
+            if !self.globalCartList.isBackgroundLoading {
+                self.globalCartList.isBackgroundLoading = true
+                self.globalCartList.getCartList2()
+            }
+        }
     }
 }
 

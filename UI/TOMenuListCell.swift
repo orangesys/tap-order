@@ -42,8 +42,6 @@ struct TOMenuListCell: View {
                 Button {
                     //self.globalCart.badgeNum = self.globalCart.badgeNum + 1
                     self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
-                    self.globalCart.isLoading = true
-                    self.globalCart.getCartList2()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)

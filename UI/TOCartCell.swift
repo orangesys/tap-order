@@ -9,7 +9,11 @@ import SwiftUI
 
 struct TOCartCell: View {
     var model = [TOCartItemForDel]()
+    var item:TOCartItem
+    var delId:String 
     
+    @EnvironmentObject var globalCart: TOCartViewModel
+
     var body: some View {
         HStack {
             Image("chicken")
@@ -20,7 +24,7 @@ struct TOCartCell: View {
                 .cornerRadius(20)
             VStack(alignment:.leading,spacing: 15){
                 HStack {
-                    Text("\((model[0] as TOCartItemForDel).item.foodName)")
+                    Text("\(item.foodName)")
                         .font(.system(size: 16, weight: .medium))
                     Spacer()
                     Button {
@@ -30,40 +34,42 @@ struct TOCartCell: View {
                             .foregroundColor(Color.normalRed)
                             .font(.system(size: 20))
                     }
-                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
+                    .disabled( item.userId != TOUserViewModel.shared.userid)
 
                 }
-                Text( (model[0] as TOCartItemForDel).item.foodPrice.round2Str() )
+                Text(item.foodPrice.round2Str() )
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(Color.normalYellow)
                 HStack {
                     Button {
-                        
+                        self.globalCart.delCart(delId: delId)
                     } label: {
                         Image(systemName: "minus.circle")
-                            .foregroundColor(Color.themeColor)
+                            .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)
                             .font(.system(size: 20))
                     }
-                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
+                    .disabled( item.userId != TOUserViewModel.shared.userid)
+                    .buttonStyle(.borderless)
                     Text("\(model.count)")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.themeColor)
                     Button {
-                        
+                        self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
                     } label: {
                         Image(systemName: "plus.circle")
-                            .foregroundColor(Color.themeColor)
+                            .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)
                             .font(.system(size: 20))
                     }
-                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
+                    .disabled( item.userId != TOUserViewModel.shared.userid)
+                    .buttonStyle(.borderless)
                 }
             }
         }
     }
 }
 
-struct TOCartCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TOCartCell()
-    }
-}
+//struct TOCartCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TOCartCell()
+//    }
+//}

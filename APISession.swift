@@ -15,6 +15,8 @@ struct APISession: APIService {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
+        print("ssn: \(builder.urlRequest) \(builder.urlRequest.httpBody)")
+        
         return URLSession.shared
             .dataTaskPublisher(for: builder.urlRequest)
             .receive(on: DispatchQueue.main)
@@ -23,7 +25,9 @@ struct APISession: APIService {
                 if let response = response as? HTTPURLResponse {
                     if (200...299).contains(response.statusCode) {
                     
-                    return Just(data)
+                        let rstNull = (String(decoding: data, as: UTF8.self) == "null")
+                        
+                        return Just( rstNull ? Data("{\"City\":\"Paris\"}".utf8) : data)
                         .decode(type: T.self, decoder: decoder)
                         .mapError {_ in .decodingError}
                         .eraseToAnyPublisher()
