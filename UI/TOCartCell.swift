@@ -33,7 +33,7 @@ struct TOCartCell: View {
                     .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
 
                 }
-                Text("20")
+                Text( (model[0] as TOCartItemForDel).item.foodPrice.round2Str() )
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(Color.normalYellow)
                 HStack {

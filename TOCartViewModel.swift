@@ -17,6 +17,7 @@ class TOCartViewModel: ObservableObject, TOAPIService {
     @Published var badgeNum = 0
     @Published var isLoading = false
     @Published var isError = false
+    @Published var totalStr = ""
     var errorStr = ""
 
     var cancellables = Set<AnyCancellable>()
@@ -60,8 +61,10 @@ class TOCartViewModel: ObservableObject, TOAPIService {
             }) { (rst) in
                 self.badgeNum = rst.count
                 var tmp = [TOCartItemForDel]()
+                var totoalNum = 0.0
                 for delId in rst.keys {
                     tmp.append(TOCartItemForDel(item: rst[delId]!, delId: delId))
+                    totoalNum = totoalNum + rst[delId]!.foodPrice
                 }
                 let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}
                 // this will generate array[(key,value)]
@@ -76,6 +79,7 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                     
                 }
                 withAnimation {
+                    self.totalStr = totoalNum.round2Str()
                     self.cartList = groupFoodArr
                 }
                 self.isLoading = false

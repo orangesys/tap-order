@@ -36,7 +36,7 @@ struct TOCartView: View {
                         Text("Total:")
                             .font(.system(size: 22, weight: .semibold))
                         Spacer()
-                        Text("22")
+                        Text(self.globalCart.totalStr)
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(.normalYellow)
                     }

@@ -35,7 +35,7 @@ struct TOMenuListCell: View {
                 .frame(height:50)
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             HStack {
-                Text("\(item.foodPrice)")
+                Text( item.foodPrice.round2Str() )
                     .font(.system(size: 18,weight: .bold))
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()

@@ -77,6 +77,12 @@ extension CGFloat {
         return window?.safeAreaInsets.top ?? 44.0
     }
 }
+
+extension Double {
+    func round2Str() -> String {
+        return String(format: "%.2f", self)
+    }
+}
     
 extension UITabBarController {
 open override func viewWillLayoutSubviews() {

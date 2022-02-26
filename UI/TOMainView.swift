@@ -29,7 +29,7 @@ struct TOMainView: View {
                 //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                     .navigationTitle("Menu")
                     .toolbar {
-                        Text("#0001")
+                        Text("#00001")
                             .font(.system(size: 20)).bold()
                     }
             }

@@ -25,7 +25,7 @@ struct TOStartView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 200, height: 150)
-                                Text("Hello, world!").font(.toOrderFont)
+                                Text("No.#00001").font(.toOrderFont)
                             }//.offset(x:0, y: 60)
                             ,alignment: .center)
                     Spacer()

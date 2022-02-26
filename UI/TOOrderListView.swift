@@ -10,6 +10,8 @@ import SwiftUI
 struct TOOrderListView: View {
     let dataList = [1,2,3,1,2,3]
     
+    @EnvironmentObject var globalCart: TOCartViewModel
+    
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
@@ -33,7 +35,7 @@ struct TOOrderListView: View {
                     Text("Total:")
                         .font(.system(size: 22, weight: .semibold))
                     Spacer()
-                    Text("22")
+                    Text(self.globalCart.totalStr)
                         .font(.system(size: 22, weight: .bold))
                         .foregroundColor(.normalYellow)
                 }
