@@ -30,6 +30,7 @@ struct TOCartCell: View {
                             .foregroundColor(Color.normalRed)
                             .font(.system(size: 20))
                     }
+                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
 
                 }
                 Text("20")
@@ -43,6 +44,7 @@ struct TOCartCell: View {
                             .foregroundColor(Color.themeColor)
                             .font(.system(size: 20))
                     }
+                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
                     Text("\(model.count)")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.themeColor)
@@ -53,6 +55,7 @@ struct TOCartCell: View {
                             .foregroundColor(Color.themeColor)
                             .font(.system(size: 20))
                     }
+                    .disabled( (model[0] as TOCartItemForDel).item.userId != TOUserViewModel.shared.userid)
                 }
             }
         }

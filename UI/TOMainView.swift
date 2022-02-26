@@ -10,6 +10,7 @@ import PopupView
 
 struct TOMainView: View {
     @StateObject var globalCartList = TOCartViewModel()
+    let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor(Color.themeColor.opacity(0.4))
@@ -61,6 +62,15 @@ struct TOMainView: View {
         .popup(isPresented: $globalCartList.isError, type:.floater(verticalPadding: .TopSafePadding), position: .top, autohideIn: 2) {
             TOToastView(content: self.globalCartList.errorStr)
         }
+        .overlay(
+            TOLoadingView()
+                .opacity(self.globalCartList.isLoading ? 1 : 0)
+        )
+//        .onReceive(timer) { time in
+//            if !self.globalCartList.isLoading {
+//                self.globalCartList.getCartList2()
+//            }
+//        }
     }
 }
 

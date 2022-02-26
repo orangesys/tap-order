@@ -24,6 +24,8 @@
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
 		F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
+		F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
+		F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
 		F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
@@ -65,6 +67,7 @@
 		F8A57CD327C6091900138905 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F8A57CD527C6098000138905 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		F8A57CD727C611BB00138905 /* TOAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIRequest.swift; sourceTree = "<group>"; };
+		F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLoadingView.swift; sourceTree = "<group>"; };
 		F8FBF7E427C3269200571A32 /* TapOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderApp.swift; sourceTree = "<group>"; };
 		F8FBF7E527C3269200571A32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8FBF7E627C3269300571A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 				F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */,
 				F8FBF80B27C363F700571A32 /* TOMenuListView.swift */,
 				F8252A8327C8E72200D80724 /* TOToastView.swift */,
+				F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -290,6 +294,7 @@
 				F8FBF82127C4AFCB00571A32 /* TOCartCell.swift in Sources */,
 				F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */,
 				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
+				F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
 				F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */,
 				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
 				F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */,
@@ -322,6 +327,7 @@
 				F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */,
 				F8FBF81F27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
 				F8FBF81C27C4A05900571A32 /* TOCartView.swift in Sources */,
+				F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
 				F8FBF82527C4AFD600571A32 /* TOOrderListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

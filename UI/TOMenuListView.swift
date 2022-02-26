@@ -73,7 +73,11 @@ struct TOMenuListView: View {
             .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
             
             if viewModel.isLoading {
-              ProgressView()
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(20)
+                    .shadow(radius: 20)
             }
         }
         .onAppear {

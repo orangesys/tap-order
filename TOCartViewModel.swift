@@ -64,13 +64,20 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                     tmp.append(TOCartItemForDel(item: rst[delId]!, delId: delId))
                 }
                 let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}
+                // this will generate array[(key,value)]
+                let sortedGroupUserDic = groupUserDic.sorted {$0.key < $1.key}
+                let valuesArraySorted = Array(sortedGroupUserDic.map({ $0.value }))
                 var groupFoodArr = [[TOCartItemForDel]]()
-                for arr in groupUserDic.values {
+                for arr in valuesArraySorted {
                     let groupFoodDic = Dictionary(grouping: arr) { $0.item.foodId}
-                    groupFoodArr.append(contentsOf: groupFoodDic.values )
+                    let sortedGroupFood = groupFoodDic.sorted {$0.key < $1.key}
+                    let foodArraySorted = Array(sortedGroupFood.map({ $0.value }))
+                    groupFoodArr.append(contentsOf: foodArraySorted )
                     
                 }
-                self.cartList = groupFoodArr
+                withAnimation {
+                    self.cartList = groupFoodArr
+                }
                 self.isLoading = false
         }
         cancellables.insert(cancellable)

@@ -35,13 +35,15 @@ struct TOMenuListCell: View {
                 .frame(height:50)
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             HStack {
-                Text(priceName)
+                Text("\(item.foodPrice)")
                     .font(.system(size: 18,weight: .bold))
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()
                 Button {
-                    self.globalCart.badgeNum = self.globalCart.badgeNum + 1
+                    //self.globalCart.badgeNum = self.globalCart.badgeNum + 1
                     self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
+                    self.globalCart.isLoading = true
+                    self.globalCart.getCartList2()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)
