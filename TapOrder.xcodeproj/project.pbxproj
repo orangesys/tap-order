@@ -24,8 +24,37 @@
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
 		F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
+		F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
+		F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8A6D5E927CA1C5100BA45FA /* PopupView */; };
+		F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
 		F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
 		F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
+		F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */; };
+		F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6327CA1AB100B9949F /* ContentView.swift */; };
+		F8C9EA6627CA1AB200B9949F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6527CA1AB200B9949F /* Assets.xcassets */; };
+		F8C9EA6927CA1AB200B9949F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */; };
+		F8C9EA6E27CA1AB200B9949F /* TapOrderClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
+		F8C9EA7427CA1B1300B9949F /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
+		F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
+		F8C9EA7627CA1B3500B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
+		F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* TOToastView.swift */; };
+		F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */; };
+		F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TOTestView.swift */; };
+		F8C9EA7A27CA1B3C00B9949F /* TOOrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */; };
+		F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* TOMenuListView.swift */; };
+		F8C9EA7C27CA1B3C00B9949F /* TOCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* TOCartView.swift */; };
+		F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */; };
+		F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */; };
+		F8C9EA7F27CA1B3C00B9949F /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
+		F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
+		F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
+		F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
+		F8C9EA8327CA1B4500B9949F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
+		F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
+		F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
+		F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
+		F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
 		F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
@@ -54,6 +83,30 @@
 		F8FBF82527C4AFD600571A32 /* TOOrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F8C9EA6C27CA1AB200B9949F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8FBF7DF27C3269100571A32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8C9EA5E27CA1AB100B9949F;
+			remoteInfo = TapOrderClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8C9EA7227CA1AB200B9949F /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				F8C9EA6E27CA1AB200B9949F /* TapOrderClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartViewModel.swift; sourceTree = "<group>"; };
 		F81F14E627C87C540069FFA8 /* TOCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartResponse.swift; sourceTree = "<group>"; };
@@ -68,6 +121,13 @@
 		F8A57CD527C6098000138905 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		F8A57CD727C611BB00138905 /* TOAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIRequest.swift; sourceTree = "<group>"; };
 		F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLoadingView.swift; sourceTree = "<group>"; };
+		F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrderClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderClipApp.swift; sourceTree = "<group>"; };
+		F8C9EA6327CA1AB100B9949F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8C9EA6527CA1AB200B9949F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8C9EA6A27CA1AB200B9949F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C9EA6B27CA1AB200B9949F /* TapOrderClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapOrderClip.entitlements; sourceTree = "<group>"; };
 		F8FBF7E427C3269200571A32 /* TapOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderApp.swift; sourceTree = "<group>"; };
 		F8FBF7E527C3269200571A32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8FBF7E627C3269300571A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +147,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F8C9EA5C27CA1AB100B9949F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8FBF7E827C3269300571A32 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,6 +194,34 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		F8A6D5E827CA1C5100BA45FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8C9EA6027CA1AB100B9949F /* TapOrderClip */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */,
+				F8C9EA6327CA1AB100B9949F /* ContentView.swift */,
+				F8C9EA6527CA1AB200B9949F /* Assets.xcassets */,
+				F8C9EA6A27CA1AB200B9949F /* Info.plist */,
+				F8C9EA6B27CA1AB200B9949F /* TapOrderClip.entitlements */,
+				F8C9EA6727CA1AB200B9949F /* Preview Content */,
+			);
+			path = TapOrderClip;
+			sourceTree = "<group>";
+		};
+		F8C9EA6727CA1AB200B9949F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +237,9 @@
 				F8A57CD227C607DB00138905 /* UI */,
 				F8FBF7E327C3269200571A32 /* Shared */,
 				F8FBF7F227C3269300571A32 /* macOS */,
+				F8C9EA6027CA1AB100B9949F /* TapOrderClip */,
 				F8FBF7EC27C3269300571A32 /* Products */,
+				F8A6D5E827CA1C5100BA45FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +260,7 @@
 			children = (
 				F8FBF7EB27C3269300571A32 /* TapOrder.app */,
 				F8FBF7F127C3269300571A32 /* TapOrder.app */,
+				F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +276,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F8C9EA5E27CA1AB100B9949F /* TapOrderClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8C9EA6F27CA1AB200B9949F /* Build configuration list for PBXNativeTarget "TapOrderClip" */;
+			buildPhases = (
+				F8C9EA5B27CA1AB100B9949F /* Sources */,
+				F8C9EA5C27CA1AB100B9949F /* Frameworks */,
+				F8C9EA5D27CA1AB100B9949F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TapOrderClip;
+			packageProductDependencies = (
+				F8A6D5E927CA1C5100BA45FA /* PopupView */,
+			);
+			productName = TapOrderClip;
+			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
 		F8FBF7EA27C3269300571A32 /* TapOrder (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8FBF7FC27C3269300571A32 /* Build configuration list for PBXNativeTarget "TapOrder (iOS)" */;
@@ -184,10 +303,12 @@
 				F8FBF7E727C3269300571A32 /* Sources */,
 				F8FBF7E827C3269300571A32 /* Frameworks */,
 				F8FBF7E927C3269300571A32 /* Resources */,
+				F8C9EA7227CA1AB200B9949F /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F8C9EA6D27CA1AB200B9949F /* PBXTargetDependency */,
 			);
 			name = "TapOrder (iOS)";
 			packageProductDependencies = (
@@ -226,6 +347,9 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					F8C9EA5E27CA1AB100B9949F = {
+						CreatedOnToolsVersion = 13.2;
+					};
 					F8FBF7EA27C3269300571A32 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -254,11 +378,22 @@
 			targets = (
 				F8FBF7EA27C3269300571A32 /* TapOrder (iOS) */,
 				F8FBF7F027C3269300571A32 /* TapOrder (macOS) */,
+				F8C9EA5E27CA1AB100B9949F /* TapOrderClip */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F8C9EA5D27CA1AB100B9949F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C9EA6927CA1AB200B9949F /* Preview Assets.xcassets in Resources */,
+				F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */,
+				F8C9EA6627CA1AB200B9949F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8FBF7E927C3269300571A32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +415,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F8C9EA5B27CA1AB100B9949F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8C9EA7427CA1B1300B9949F /* TOUtils.swift in Sources */,
+				F8C9EA8327CA1B4500B9949F /* API.swift in Sources */,
+				F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */,
+				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
+				F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */,
+				F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */,
+				F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */,
+				F8C9EA7627CA1B3500B9949F /* TOLoadingView.swift in Sources */,
+				F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */,
+				F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */,
+				F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */,
+				F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */,
+				F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */,
+				F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */,
+				F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */,
+				F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */,
+				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
+				F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */,
+				F8C9EA7F27CA1B3C00B9949F /* TOMenuListCell.swift in Sources */,
+				F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */,
+				F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */,
+				F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */,
+				F8C9EA7A27CA1B3C00B9949F /* TOOrderListCell.swift in Sources */,
+				F8C9EA7C27CA1B3C00B9949F /* TOCartView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8FBF7E727C3269300571A32 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,7 +500,84 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F8C9EA6D27CA1AB200B9949F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8C9EA5E27CA1AB100B9949F /* TapOrderClip */;
+			targetProxy = F8C9EA6C27CA1AB200B9949F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F8C9EA7027CA1AB200B9949F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
+				DEVELOPMENT_TEAM = 4N44FM69KH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapOrderClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapOrder;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oeoly.testTapOrder.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8C9EA7127CA1AB200B9949F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
+				DEVELOPMENT_TEAM = 4N44FM69KH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TapOrderClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TapOrder;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oeoly.testTapOrder.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F8FBF7FA27C3269300571A32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,6 +692,7 @@
 		F8FBF7FD27C3269300571A32 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +724,7 @@
 		F8FBF7FE27C3269300571A32 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +813,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F8C9EA6F27CA1AB200B9949F /* Build configuration list for PBXNativeTarget "TapOrderClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8C9EA7027CA1AB200B9949F /* Debug */,
+				F8C9EA7127CA1AB200B9949F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F8FBF7E227C3269100571A32 /* Build configuration list for PBXProject "TapOrder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -639,6 +893,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		F8A6D5E927CA1C5100BA45FA /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

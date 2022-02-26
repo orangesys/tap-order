@@ -94,9 +94,22 @@ class TOCartViewModel: ObservableObject, TOAPIService {
                     tmp.append(TOCartItemForDel(item: rst[delId]!, delId: delId))
                     totoalNum = totoalNum + rst[delId]!.foodPrice
                 }
-                let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}
+                
+                let currentUser = TOUserViewModel.shared.userid
+                var currentUserValue = [TOCartItemForDel]()
+                let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}.filter() {
+                    if currentUser == $0.key {
+                        currentUserValue = $0.value
+                    }
+                    return currentUser != $0.key
+                }
                 // this will generate array[(key,value)]
-                let sortedGroupUserDic = groupUserDic.sorted {$0.key < $1.key}
+                var sortedGroupUserDic = groupUserDic.sorted {$0.key < $1.key}
+                // 排序当前用户最上面
+                if currentUserValue.count > 0 {
+                    sortedGroupUserDic.insert(contentsOf: [currentUser:currentUserValue], at: 0)
+                }
+                    
                 let valuesArraySorted = Array(sortedGroupUserDic.map({ $0.value }))
                 var groupFoodArr = [[TOCartItemForDel]]()
                 for arr in valuesArraySorted {
