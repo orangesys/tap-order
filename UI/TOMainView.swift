@@ -9,6 +9,7 @@ import SwiftUI
 import PopupView
 
 struct TOMainView: View {
+
     @StateObject var globalCartList = TOCartViewModel()
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
@@ -20,7 +21,11 @@ struct TOMainView: View {
         style.alignment = .justified
         style.firstLineHeadIndent = 20
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 36, weight: .medium),.paragraphStyle: style]
+        
     }
+    
+    private let stream = WebSocketStream(url: "ws://192.168.0.106:8080")
+        
     var body: some View {
         TabView {
             // menu
@@ -66,12 +71,25 @@ struct TOMainView: View {
             TOLoadingView()
                 .opacity(self.globalCartList.isLoading ? 1 : 0)
         )
-        .onReceive(timer) { time in
-            if !self.globalCartList.isBackgroundLoading {
-                self.globalCartList.isBackgroundLoading = true
-                self.globalCartList.getCartList2()
+        .task {
+            do {
+                for try await message in stream {
+//                    print("\(message")
+//                    let updateDevice = try message.device()
+//                    devices = devices.map({ device in
+//                        device.id == updateDevice.id ? updateDevice : device
+//                    })
+                }
+            } catch {
+                debugPrint("Oops something didn't go right")
             }
         }
+//        .onReceive(timer) { time in
+//            if !self.globalCartList.isBackgroundLoading {
+//                self.globalCartList.isBackgroundLoading = true
+//                self.globalCartList.getCartList2()
+//            }
+//        }
     }
 }
 
