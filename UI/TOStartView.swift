@@ -49,7 +49,7 @@ struct TOStartView: View {
                             .foregroundColor(Color(uiColor: UIColor(rgb: 0x6644ab)))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 25)
-                                    .stroke(Color.white, lineWidth: 0)
+                                    .stroke(Color.red, lineWidth: 0)
                             )
                     }
                     .background(Color.white.opacity(0.85)) // If you have this

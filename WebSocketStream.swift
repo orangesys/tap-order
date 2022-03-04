@@ -31,10 +31,10 @@ class WebSocketStream: AsyncSequence {
         guard let stream = stream else {
             fatalError("stream was not initialized")
         }
-        socket.resume()
-        send()
-        ping()
-        receive()
+//        socket.resume()
+//        send()
+//        ping()
+//        receive()
         //listenForMessages()
         return stream.makeAsyncIterator()
     }

@@ -27,6 +27,15 @@
 		F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
 		F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8A6D5E927CA1C5100BA45FA /* PopupView */; };
 		F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
+		F8B7089927D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
+		F8B7089A27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
+		F8B7089B27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
+		F8B7089D27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
+		F8B7089E27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
+		F8B7089F27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
+		F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
+		F8B708A227D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
+		F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
 		F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */; };
 		F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */; };
 		F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
@@ -122,6 +131,9 @@
 		F8A57CD327C6091900138905 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F8A57CD527C6098000138905 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		F8A57CD727C611BB00138905 /* TOAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIRequest.swift; sourceTree = "<group>"; };
+		F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageButtonView.swift; sourceTree = "<group>"; };
+		F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageListView.swift; sourceTree = "<group>"; };
+		F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageCell.swift; sourceTree = "<group>"; };
 		F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStream.swift; sourceTree = "<group>"; };
 		F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLoadingView.swift; sourceTree = "<group>"; };
 		F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrderClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +205,9 @@
 				F8FBF80B27C363F700571A32 /* TOMenuListView.swift */,
 				F8252A8327C8E72200D80724 /* TOToastView.swift */,
 				F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */,
+				F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */,
+				F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */,
+				F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -424,12 +439,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C9EA7427CA1B1300B9949F /* TOUtils.swift in Sources */,
+				F8B7089B27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
 				F8C9EA8327CA1B4500B9949F /* API.swift in Sources */,
 				F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */,
 				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
 				F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */,
 				F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */,
 				F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */,
+				F8B7089F27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
 				F8C9EA7627CA1B3500B9949F /* TOLoadingView.swift in Sources */,
 				F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */,
 				F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
@@ -439,6 +456,7 @@
 				F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */,
 				F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */,
 				F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */,
+				F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
 				F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */,
 				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
 				F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */,
@@ -456,12 +474,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FBF81827C47F2D00571A32 /* TOStartView.swift in Sources */,
+				F8B7089927D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
 				F8A57CD627C6098000138905 /* APISession.swift in Sources */,
 				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */,
 				F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */,
 				F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */,
+				F8B7089D27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
 				F8FBF82127C4AFCB00571A32 /* TOCartCell.swift in Sources */,
 				F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */,
 				F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
@@ -471,6 +491,7 @@
 				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
 				F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */,
 				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
+				F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
 				F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
 				F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */,
@@ -488,15 +509,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */,
+				F8B7089E27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
 				F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8FBF82227C4AFCB00571A32 /* TOCartCell.swift in Sources */,
 				F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */,
 				F8252A8527C8E72200D80724 /* TOToastView.swift in Sources */,
 				F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */,
+				F8B708A227D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
 				F8FBF80D27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8FBF81027C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
 				F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */,
+				F8B7089A27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
 				F8FBF81F27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
 				F8FBF81C27C4A05900571A32 /* TOCartView.swift in Sources */,
 				F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
@@ -716,6 +740,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,6 +775,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

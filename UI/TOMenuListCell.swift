@@ -21,9 +21,9 @@ struct TOMenuListCell: View {
         VStack {
             Image("\(imgName)")
                 .resizable()
-                .font(.system(size: 30))
-                .frame(width: .TOMenuCardWidth - 20, height: 90)
                 .scaledToFit()
+                .font(.system(size: 30))
+                .frame(width: .TOMenuCardWidth - 20, height: 65)
                 //.background(Color.themeColor)
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
@@ -48,9 +48,9 @@ struct TOMenuListCell: View {
                         .font(.system(size: 25))
                 }
 
-            }.padding(EdgeInsets(top: 5, leading: 10, bottom: 10, trailing: 10))
+            }.padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
         }
-        .frame(maxWidth: .infinity, minHeight: 210, alignment: .top)
+        .frame(maxWidth: .infinity, minHeight: 180, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0xe8e8e8)), Color(uiColor:UIColor(rgb: 0xe4e4e4).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
     }
@@ -58,6 +58,6 @@ struct TOMenuListCell: View {
 
 struct TOMenuListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOMenuListCell(item: TOFoodsItem(foodName: "chickent", foodPic: "one", foodId: 123, foodPrice: 20))
+        TOMenuListCell(item: TOFoodsItem(foodName: "chickent\nname", foodPic: "one", foodId: 123, foodPrice: 20))
     }
 }
