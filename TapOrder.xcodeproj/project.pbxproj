@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
+		F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
+		F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
+		F81D5FAB27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
+		F81D5FAC27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
 		F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
 		F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
 		F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
@@ -123,6 +127,9 @@
 /* Begin PBXFileReference section */
 		F81D5FA327D25C52009BE108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA527D25C70009BE108 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TapOrder (iOS).entitlements"; sourceTree = "<group>"; };
+		F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOQuickSignInWithApple.swift; sourceTree = "<group>"; };
+		F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOSignInWithAppleVIewModel.swift; sourceTree = "<group>"; };
 		F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartViewModel.swift; sourceTree = "<group>"; };
 		F81F14E627C87C540069FFA8 /* TOCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartResponse.swift; sourceTree = "<group>"; };
 		F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +254,7 @@
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
+				F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */,
 				F81D5FA427D25C52009BE108 /* Localizable.strings */,
 				F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */,
 				F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */,
@@ -258,6 +266,8 @@
 				F8A57CD527C6098000138905 /* APISession.swift */,
 				F8A57CD327C6091900138905 /* API.swift */,
 				F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */,
+				F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */,
+				F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */,
 				F8A57CD227C607DB00138905 /* UI */,
 				F8FBF7E327C3269200571A32 /* Shared */,
 				F8FBF7F227C3269300571A32 /* macOS */,
@@ -450,6 +460,7 @@
 				F8B7089B27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
 				F8C9EA8327CA1B4500B9949F /* API.swift in Sources */,
 				F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */,
+				F81D5FAC27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */,
 				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
 				F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */,
 				F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */,
@@ -459,6 +470,7 @@
 				F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */,
 				F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
 				F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */,
+				F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
 				F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */,
 				F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */,
 				F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */,
@@ -485,6 +497,7 @@
 				F8B7089927D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
 				F8A57CD627C6098000138905 /* APISession.swift in Sources */,
+				F81D5FAB27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */,
 				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */,
 				F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */,
@@ -494,6 +507,7 @@
 				F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */,
 				F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
 				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
+				F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
 				F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
 				F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */,
 				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
@@ -749,6 +763,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TapOrder (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -784,6 +799,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "TapOrder (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;

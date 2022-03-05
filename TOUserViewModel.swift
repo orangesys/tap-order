@@ -14,11 +14,11 @@ class TOUserViewModel: ObservableObject {
     let userid = UUID().uuidString
     
     @Published var lang: String = "en"
-
-        var bundle: Bundle? {
-            let b = Bundle.main.path(forResource: lang, ofType: "lproj")!
-            return Bundle(path: b)
-        }
+    
+    var bundle: Bundle? {
+        let b = Bundle.main.path(forResource: lang, ofType: "lproj")!
+        return Bundle(path: b)
+    }
 }
 
 extension Bundle {
