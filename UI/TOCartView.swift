@@ -56,7 +56,7 @@ struct TOCartView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
             }
         }
-        .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
+        .padding(EdgeInsets(top: 0, leading: .menuListPadding - 15, bottom: 0, trailing: .menuListPadding - 15))
         
     }
     
