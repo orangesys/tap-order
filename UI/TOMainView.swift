@@ -13,7 +13,7 @@ struct TOMainView: View {
     @StateObject var globalCartList = TOCartViewModel()
     @StateObject var userSetting = TOUserViewModel.shared
     @State var isSwitchLan = false
-    @State var selectedLan:TOLanguage? = TOLanguage(name: "Japan", flagName: "🇯🇵")
+    @State var selectedLan:TOLanguage? = TOLanguage(name: "En", flagName: "🇺🇸")
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     init() {
@@ -49,7 +49,7 @@ struct TOMainView: View {
                     //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                         .navigationTitle("Menu")
                         .toolbar {
-                            TOLanguageButtonView(isSwitch: $isSwitchLan)
+                            TOLanguageButtonView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
                         }
                 }
                 .tabItem {

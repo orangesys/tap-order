@@ -40,7 +40,11 @@ struct TOLanguageCell: View {
         //.background(.teal)
         .onTapGesture {
             self.seledItem = item
-            userSetting.lang = "ja"
+            if item.name == "En" {
+                userSetting.lang = "en"
+            } else {
+                userSetting.lang = "ja"
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TOLanguageButtonView: View {
     @Binding var isSwitch:Bool
+    @Binding var seledLan:TOLanguage?
     var body: some View {
         
 //        Button(action: {
@@ -38,7 +39,7 @@ struct TOLanguageButtonView: View {
                 self.isSwitch = !self.isSwitch
             }
         }) {
-            Text("🇺🇸")
+            Text(seledLan!.flagName)
                 .foregroundColor(Color.black)
                 .font(.system(size: 20))
         }
@@ -49,6 +50,6 @@ struct TOLanguageButtonView: View {
 
 struct TOLanguageButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TOLanguageButtonView(isSwitch: .constant(false))
+        TOLanguageButtonView(isSwitch: .constant(false), seledLan: .constant(TOLanguage(name: "Japan", flagName: "🇯🇵")))
     }
 }
