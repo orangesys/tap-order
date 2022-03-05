@@ -11,6 +11,7 @@ import PopupView
 struct TOMainView: View {
     
     @StateObject var globalCartList = TOCartViewModel()
+    @StateObject var userSetting = TOUserViewModel.shared
     @State var isSwitchLan = false
     @State var selectedLan:TOLanguage? = TOLanguage(name: "Japan", flagName: "🇯🇵")
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
@@ -36,10 +37,10 @@ struct TOMainView: View {
         ZStack {
             if isSwitchLan {
                 TOLanguageListView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
-                    .background(.ultraThinMaterial)
                     .transition(.move(edge: .bottom))
-                    .animation(.linear, value: 0.3)
+                    //.animation(.spring(), value: 0.3)
                     .zIndex(1)
+                    .environmentObject(userSetting)
             }
             TabView {
                 // menu
@@ -74,6 +75,7 @@ struct TOMainView: View {
             }
             .accentColor(.themeColor)
             .environmentObject(globalCartList)
+            .environmentObject(userSetting)
             .onAppear {
                 self.globalCartList.getCartList2()
             }
@@ -83,6 +85,13 @@ struct TOMainView: View {
             .overlay(
                 TOLoadingView()
                     .opacity(self.globalCartList.isLoading ? 1 : 0)
+            )
+            .overlay(
+                ZStack {
+                    Rectangle()
+                        .ignoresSafeArea()
+                        .foregroundColor(.black.opacity(isSwitchLan ? 0.3 : 0))
+                }
             )
             .task {
                 do {

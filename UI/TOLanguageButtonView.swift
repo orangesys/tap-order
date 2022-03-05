@@ -34,7 +34,9 @@ struct TOLanguageButtonView: View {
         
         Button(action: {
             print(isSwitch)
-            self.isSwitch = !self.isSwitch
+            withAnimation(.spring()) {
+                self.isSwitch = !self.isSwitch
+            }
         }) {
             Text("🇺🇸")
                 .foregroundColor(Color.black)

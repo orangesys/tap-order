@@ -21,7 +21,8 @@ struct TOLanguageListView: View {
     var body: some View {
         //ScrollView(.vertical, showsIndicators: false) {
         
-        VStack {
+        //之前这里做的背景但是没有和动效分离
+        //VStack {
             VStack {
                 Text("Switching Language")
                     .font(.system(size: 17))
@@ -37,11 +38,12 @@ struct TOLanguageListView: View {
                 .listStyle(.plain)
                 .background(.white)
                 .padding()
-                
                 Button(action: {
-                    self.isSwitch = false
+                    //withAnimation(.spring()) {
+                        self.isSwitch = !self.isSwitch
+                    //}
                 }) {
-                    Text("OK")
+                    Text("OK".localizedString)
                         .frame(minWidth: 220)
                         .font(.system(size: 24, weight: .semibold))
                         .padding()
@@ -61,11 +63,11 @@ struct TOLanguageListView: View {
             .frame(width:.SCREENWIDTH-100, height: 350)
             .cornerRadius(40)
         }
-        .padding()
-        .frame(maxWidth:.infinity, maxHeight: .infinity)
-        .ignoresSafeArea(.all)
-        .background(.ultraThinMaterial)
-    }
+//        .padding()
+//        .frame(maxWidth:.infinity, maxHeight: .infinity)
+//        .ignoresSafeArea(.all)
+//        .background(.ultraThinMaterial)
+//    }
 }
 
 struct TOLanguageListView_Previews: PreviewProvider {

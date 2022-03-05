@@ -10,6 +10,7 @@ import SwiftUI
 struct TOLanguageCell: View {
     var item:TOLanguage
     @Binding var seledItem:TOLanguage?
+    @EnvironmentObject var userSetting: TOUserViewModel
     var body: some View {
         HStack(spacing:2) {
             VStack {
@@ -20,7 +21,7 @@ struct TOLanguageCell: View {
             }.frame(minWidth: 0, maxWidth: .infinity)
                 .background(Color.white)
             VStack(alignment:.leading) {
-                Text(item.name)
+                Text(item.name.localizedString)
                     .foregroundColor(.black)
                 .font(.system(size: 20))
                 .frame(width:90, alignment: .leading)
@@ -39,6 +40,7 @@ struct TOLanguageCell: View {
         //.background(.teal)
         .onTapGesture {
             self.seledItem = item
+            userSetting.lang = "ja"
         }
     }
 }

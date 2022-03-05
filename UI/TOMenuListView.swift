@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct TOMenuListView: View {
-    let myList: [String] = ["1", "2"]//, "3","1", "2", "3","1", "2", "3","1", "2", "3","1", "2", "3"]
     let headerHeight = CGFloat(150)
-    private var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
     private var oneColumnGrid = [GridItem(.flexible())]
     private var twoColumnGrid = [GridItem(.flexible(),spacing: .menuListPadding),GridItem(.flexible(),spacing: .menuListPadding)]
-    private var colors: [Color] = [.yellow, .purple, .green]
     
     private var placeholderFoods =  [TOFoodsItem]()
     private var placeholderCats = [TOFoodsCatItem]()
