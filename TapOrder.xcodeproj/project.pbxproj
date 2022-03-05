@@ -13,6 +13,7 @@
 		F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
 		F81D5FAB27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
 		F81D5FAC27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
+		F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = F81D5FAE27D34F0C009BE108 /* FlagKit */; };
 		F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
 		F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
 		F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
@@ -186,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
+				F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */,
 				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
 				F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -349,6 +351,7 @@
 				F8252A7B27C5223700D80724 /* FirebaseAnalytics */,
 				F8252A7E27C8DDF900D80724 /* PopupView */,
 				F8252A8127C8DE7900D80724 /* Kingfisher */,
+				F81D5FAE27D34F0C009BE108 /* FlagKit */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -406,6 +409,7 @@
 				F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */,
 				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -930,6 +934,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/madebybowtie/FlagKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -957,6 +969,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F81D5FAE27D34F0C009BE108 /* FlagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */;
+			productName = FlagKit;
+		};
 		F8252A7B27C5223700D80724 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

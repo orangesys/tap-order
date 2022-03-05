@@ -27,7 +27,7 @@ struct TOLanguageListView: View {
                 Text("Switching Language")
                     .font(.system(size: 17))
                     .foregroundColor(.themeColor)
-                    .padding()
+                    .padding(EdgeInsets(top: 30, leading: 20, bottom: 0, trailing: 20))
                 List {
                     ForEach(rows) { one in
                         TOLanguageCell(item: one, seledItem: $seledLan)

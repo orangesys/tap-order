@@ -24,7 +24,7 @@ struct TOLanguageCell: View {
                 Text(item.name.localizedString)
                     .foregroundColor(.black)
                 .font(.system(size: 20))
-                .frame(width:90, alignment: .leading)
+                .frame(width:90, alignment: .center)
             }.frame(minWidth: 90, maxWidth: .infinity)
                 .background(Color.white)//blank can click
             VStack {

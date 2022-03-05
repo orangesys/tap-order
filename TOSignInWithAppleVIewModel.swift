@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import AuthenticationServices
 
 enum TOLoginStatus {
@@ -17,6 +18,10 @@ enum TOLoginStatus {
 
 class TOSignInWithAppleVIewModel: NSObject, ASAuthorizationControllerDelegate, ObservableObject {
     @Published var isSuccessLogin: TOLoginStatus = .notLogin
+    private weak var swindow: UIWindow!
+    init(window: UIWindow?) {
+        self.swindow = window
+    }
     
     func authorizationController(controller: ASAuthorizationController,
                                  didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -66,12 +71,16 @@ extension TOSignInWithAppleVIewModel {
         // API Call - Pass the email, user full name, user identity provided by Apple and other details.
         // Give Call Back to UI
         self.isSuccessLogin = .sucessNewLogin
+        swindow.rootViewController = UIHostingController(rootView: TOMainView())
+        swindow.makeKeyAndVisible()
     }
     
     private func signInExistingUser(credential: ASAuthorizationAppleIDCredential) {
         // API Call - Pass the user identity, authorizationCode and identity token
         // Give Call Back to UI
         self.isSuccessLogin = .sucessNormalLogin
+        swindow.rootViewController = UIHostingController(rootView: TOMainView())
+        swindow.makeKeyAndVisible()
     }
     
     private func signinWithUserNamePassword(credential: ASPasswordCredential) {

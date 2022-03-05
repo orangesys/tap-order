@@ -66,7 +66,7 @@ struct TOStartView: View {
     }
     
     private func showAppleLoginView() {
-        signInWithAppleViewModel = TOSignInWithAppleVIewModel()
+        signInWithAppleViewModel = TOSignInWithAppleVIewModel(window: UIApplication.shared.windows.first)
         
         // 1. Instantiate the AuthorizationAppleIDProvider
         let provider = ASAuthorizationAppleIDProvider()
@@ -80,12 +80,12 @@ struct TOStartView: View {
         controller.delegate = signInWithAppleViewModel
         // 6. Initiate the authorization flows.
         controller.performRequests()
-        if signInWithAppleViewModel?.isSuccessLogin != .failLogin {
-            if let window = UIApplication.shared.windows.first {
-                window.rootViewController = UIHostingController(rootView: TOMainView())
-                window.makeKeyAndVisible()
-            }
-        }
+//        if signInWithAppleViewModel?.isSuccessLogin != .failLogin {
+//            if let window = UIApplication.shared.windows.first {
+//                window.rootViewController = UIHostingController(rootView: TOMainView())
+//                window.makeKeyAndVisible()
+//            }
+//        }
      }
 }
 

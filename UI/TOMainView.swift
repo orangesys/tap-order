@@ -38,7 +38,7 @@ struct TOMainView: View {
             if isSwitchLan {
                 TOLanguageListView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
                     .transition(.move(edge: .bottom))
-                    //.animation(.spring(), value: 0.3)
+                    .animation(.spring(), value: 0.3)
                     .zIndex(1)
                     .environmentObject(userSetting)
             }
