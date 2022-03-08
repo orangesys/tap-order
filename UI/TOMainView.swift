@@ -31,7 +31,7 @@ struct TOMainView: View {
         
     }
     
-    private let stream = WebSocketStream(url: "ws://192.168.0.106:8080")
+    private let stream = WebSocketStream(url: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
     
     var body: some View {
         ZStack {
@@ -76,9 +76,6 @@ struct TOMainView: View {
             .accentColor(.themeColor)
             .environmentObject(globalCartList)
             .environmentObject(userSetting)
-            .onAppear {
-                self.globalCartList.getCartList2()
-            }
             .popup(isPresented: $globalCartList.isError, type:.floater(verticalPadding: .TopSafePadding), position: .top, autohideIn: 2) {
                 TOToastView(content: self.globalCartList.errorStr)
             }
@@ -93,26 +90,29 @@ struct TOMainView: View {
                         .foregroundColor(.black.opacity(isSwitchLan ? 0.3 : 0))
                 }
             )
-            .task {
-                do {
-                    for try await message in stream {
-                        //                    print("\(message")
-                        //                    let updateDevice = try message.device()
-                        //                    devices = devices.map({ device in
-                        //                        device.id == updateDevice.id ? updateDevice : device
-                        //                    })
-                    }
-                } catch {
-                    debugPrint("Oops something didn't go right")
-                }
-            }
+            //            .onAppear {
+            //                self.globalCartList.getCartList2()
+            //            }
+//            .task {
+//                do {
+//                    for try await message in stream {
+//                        //                    print("\(message")
+//                        //                    let updateDevice = try message.device()
+//                        //                    devices = devices.map({ device in
+//                        //                        device.id == updateDevice.id ? updateDevice : device
+//                        //                    })
+//                    }
+//                } catch {
+//                    debugPrint("Oops something didn't go right")
+//                }
+//            }
         }
-        //        .onReceive(timer) { time in
-        //            if !self.globalCartList.isBackgroundLoading {
-        //                self.globalCartList.isBackgroundLoading = true
-        //                self.globalCartList.getCartList2()
-        //            }
-        //        }
+//                .onReceive(timer) { time in
+//                    if !self.globalCartList.isBackgroundLoading {
+//                        self.globalCartList.isBackgroundLoading = true
+//                        self.globalCartList.getCartList2()
+//                    }
+//                }
     }
 }
 

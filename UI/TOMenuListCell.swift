@@ -12,7 +12,7 @@ struct TOMenuListCell: View {
     var catName = "chicken\nbugger"
     var priceName = "20"
     
-    var item:TOFoodsItem
+    var item:TONewFoods
     
     @EnvironmentObject var globalCart: TOCartViewModel
 
@@ -27,7 +27,7 @@ struct TOMenuListCell: View {
                 //.background(Color.themeColor)
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
-            Text("\(item.foodName)")
+            Text(item.name ?? "name")
                 .font(.system(size: 20))
                 .foregroundColor(.black)
                 .lineLimit(2)
@@ -35,13 +35,13 @@ struct TOMenuListCell: View {
                 .frame(height:50)
                 .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             HStack {
-                Text( item.foodPrice.round2Str() )
+                Text( item.price ?? "0.0" )
                     .font(.system(size: 18,weight: .bold))
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()
                 Button {
                     //self.globalCart.badgeNum = self.globalCart.badgeNum + 1
-                    self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
+                    //self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)
@@ -58,6 +58,6 @@ struct TOMenuListCell: View {
 
 struct TOMenuListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOMenuListCell(item: TOFoodsItem(foodName: "chickent\nname", foodPic: "one", foodId: 123, foodPrice: 20))
+        TOMenuListCell(item: TONewFoods(id: "123", name: "name"))
     }
 }

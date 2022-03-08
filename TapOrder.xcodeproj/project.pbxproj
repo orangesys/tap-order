@@ -14,6 +14,10 @@
 		F81D5FAB27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
 		F81D5FAC27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */; };
 		F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = F81D5FAE27D34F0C009BE108 /* FlagKit */; };
+		F81D5FB127D76039009BE108 /* TONewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */; };
+		F81D5FB227D76039009BE108 /* TONewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */; };
+		F81D5FB427D764CC009BE108 /* TOFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */; };
+		F81D5FB527D764CC009BE108 /* TOFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */; };
 		F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
 		F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
 		F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
@@ -131,6 +135,8 @@
 		F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TapOrder (iOS).entitlements"; sourceTree = "<group>"; };
 		F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOQuickSignInWithApple.swift; sourceTree = "<group>"; };
 		F81D5FAA27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOSignInWithAppleVIewModel.swift; sourceTree = "<group>"; };
+		F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TONewFoodsResponse.swift; sourceTree = "<group>"; };
+		F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOFoodViewModel.swift; sourceTree = "<group>"; };
 		F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartViewModel.swift; sourceTree = "<group>"; };
 		F81F14E627C87C540069FFA8 /* TOCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartResponse.swift; sourceTree = "<group>"; };
 		F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserViewModel.swift; sourceTree = "<group>"; };
@@ -261,8 +267,10 @@
 				F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */,
 				F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */,
 				F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */,
+				F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */,
 				F8639CB127C618EC00CDE134 /* TOAPIService.swift */,
 				F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */,
+				F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */,
 				F81F14E627C87C540069FFA8 /* TOCartResponse.swift */,
 				F8A57CD727C611BB00138905 /* TOAPIRequest.swift */,
 				F8A57CD527C6098000138905 /* APISession.swift */,
@@ -467,6 +475,7 @@
 				F81D5FAC27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */,
 				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
 				F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */,
+				F81D5FB527D764CC009BE108 /* TOFoodViewModel.swift in Sources */,
 				F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */,
 				F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */,
 				F8B7089F27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
@@ -485,6 +494,7 @@
 				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
 				F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */,
 				F8C9EA7F27CA1B3C00B9949F /* TOMenuListCell.swift in Sources */,
+				F81D5FB227D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
 				F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */,
 				F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */,
 				F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */,
@@ -504,6 +514,7 @@
 				F81D5FAB27D2F50D009BE108 /* TOSignInWithAppleVIewModel.swift in Sources */,
 				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */,
+				F81D5FB427D764CC009BE108 /* TOFoodViewModel.swift in Sources */,
 				F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */,
 				F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */,
 				F8B7089D27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
@@ -522,6 +533,7 @@
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
 				F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */,
 				F8A57CD427C6091900138905 /* API.swift in Sources */,
+				F81D5FB127D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
 				F8FBF81E27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
 				F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */,

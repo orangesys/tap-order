@@ -12,6 +12,8 @@ import UIKit
 protocol TOAPIService {
     var apiSession: APIService {get}
     
+    func getFoodsCat() -> AnyPublisher<[String:TONewFoodsCat], APIError>
+    func getFoodsCatList(cat:String) -> AnyPublisher<[String:TONewFoods], APIError>
     func getFoodsList() -> AnyPublisher<TOFoodsResposne, APIError>
     func postCart(cartSend:TOCartItemSend) -> AnyPublisher<[String:String], APIError>
     func delCart(delId:String) -> AnyPublisher<[String:String], APIError>
@@ -20,6 +22,14 @@ protocol TOAPIService {
 
 extension TOAPIService {
     
+    func getFoodsCat() -> AnyPublisher<[String:TONewFoodsCat], APIError> {
+        return apiSession.request(with: TOAPIRequest.foodCat)
+            .eraseToAnyPublisher()
+    }
+    func getFoodsCatList(cat:String) -> AnyPublisher<[String:TONewFoods], APIError> {
+        return apiSession.request(with: TOAPIRequest.foodCatList(cat))
+            .eraseToAnyPublisher()
+    }
     func getFoodsList() -> AnyPublisher<TOFoodsResposne, APIError> {
         return apiSession.request(with: TOAPIRequest.foodList)
             .eraseToAnyPublisher()
@@ -36,10 +46,5 @@ extension TOAPIService {
         return apiSession.request(with: TOAPIRequest.cartList2)
             .eraseToAnyPublisher()
     }
-
-//    func getPokemon(pokemonURL: String) -> AnyPublisher<Pokemon, APIError> {
-//        return apiSession.request(with: PokemonEndpoint.pokemonDetail(pokemonURL))
-//            .eraseToAnyPublisher()
-//    }
 }
 

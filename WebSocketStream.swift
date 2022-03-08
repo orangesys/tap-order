@@ -31,10 +31,10 @@ class WebSocketStream: AsyncSequence {
         guard let stream = stream else {
             fatalError("stream was not initialized")
         }
-//        socket.resume()
-//        send()
-//        ping()
-//        receive()
+        socket.resume()
+        send()
+        ping()
+        receive()
         //listenForMessages()
         return stream.makeAsyncIterator()
     }
@@ -75,7 +75,7 @@ class WebSocketStream: AsyncSequence {
                 print("Error when sending PING \(error)")
             } else {
                 print("Web Socket connection is alive")
-                DispatchQueue.global().asyncAfter(deadline: .now() + 5) { [self] in
+                DispatchQueue.global().asyncAfter(deadline: .now() + 10) { [self] in
                     ping()
                 }
             }
@@ -88,14 +88,14 @@ class WebSocketStream: AsyncSequence {
     }
 
     func send() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [self] in
-            send()
+        //DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [self] in
+        //    send()
             socket.send(.string("New Message")) { error in
                 if let error = error {
                     print("Error when sending a message \(error)")
                 }
             }
-        }
+        //}
     }
     
 }

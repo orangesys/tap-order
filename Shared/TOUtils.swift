@@ -85,11 +85,15 @@ extension Double {
 }
     
 extension UITabBarController {
-open override func viewWillLayoutSubviews() {
-    let array = self.viewControllers
-    for controller in array! {
-        controller.tabBarItem.title = ""
-        controller.tabBarItem.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: -20, right: 0)
+    open override func viewWillLayoutSubviews() {
+        let array = self.viewControllers
+        for controller in array! {
+            controller.tabBarItem.title = ""
+            controller.tabBarItem.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: -20, right: 0)
+        }
     }
 }
+
+extension String {
+    static let APIHost = "http://localhost:8080"
 }

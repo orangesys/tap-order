@@ -9,6 +9,8 @@ import Foundation
 
 
 enum TOAPIRequest {
+    case foodCat
+    case foodCatList(String)
     case foodList
     case postCart(TOCartItemSend)
     case delCart(String)
@@ -19,6 +21,16 @@ extension TOAPIRequest: RequestBuilder {
     
     var urlRequest: URLRequest {
         switch self {
+        case .foodCat:
+            guard let url = URL(string: "\(String.APIHost)/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/categories?language=en")
+                else {preconditionFailure("Invalid URL format")}
+            let request = URLRequest(url: url)
+            return request
+        case .foodCatList(let cat):
+            guard let url = URL(string: "\(String.APIHost)/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/categories/\(cat)?language=ja".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+                else {preconditionFailure("Invalid URL format")}
+            let request = URLRequest(url: url)
+            return request
         case .foodList:
             guard let url = URL(string: "https://tap-open-default-rtdb.asia-southeast1.firebasedatabase.app/foods.json")
                 else {preconditionFailure("Invalid URL format")}

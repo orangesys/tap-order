@@ -12,24 +12,24 @@ struct TOMenuCategoryCell: View {
     var catName = "bugger"
     var isSelected = false
     
-    var item: TOFoodsCatItem
-    @Binding var selItemId: Int
+    var item: TONewFoodsCat
+    @Binding var selItemId: String
 
     var body: some View {
         
         VStack {
             Button {
-                selItemId = item.catgoryId
+                selItemId = item.id!.uuidString
             } label: {
                 Image(imgName)
                     .resizable()
                     .frame(width: .TOMenuCatgoryWidth, height: .TOMenuCatgoryWidth)
                     .scaledToFit()
                     //.padding(3)
-                    .background(item.catgoryId == selItemId ? Color.themeColor : Color.normalGray)
+                    .background(item.id!.uuidString == selItemId ? Color.themeColor : Color.normalGray)
                 .cornerRadius(20)
             }
-            Text(item.catgoryName)
+            Text(item.name ?? "name")
                 .font(.system(size: 17))
                 .foregroundColor(.themeColor)
         }
