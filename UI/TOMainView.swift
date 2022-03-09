@@ -31,7 +31,7 @@ struct TOMainView: View {
         
     }
     
-    private let stream = WebSocketStream(url: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
+    let stream = WebSocketStream(url: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
     
     var body: some View {
         ZStack {
@@ -45,7 +45,7 @@ struct TOMainView: View {
             TabView {
                 // menu
                 NavigationView{
-                    TOMenuListView()
+                    TOMenuListView(socket: stream)
                     //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                         .navigationTitle("Menu")
                         .toolbar {
@@ -93,19 +93,28 @@ struct TOMainView: View {
             //            .onAppear {
             //                self.globalCartList.getCartList2()
             //            }
-//            .task {
-//                do {
-//                    for try await message in stream {
-//                        //                    print("\(message")
-//                        //                    let updateDevice = try message.device()
-//                        //                    devices = devices.map({ device in
-//                        //                        device.id == updateDevice.id ? updateDevice : device
-//                        //                    })
-//                    }
-//                } catch {
-//                    debugPrint("Oops something didn't go right")
-//                }
-//            }
+            .task {
+                do {
+                    for try await message in stream {
+                        switch message {
+                        case .data(let data):
+                            print("Data received \(data)")
+                        case .string(let text):
+                            print("Text received \(text)")
+                            let data = text.data(using: .utf8)!
+                            do {
+                                let f = try JSONDecoder().decode([TOCartItem].self, from: data)
+                                self.globalCartList.newCartList = f
+                                self.globalCartList.badgeNum = f.count
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    }
+                } catch {
+                    debugPrint("Oops something didn't go right")
+                }
+            }
         }
 //                .onReceive(timer) { time in
 //                    if !self.globalCartList.isBackgroundLoading {

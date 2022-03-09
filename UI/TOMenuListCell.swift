@@ -13,6 +13,7 @@ struct TOMenuListCell: View {
     var priceName = "20"
     
     var item:TONewFoods
+    var socket:WebSocketStream
     
     @EnvironmentObject var globalCart: TOCartViewModel
 
@@ -40,7 +41,8 @@ struct TOMenuListCell: View {
                 .foregroundColor(Color(uiColor: UIColor(rgb: 0xCAAA38)))
                 Spacer()
                 Button {
-                    //self.globalCart.badgeNum = self.globalCart.badgeNum + 1
+                    socket.sendToCart(food: item)
+                    self.globalCart.badgeNum = self.globalCart.badgeNum + 1
                     //self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
                 } label: {
                     Image(systemName: "plus.circle.fill")
@@ -58,6 +60,6 @@ struct TOMenuListCell: View {
 
 struct TOMenuListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOMenuListCell(item: TONewFoods(id: "123", name: "name"))
+        TOMenuListCell(item: TONewFoods(id: "123", name: "name"), socket: WebSocketStream(url: ""))
     }
 }

@@ -55,17 +55,11 @@ class WebSocketStream: AsyncSequence {
         socket.receive { result in
             switch result {
             case .success(let message):
-                switch message {
-                case .data(let data):
-                    print("Data received \(data)")
-                case .string(let text):
-                    print("Text received \(text)")
-                }
+                self.continuation?.yield(message)
+                self.receive()
             case .failure(let error):
                 print("Error when receiving \(error)")
             }
-
-            self.receive()
         }
     }
     
@@ -98,4 +92,25 @@ class WebSocketStream: AsyncSequence {
         //}
     }
     
+    func sendToCart(food:TONewFoods) {
+        
+        socket.send(.string("{\"+\":{\"sku_id\":\"\(food.id ?? "food_id")\",\"customer_id\":\"\(TOUserViewModel.shared.userid)\"}}")) { error in
+            if let error = error {
+                print("Error when sending a message \(error)")
+            }
+        }
+    }
+    
+    func stringify(json: TONewFoods, prettyPrinted: Bool = false) -> String {
+        do {
+            let jsonData = try JSONEncoder().encode(json)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            return jsonString ?? ""
+        }catch {
+            print("error: \(error)")
+        }
+        
+        return ""
+    }
+
 }
