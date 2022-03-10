@@ -34,7 +34,7 @@ class TOFoodViewModel: ObservableObject, TOAPIService {
     func getFoodsCat() {
         let cancellable = self.getFoodsCat()
             .sink(receiveCompletion: { result in
-                self.isLoading = false
+                // self.isLoading = false
                 switch result {
                 case .failure(let error):
                     print("Handle error: \(error)")
@@ -55,7 +55,7 @@ class TOFoodViewModel: ObservableObject, TOAPIService {
                     self.concurrentQueue.async {
                         let cancellable2 = self.getFoodsCatList(cat: one.key)
                             .sink(receiveCompletion: { result in
-                                print("fail \(one.key)")
+                                print("completion \(one.key)")
                                 self.concurrentFetchGroup.leave()
                                 switch result {
                                 case .failure(let error):
@@ -76,7 +76,9 @@ class TOFoodViewModel: ObservableObject, TOAPIService {
                                     self.allFoods.append(contentsOf: configFoodsArr)
                                 }
                         }
-                        self.cancellables.insert(cancellable2)
+                        DispatchQueue.main.async {
+                            self.cancellables.insert(cancellable2)
+                        }
                     }
                     
                     // back
@@ -90,6 +92,7 @@ class TOFoodViewModel: ObservableObject, TOAPIService {
         cancellables.insert(cancellable)
     }
     
+    // not use now
     func getFoodsCatList(cat:String) {
         let cancellable = self.getFoodsCatList(cat: cat)
             .sink(receiveCompletion: { result in

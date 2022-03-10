@@ -32,7 +32,7 @@ class WebSocketStream: AsyncSequence {
             fatalError("stream was not initialized")
         }
         socket.resume()
-        send()
+        //send()
         ping()
         receive()
         //listenForMessages()

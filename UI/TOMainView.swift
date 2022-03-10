@@ -14,7 +14,7 @@ struct TOMainView: View {
     @StateObject var userSetting = TOUserViewModel.shared
     @State var isSwitchLan = false
     @State var selectedLan:TOLanguage? = TOLanguage(name: "En", flagName: "🇺🇸")
-    let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
+    // let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     init() {
         let appearance = UITabBarAppearance()
@@ -90,9 +90,6 @@ struct TOMainView: View {
                         .foregroundColor(.black.opacity(isSwitchLan ? 0.3 : 0))
                 }
             )
-            //            .onAppear {
-            //                self.globalCartList.getCartList2()
-            //            }
             .task {
                 do {
                     for try await message in stream {
@@ -103,12 +100,16 @@ struct TOMainView: View {
                             print("Text received \(text)")
                             let data = text.data(using: .utf8)!
                             do {
-                                let f = try JSONDecoder().decode([TOCartItem].self, from: data)
-                                self.globalCartList.newCartList = f
-                                self.globalCartList.badgeNum = f.count
+                                let f = try JSONDecoder().decode(TOCartResponse.self, from: data)
+                                // print(f)
+                                self.globalCartList.newCartList = Array(f.items.values)
+                                self.globalCartList.badgeNum = f.items.count
+                                self.globalCartList.totalStr = "\(f.total)"
                             } catch {
                                 print(error)
                             }
+                        @unknown default:
+                            fatalError("websocket panic")
                         }
                     }
                 } catch {
@@ -116,12 +117,6 @@ struct TOMainView: View {
                 }
             }
         }
-//                .onReceive(timer) { time in
-//                    if !self.globalCartList.isBackgroundLoading {
-//                        self.globalCartList.isBackgroundLoading = true
-//                        self.globalCartList.getCartList2()
-//                    }
-//                }
     }
 }
 

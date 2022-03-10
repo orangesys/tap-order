@@ -22,7 +22,7 @@ struct TOCartView: View {
         VStack {
             List {
                 ForEach(self.globalCart.newCartList, id:\.sid) { one in
-                    TOCartCell(item: one, delId: one.sid?.uuidString ?? "uuid")
+                    TOCartCell(item: one, delId: one.sid)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
                         .listRowSeparator(.hidden)

@@ -15,6 +15,8 @@ struct TOMenuListView: View {
     private var placeholderFoods =  [TONewFoods]()
     private var placeholderCats = [TONewFoodsCat]()
     
+    @State var isLoading = false
+    
     var websocket:WebSocketStream
     
     // environment变量导致强制刷新
@@ -38,7 +40,7 @@ struct TOMenuListView: View {
     
     var body: some View {
         ZStack {
-            ScrollView(.vertical, showsIndicators: false) {
+            RefreshableScrollView(refreshing: .constant(viewModel.isLoading)) {
                 LazyVGrid(columns: twoColumnGrid,spacing: .menuListPadding,pinnedViews: [.sectionHeaders]) {
                     Section {
                         ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.id) { one in
@@ -72,19 +74,22 @@ struct TOMenuListView: View {
             }
             .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
             
-            if viewModel.isLoading {
-                ProgressView()
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .shadow(radius: 20)
-            }
+           // another loading style
+           //
+           // if viewModel.isLoading {
+           //     ProgressView()
+           //         .padding()
+           //         .background(Color.white)
+           //         .cornerRadius(20)
+           //         .shadow(radius: 20)
+           // }
         }
         .onAppear {
             // 本来已经放到init，毕竟init更像viewdidload
             // 但是environment变量强制刷，改进
-            if viewModel.foodList.count <= 0 {
+            if viewModel.foodList.count <= 0 && self.viewModel.isLoading == false{
                 self.viewModel.isLoading = true
+                //self.isLoading = viewModel.isLoading
                 self.viewModel.getFoodsCat()
             }
         }

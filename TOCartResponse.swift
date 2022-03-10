@@ -7,25 +7,20 @@
 
 import Foundation
 
-//struct TOCartResponse: Codable {
-//    let foodName: String
-//    let foodPic: String
-//    let foodId: Int
-//    let foodPrice: Double
-//    let foodCount: Int?
-//    let userId: String
-//    let createAt: Date
-//}
+struct TOCartResponse: Codable {
+    let items: [String:TOCartItem]
+    let total: Int
+}
 
 struct TOCartItem: Codable {
-    let foodName: String?
+    let foodName: String
     let foodId: String
     let foodPrice: Int
     let foodPic: String
     //let createAt: Date
     let userId: String
     let count: Int
-    let sid: UUID?
+    let sid: String
 
     enum CodingKeys: String, CodingKey {
         case foodName = "name"
@@ -34,12 +29,12 @@ struct TOCartItem: Codable {
         case foodId = "sku_id"
         case count = "count"
         case userId = "customer_id"
-        case sid = "sid"
+        case sid = "uuid"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        sid = try values.decodeIfPresent(UUID.self, forKey: .sid) ?? UUID()
+        sid = try values.decodeIfPresent(String.self, forKey: .sid) ?? "sid"
         foodName = try values.decodeIfPresent(String.self, forKey: .foodName) ?? "name"
         foodId = try values.decodeIfPresent(String.self, forKey: .foodId) ?? "foodId"
         userId = try values.decodeIfPresent(String.self, forKey: .userId) ?? "userId"
@@ -47,6 +42,17 @@ struct TOCartItem: Codable {
         foodPrice = try values.decodeIfPresent(Int.self, forKey: .foodPrice) ?? 0
         count = try values.decodeIfPresent(Int.self, forKey: .count) ?? 0
     }
+    
+    // init(from decoder: Decoder) throws {
+    //     let values = try decoder.container(keyedBy: CodingKeys.self)
+    //     sid = try values.decodeIfPresent(UUID.self, forKey: .sid) ?? UUID() //json have not this key
+    //     foodName = try values.decodeIfPresent(String.self, forKey: .foodName) ?? "name"
+    //     foodId = try values.decodeIfPresent(String.self, forKey: .foodId) ?? "foodId"
+    //     userId = try values.decodeIfPresent(String.self, forKey: .userId) ?? "userId"
+    //     foodPic = try values.decodeIfPresent(String.self, forKey: .foodPic) ?? "foodPic"
+    //     foodPrice = try values.decodeIfPresent(Int.self, forKey: .foodPrice) ?? 0
+    //     count = try values.decodeIfPresent(Int.self, forKey: .count) ?? 0
+    // }
 }
 
 struct TOCartItemForDel {
@@ -63,12 +69,12 @@ struct TOCartItemSend: Codable {
     let userId: String
 }
 
-struct TOCartResponse: Codable {
-    let orderId: String
-    struct OrderList: Codable {
-        let birthday: String
-        let createAt: Date
-        let name: String
-    }
-    let orderList: [OrderList]
-}
+//struct TOCartResponse: Codable {
+//    let orderId: String
+//    struct OrderList: Codable {
+//        let birthday: String
+//        let createAt: Date
+//        let name: String
+//    }
+//    let orderList: [OrderList]
+//}
