@@ -40,6 +40,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     init(urlstr:String) {
         socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
+        socket?.ping(interval: 10)
         socket?.delegate = self
     }
     
@@ -146,7 +147,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
             sendDic[one.sid] = one
         }
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode(foods), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"=\":\(jsonString)}")

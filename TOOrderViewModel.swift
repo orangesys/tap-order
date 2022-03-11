@@ -37,6 +37,7 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     init(urlstr:String) {
         socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
+        socket?.ping(interval: 10)
         socket?.delegate = self
     }
     
