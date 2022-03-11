@@ -100,19 +100,28 @@ struct TOMainView: View {
                             print("Text received \(text)")
                             let data = text.data(using: .utf8)!
                             do {
-                                let f = try JSONDecoder().decode(TOCartResponse.self, from: data)
-                                // print(f)
+                                let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
+                                //print(fjson)
+                                //print(fjson.items.map({$0.value}))
+                                let farrJson = fjson.items.map({$0.value})
                                 let currentUser = TOUserViewModel.shared.userid
-                                var currentUserValue = [TOCartItemForDel]()
-                                let groupUserDic = Dictionary(grouping: f.items) { $0.value.userId}.filter() {
-                                    if currentUser == $0.value.userid {
-                                        currentUserValue = $0.value
+                                var currentUserValue = [TOCartItem]()
+                                let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
+                                    .filter() {
+                                        // array first to group by dic
+                                        // and filter current user
+                                        if currentUser == $0.key {
+                                            currentUserValue = $0.value
+                                        }
+                                        return currentUser != $0.key
                                     }
-                                    return currentUser != $0.key
-                                }
-                                self.globalCartList.newCartList = Array(f.items.values)
-                                self.globalCartList.badgeNum = f.items.count
-                                self.globalCartList.totalStr = "\(f.total)"
+                                //print(groupUserDic)
+                                // 排序当前用户最上面
+                                var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
+                                allarr.insert(contentsOf: currentUserValue, at: 0)
+                                self.globalCartList.newCartList = Array(fjson.items.values)
+                                self.globalCartList.badgeNum = fjson.items.count
+                                self.globalCartList.totalStr = "\(fjson.total)"
                             } catch {
                                 print(error)
                             }
