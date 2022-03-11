@@ -68,7 +68,7 @@ class WebSocketStream: AsyncSequence {
             if let error = error {
                 print("Error when sending PING \(error)")
             } else {
-                print("Web Socket connection is alive")
+                // print("Web Socket connection is alive")
                 DispatchQueue.global().asyncAfter(deadline: .now() + 10) { [self] in
                     ping()
                 }
@@ -93,6 +93,12 @@ class WebSocketStream: AsyncSequence {
     }
     
     func sendToCart(food:TONewFoods) {
+        var food2 = food
+        food2.customer_id = TOUserViewModel.shared.userid
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        }
         
         socket.send(.string("{\"+\":{\"sku_id\":\"\(food.id ?? "food_id")\",\"customer_id\":\"\(TOUserViewModel.shared.userid)\"}}")) { error in
             if let error = error {

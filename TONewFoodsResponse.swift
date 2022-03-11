@@ -32,9 +32,20 @@ struct TONewFoods: Codable, Identifiable {
     var name: String?
     var image: String?
     var price: String?
+    var customer_id: String?
+    var count: Int?
 
-    init(id: String?, name: String?) {
-        self.id = id
-        self.name = name
-    }
+//    init(id: String?, name: String?) {
+//        self.id = id
+//        self.name = name
+//    }
+    
+    private enum CodingKeys: String, CodingKey {
+            case id = "sku_id"
+            case name
+            case image
+            case customer_id
+        case price
+        case count
+        }
 }
