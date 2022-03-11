@@ -58,7 +58,7 @@ struct TOMainView: View {
                 }
                 // cart
                 NavigationView{
-                    TOCartView()
+                    TOCartView(socket: stream)
                         .navigationBarTitle("\(globalCartList.badgeNum) items in cart", displayMode: .large) // << !!
                 }
                 .tabItem {
@@ -93,6 +93,7 @@ struct TOMainView: View {
             .task {
                 do {
                     for try await message in stream {
+                        
                         switch message {
                         case .data(let data):
                             print("Data received \(data)")
@@ -119,7 +120,7 @@ struct TOMainView: View {
                                 // 排序当前用户最上面
                                 var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
                                 allarr.insert(contentsOf: currentUserValue, at: 0)
-                                self.globalCartList.newCartList = Array(fjson.items.values)
+                                self.globalCartList.newCartList = allarr
                                 self.globalCartList.badgeNum = fjson.items.count
                                 self.globalCartList.totalStr = "\(fjson.total)"
                             } catch {

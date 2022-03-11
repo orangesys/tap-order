@@ -10,11 +10,13 @@ import SwiftUI
 struct TOCartView: View {
     let dataList = [1,2,3]
     
-    init() {
+    init(socket:WebSocketStream) {
         UITableView.appearance().showsVerticalScrollIndicator = false
+        websocket = socket
     }
     
     @EnvironmentObject var globalCart: TOCartViewModel
+    var websocket:WebSocketStream
     
     var body: some View {
         //NavigationView {
@@ -22,7 +24,7 @@ struct TOCartView: View {
         VStack {
             List {
                 ForEach(self.globalCart.newCartList, id:\.sid) { one in
-                    TOCartCell(item: one, delId: one.sid)
+                    TOCartCell(item: one, delId: one.sid, socket: websocket)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
                         .listRowSeparator(.hidden)
@@ -67,6 +69,6 @@ struct TOCartView: View {
 
 struct TOCartView_Previews: PreviewProvider {
     static var previews: some View {
-        TOCartView()
+        TOCartView(socket: WebSocketStream(url: ""))
     }
 }

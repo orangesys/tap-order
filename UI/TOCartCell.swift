@@ -11,6 +11,7 @@ struct TOCartCell: View {
     //var model = [TOCartItemForDel]()
     var item:TOCartItem
     var delId:String 
+    var socket:WebSocketStream
     
     @EnvironmentObject var globalCart: TOCartViewModel
 
@@ -25,11 +26,12 @@ struct TOCartCell: View {
                     .cornerRadius(20)
                 VStack(alignment:.leading,spacing: 15){
                     HStack {
-                        Text(item.foodName ?? "name")
+                        Text(item.foodName)
                             .font(.system(size: 16, weight: .medium))
                         Spacer()
                         Button {
-                            
+                            socket.removeFromCart(food: item)
+                            globalCart.newCartList = globalCart.newCartList.filter({$0.sid != item.sid})
                         } label: {
                             Image(systemName: "xmark.circle")
                                 .foregroundColor(Color.normalRed)
@@ -43,7 +45,14 @@ struct TOCartCell: View {
                         .foregroundColor(Color.normalYellow)
                     HStack {
                         Button {
-                            //self.globalCart.delCart(delId: delId)
+                            socket.deleteFromCart(food: item)
+                            globalCart.newCartList = globalCart.newCartList.map({ one in
+                                var tmp = one
+                                if tmp.sid == item.sid {
+                                    tmp.count = tmp.count - 1
+                                }
+                                return tmp
+                            })
                         } label: {
                             Image(systemName: "minus.circle")
                                 .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)
@@ -55,14 +64,21 @@ struct TOCartCell: View {
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.themeColor)
                         Button {
-                            //self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
+                            socket.addToCart(food: item)
+                            globalCart.newCartList = globalCart.newCartList.map({ one in
+                                var tmp = one
+                                if tmp.sid == item.sid {
+                                    tmp.count = tmp.count + 1
+                                }
+                                return tmp
+                            })
                         } label: {
                             Image(systemName: "plus.circle")
                                 .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)
                                 .font(.system(size: 20))
                         }
                         .disabled( item.userId != TOUserViewModel.shared.userid)
-                        .buttonStyle(.borderless)
+                        .buttonStyle(.borderless)//fix click issue
                     }
                 }
             }
@@ -73,8 +89,8 @@ struct TOCartCell: View {
     }
 }
 
-//struct TOCartCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TOCartCell()
-//    }
-//}
+struct TOCartCell_Previews: PreviewProvider {
+    static var previews: some View {
+        TOCartCell(item: TOCartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"), delId: "", socket: WebSocketStream(url: ""))
+    }
+}

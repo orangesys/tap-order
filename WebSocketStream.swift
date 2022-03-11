@@ -92,21 +92,69 @@ class WebSocketStream: AsyncSequence {
         //}
     }
     
+    
+    /// add from menu list
+    /// - Parameter food: food object
     func sendToCart(food:TONewFoods) {
         var food2 = food
         food2.customer_id = TOUserViewModel.shared.userid
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
-        }
-        
-        socket.send(.string("{\"+\":{\"sku_id\":\"\(food.id ?? "food_id")\",\"customer_id\":\"\(TOUserViewModel.shared.userid)\"}}")) { error in
-            if let error = error {
-                print("Error when sending a message \(error)")
+            
+            socket.send(.string("{\"+\":\(jsonString)}")) { error in
+                if let error = error {
+                    print("Error when sending a message \(error)")
+                }
             }
         }
     }
     
+    func addToCart(food:TOCartItem) {
+        var food2 = food
+        food2.count = food2.count + 1
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket.send(.string("{\"~\":\(jsonString)}")) { error in
+                if let error = error {
+                    print("Error when sending a message \(error)")
+                }
+            }
+        }
+    }
+    
+    func deleteFromCart(food:TOCartItem) {
+        var food2 = food
+        food2.count = food2.count - 1
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket.send(.string("{\"~\":\(jsonString)}")) { error in
+                if let error = error {
+                    print("Error when sending a message \(error)")
+                }
+            }
+        }
+    }
+    
+    func removeFromCart(food:TOCartItem) {
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket.send(.string("{\"-\":\(jsonString)}")) { error in
+                if let error = error {
+                    print("Error when sending a message \(error)")
+                }
+            }
+        }
+    }
+    
+    
+
     func stringify(json: TONewFoods, prettyPrinted: Bool = false) -> String {
         do {
             let jsonData = try JSONEncoder().encode(json)

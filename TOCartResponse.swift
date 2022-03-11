@@ -19,7 +19,7 @@ struct TOCartItem: Codable {
     let foodPic: String
     //let createAt: Date
     let userId: String
-    let count: Int
+    var count: Int
     let sid: String
 
     enum CodingKeys: String, CodingKey {
@@ -32,6 +32,10 @@ struct TOCartItem: Codable {
         case sid = "uuid"
     }
     
+}
+
+extension TOCartItem {
+    // [A Workaround for a Missing Memberwise Initializer](https://cocoacasts.com/swift-fundamentals-what-is-a-memberwise-initializer)
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         sid = try values.decodeIfPresent(String.self, forKey: .sid) ?? "sid"
