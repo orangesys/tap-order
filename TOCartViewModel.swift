@@ -32,7 +32,7 @@ class TOCartViewModel: ObservableObject, TOAPIService {
         let cancellable = self.postCart(cartSend: item)
             .sink(receiveCompletion: { result in
                 
-                self.getCartList2()
+                //self.getCartList2()
                 
                 switch result {
                 case .failure(let error):
@@ -54,7 +54,7 @@ class TOCartViewModel: ObservableObject, TOAPIService {
         let cancellable = self.delCart(delId: delId)
             .sink(receiveCompletion: { result in
                 
-                self.getCartList2()
+                //self.getCartList2()
                 
                 switch result {
                 case .failure(let error):

@@ -102,6 +102,14 @@ struct TOMainView: View {
                             do {
                                 let f = try JSONDecoder().decode(TOCartResponse.self, from: data)
                                 // print(f)
+                                let currentUser = TOUserViewModel.shared.userid
+                                var currentUserValue = [TOCartItemForDel]()
+                                let groupUserDic = Dictionary(grouping: f.items) { $0.value.userId}.filter() {
+                                    if currentUser == $0.value.userid {
+                                        currentUserValue = $0.value
+                                    }
+                                    return currentUser != $0.key
+                                }
                                 self.globalCartList.newCartList = Array(f.items.values)
                                 self.globalCartList.badgeNum = f.items.count
                                 self.globalCartList.totalStr = "\(f.total)"
