@@ -10,7 +10,7 @@ import PopupView
 
 struct TOMainView: View {
     
-    @StateObject var globalCartList = TOCartViewModel()
+    @StateObject var globalCartList = TOCartViewModel(urlstr: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
     @StateObject var userSetting = TOUserViewModel.shared
     @State var isSwitchLan = false
     @State var selectedLan:TOLanguage? = TOLanguage(name: "En", flagName: "🇺🇸")
@@ -31,7 +31,7 @@ struct TOMainView: View {
         
     }
     
-    let stream = WebSocketStream(url: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
+//    let stream = WebSocketStream(url: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/carts?language=ja")
     
     var body: some View {
         ZStack {
@@ -45,7 +45,7 @@ struct TOMainView: View {
             TabView {
                 // menu
                 NavigationView{
-                    TOMenuListView(socket: stream)
+                    TOMenuListView()
                     //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                         .navigationTitle("Menu")
                         .toolbar {
@@ -58,7 +58,7 @@ struct TOMainView: View {
                 }
                 // cart
                 NavigationView{
-                    TOCartView(socket: stream)
+                    TOCartView()
                         .navigationBarTitle("\(globalCartList.badgeNum) items in cart", displayMode: .large) // << !!
                 }
                 .tabItem {
@@ -90,50 +90,51 @@ struct TOMainView: View {
                         .foregroundColor(.black.opacity(isSwitchLan ? 0.3 : 0))
                 }
             )
-            .task {
-                do {
-                    for try await message in stream {
-                        
-                        switch message {
-                        case .data(let data):
-                            print("Data received \(data)")
-                        case .string(let text):
-                            print("Text received \(text)")
-                            let data = text.data(using: .utf8)!
-                            do {
-                                let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
-                                //print(fjson)
-                                //print(fjson.items.map({$0.value}))
-                                let farrJson = fjson.items.map({$0.value})
-                                let currentUser = TOUserViewModel.shared.userid
-                                var currentUserValue = [TOCartItem]()
-                                let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
-                                    .filter() {
-                                        // array first to group by dic
-                                        // and filter current user
-                                        if currentUser == $0.key {
-                                            currentUserValue = $0.value
-                                        }
-                                        return currentUser != $0.key
-                                    }
-                                //print(groupUserDic)
-                                // 排序当前用户最上面
-                                var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
-                                allarr.insert(contentsOf: currentUserValue, at: 0)
-                                self.globalCartList.newCartList = allarr
-                                self.globalCartList.badgeNum = fjson.items.count
-                                self.globalCartList.totalStr = "\(fjson.total)"
-                            } catch {
-                                print(error)
-                            }
-                        @unknown default:
-                            fatalError("websocket panic")
-                        }
-                    }
-                } catch {
-                    debugPrint("Oops something didn't go right")
-                }
-            }
+
+//            .task {
+//                do {
+//                    for try await message in stream {
+//
+//                        switch message {
+//                        case .data(let data):
+//                            print("Data received \(data)")
+//                        case .string(let text):
+//                            print("Text received \(text)")
+//                            let data = text.data(using: .utf8)!
+//                            do {
+//                                let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
+//                                //print(fjson)
+//                                //print(fjson.items.map({$0.value}))
+//                                let farrJson = fjson.items.map({$0.value})
+//                                let currentUser = TOUserViewModel.shared.userid
+//                                var currentUserValue = [TOCartItem]()
+//                                let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
+//                                    .filter() {
+//                                        // array first to group by dic
+//                                        // and filter current user
+//                                        if currentUser == $0.key {
+//                                            currentUserValue = $0.value
+//                                        }
+//                                        return currentUser != $0.key
+//                                    }
+//                                //print(groupUserDic)
+//                                // 排序当前用户最上面
+//                                var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
+//                                allarr.insert(contentsOf: currentUserValue, at: 0)
+//                                self.globalCartList.newCartList = allarr
+//                                self.globalCartList.badgeNum = fjson.items.count
+//                                self.globalCartList.totalStr = "\(fjson.total)"
+//                            } catch {
+//                                print(error)
+//                            }
+//                        @unknown default:
+//                            fatalError("websocket panic")
+//                        }
+//                    }
+//                } catch {
+//                    debugPrint("Oops something didn't go right")
+//                }
+//            }
         }
     }
 }

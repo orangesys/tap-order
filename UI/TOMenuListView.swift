@@ -17,8 +17,6 @@ struct TOMenuListView: View {
     
     @State var isLoading = false
     
-    var websocket:WebSocketStream
-    
     // environment变量导致强制刷新
     // @ObservedObject变量不保存数据
     // 替换成stateobject
@@ -26,13 +24,11 @@ struct TOMenuListView: View {
     //which cat is selected
     @State var selCatItemId: String = "All"
     
-    init(socket:WebSocketStream) {
+    init() {
         for one in 0...4 {
             placeholderFoods.append(TONewFoods(id: "\(one)", name: "name"))
             placeholderCats.append(TONewFoodsCat(name: "name", activate: true))
         }
-        
-        websocket = socket
         // environment之后改变
         // self.viewModel.isLoading = true
         // self.viewModel.getFoodsList()
@@ -44,7 +40,7 @@ struct TOMenuListView: View {
                 LazyVGrid(columns: twoColumnGrid,spacing: .menuListPadding,pinnedViews: [.sectionHeaders]) {
                     Section {
                         ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.id) { one in
-                            TOMenuListCell(item: one,socket: websocket)
+                            TOMenuListCell(item: one)
                         }
                         .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
                     } header: {
@@ -97,7 +93,7 @@ struct TOMenuListView: View {
     
     struct TOMenuListView_Previews: PreviewProvider {
         static var previews: some View {
-            TOMenuListView(socket: WebSocketStream(url: ""))
+            TOMenuListView()
         }
     }
 }

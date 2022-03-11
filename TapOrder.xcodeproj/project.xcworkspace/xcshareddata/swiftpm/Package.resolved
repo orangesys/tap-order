@@ -110,6 +110,15 @@
         }
       },
       {
+        "package": "NWWebSocket",
+        "repositoryURL": "https://github.com/pusher/NWWebSocket.git",
+        "state": {
+          "branch": null,
+          "revision": "eed470bc3607bc4893046f461107ec463dbd1220",
+          "version": "0.5.2"
+        }
+      },
+      {
         "package": "PopupView",
         "repositoryURL": "https://github.com/exyte/PopupView.git",
         "state": {

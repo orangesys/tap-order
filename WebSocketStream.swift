@@ -153,6 +153,23 @@ class WebSocketStream: AsyncSequence {
         }
     }
     
+    func sendOrder(foods:[TOCartItem]) {
+        var sendDic = [String:TOCartItem]()
+        for one in foods {
+            sendDic[one.sid] = one
+        }
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket.send(.string("{\"=\":\(jsonString)}")) { error in
+                if let error = error {
+                    print("Error when sending a message \(error)")
+                }
+            }
+        }
+    }
+
     
 
     func stringify(json: TONewFoods, prettyPrinted: Bool = false) -> String {
@@ -168,3 +185,15 @@ class WebSocketStream: AsyncSequence {
     }
 
 }
+
+//extension WebSocketStream: URLSessionWebSocketDelegate {
+//    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
+//        print("Web socket opened")
+//        
+//    }
+//
+//    
+//    func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?) {
+//        print("Web socket closed")
+//    }
+//}

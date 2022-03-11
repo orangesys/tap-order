@@ -8,10 +8,10 @@
 import Foundation
 import Combine
 import SwiftUI
+import Network
+import NWWebSocket
 
-class TOCartViewModel: ObservableObject, TOAPIService {
-    
-    var apiSession: APIService
+class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     @Published var cartList =  [[TOCartItemForDel]]() // extraordinary
     @Published var newCartList =  [TOCartItem]()
@@ -24,109 +24,133 @@ class TOCartViewModel: ObservableObject, TOAPIService {
 
     var cancellables = Set<AnyCancellable>()
     
-    init(apiSession: APIService = APISession()) {
-        self.apiSession = apiSession
+    func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
+        print(error)
     }
     
-    func postCart(item:TOCartItemSend) {
-        let cancellable = self.postCart(cartSend: item)
-            .sink(receiveCompletion: { result in
-                
-                //self.getCartList2()
-                
-                switch result {
-                case .failure(let error):
-                    self.isError = true
-                    self.errorStr = "\(error)"
-                    print("Handle error: \(error)")
-                case .finished:
-                    print("finish: ")
-                    break
-                }
-                
-            }) { (rst) in
-                self.isLoading = true // 还要fetch
-        }
-        cancellables.insert(cancellable)
+    func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
+        
     }
     
-    func delCart(delId:String) {
-        let cancellable = self.delCart(delId: delId)
-            .sink(receiveCompletion: { result in
-                
-                //self.getCartList2()
-                
-                switch result {
-                case .failure(let error):
-                    self.isError = true
-                    self.errorStr = "\(error)"
-                    print("Handle error: \(error)")
-                case .finished:
-                    print("finish: ")
-                    break
+    func webSocketDidAttemptBetterPathMigration(result: Result<WebSocketConnection, NWError>) {
+        
+    }
+    
+    var socket: NWWebSocket?
+    
+    init(urlstr:String) {
+        socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
+        socket?.delegate = self
+    }
+    
+    // Delegates
+    func webSocketDidConnect(connection: WebSocketConnection) {
+        print("connected")
+    }
+    
+    func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
+        print("disconnected")
+    }
+    
+    func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
+        print("Text received \(string)")
+        let data = string.data(using: .utf8)!
+        do {
+            let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
+            //print(fjson)
+            //print(fjson.items.map({$0.value}))
+            let farrJson = fjson.items.map({$0.value})
+            let currentUser = TOUserViewModel.shared.userid
+            var currentUserValue = [TOCartItem]()
+            let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
+                .filter() {
+                    // array first to group by dic
+                    // and filter current user
+                    if currentUser == $0.key {
+                        currentUserValue = $0.value
+                    }
+                    return currentUser != $0.key
                 }
-                
-            }) { (rst) in
-                self.isLoading = true // 还要fetch
+            //print(groupUserDic)
+            // 排序当前用户最上面
+            var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
+            allarr.insert(contentsOf: currentUserValue, at: 0)
+            self.newCartList = allarr
+            self.badgeNum = fjson.items.count
+            self.totalStr = "\(fjson.total)"
+        } catch {
+            print(error)
         }
-        cancellables.insert(cancellable)
+    }
+    
+    func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
+        
     }
 
-//    func getCartList2() {
-//        let cancellable = self.getCartList2()
-//            .sink(receiveCompletion: { result in
-//                self.isLoading = false
-//                self.isBackgroundLoading = false
-//                switch result {
-//                case .failure(let error):
-//                    self.isError = true
-//                    self.errorStr = "\(error)"
-//                    print("Handle error: \(error)")
-//                case .finished:
-//                    print("finish: ")
-//                    break
-//                }
-//                
-//            }) { (rst) in
-//                self.badgeNum = rst.count
-//                var tmp = [TOCartItemForDel]()
-//                var totoalNum = 0.0
-//                for delId in rst.keys {
-//                    tmp.append(TOCartItemForDel(item: rst[delId]!, delId: delId))
-//                    totoalNum = totoalNum + rst[delId]!.foodPrice
-//                }
-//                
-//                let currentUser = TOUserViewModel.shared.userid
-//                var currentUserValue = [TOCartItemForDel]()
-//                let groupUserDic = Dictionary(grouping: tmp) { $0.item.userId}.filter() {
-//                    if currentUser == $0.key {
-//                        currentUserValue = $0.value
-//                    }
-//                    return currentUser != $0.key
-//                }
-//                // this will generate array[(key,value)]
-//                var sortedGroupUserDic = groupUserDic.sorted {$0.key < $1.key}
-//                // 排序当前用户最上面
-//                if currentUserValue.count > 0 {
-//                    sortedGroupUserDic.insert(contentsOf: [currentUser:currentUserValue], at: 0)
-//                }
-//                    
-//                let valuesArraySorted = Array(sortedGroupUserDic.map({ $0.value }))
-//                var groupFoodArr = [[TOCartItemForDel]]()
-//                for arr in valuesArraySorted {
-//                    let groupFoodDic = Dictionary(grouping: arr) { $0.item.foodId}
-//                    let sortedGroupFood = groupFoodDic.sorted {$0.key < $1.key}
-//                    let foodArraySorted = Array(sortedGroupFood.map({ $0.value }))
-//                    groupFoodArr.append(contentsOf: foodArraySorted )
-//                    
-//                }
-//                //withAnimation {
-//                    self.totalStr = totoalNum.round2Str()
-//                    self.cartList = groupFoodArr
-//                //}
-//                self.isLoading = false
-//                self.isBackgroundLoading = false
-//        }
-//        cancellables.insert(cancellable)
-//    }
+    func webSocketDidReceivePong(connection: WebSocketConnection) {
+        print("received pong")
+    }
+    
+    func receives() {
+        
+    }
+    
+    
+    /// add from menu list
+    /// - Parameter food: food object
+    func sendToCart(food:TONewFoods) {
+        var food2 = food
+        food2.customer_id = TOUserViewModel.shared.userid
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"+\":\(jsonString)}")
+        }
+    }
+    
+    func addToCart(food:TOCartItem) {
+        var food2 = food
+        food2.count = food2.count + 1
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"~\":\(jsonString)}")
+        }
+    }
+    
+    func deleteFromCart(food:TOCartItem) {
+        var food2 = food
+        food2.count = food2.count - 1
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"~\":\(jsonString)}")
+        }
+    }
+    
+    func removeFromCart(food:TOCartItem) {
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(food), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"-\":\(jsonString)}")
+        }
+    }
+    
+    func sendOrder(foods:[TOCartItem]) {
+        var sendDic = [String:TOCartItem]()
+        for one in foods {
+            sendDic[one.sid] = one
+        }
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"=\":\(jsonString)}")
+        }
+    }
+
 }

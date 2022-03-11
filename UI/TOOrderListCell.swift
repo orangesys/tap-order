@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TOOrderListCell: View {
+    var item:TOCartItem
+    
     var body: some View {
         HStack {
             Image("chicken")
@@ -18,15 +20,15 @@ struct TOOrderListCell: View {
                 .cornerRadius(20)
             VStack(alignment:.leading,spacing: 15){
                 HStack {
-                    Text("Noodles")
+                    Text(item.foodName)
                         .font(.system(size: 16, weight: .medium))
                     Spacer()
                 }
-                Text("20")
+                Text("\(item.foodPrice)")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundColor(Color.normalYellow)
                 HStack {
-                    Text("1")
+                    Text("\(item.count)")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundColor(.themeColor)
                 }
@@ -37,6 +39,6 @@ struct TOOrderListCell: View {
 
 struct TOOrderListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOOrderListCell()
+        TOOrderListCell(item: TOCartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"))
     }
 }

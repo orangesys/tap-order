@@ -10,7 +10,7 @@ import SwiftUI
 struct TOOrderListView: View {
     let dataList = [1,2,3,1,2,3]
     
-    @EnvironmentObject var globalCart: TOCartViewModel
+    @StateObject var orderVM = TOOrderViewModel(urlstr: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/current-order?language=ja")
     
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
@@ -21,21 +21,24 @@ struct TOOrderListView: View {
         
         VStack {
             List {
-                ForEach(dataList, id:\.self) { _ in
-                    TOOrderListCell()
+                ForEach(orderVM.newOrderList, id:\.sid) { one in
+                    TOOrderListCell(item: one)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         .listRowSeparator(.hidden)
                 }
             }
             .listStyle(.plain)
+            .onAppear {
+                self.orderVM.doRece()
+            }
             
             ZStack(alignment: .bottom) {
                 HStack {
                     Text("Total:")
                         .font(.system(size: 22, weight: .semibold))
                     Spacer()
-                    Text(self.globalCart.totalStr)
+                    Text("\(self.orderVM.totalStr)")
                         .font(.system(size: 22, weight: .bold))
                         .foregroundColor(.normalYellow)
                 }
@@ -47,7 +50,7 @@ struct TOOrderListView: View {
         
     }
     
-    private func doSomething() {
+    private func doSomething(content:String) {
         
     }
 }

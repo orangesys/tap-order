@@ -10,8 +10,7 @@ import SwiftUI
 struct TOCartCell: View {
     //var model = [TOCartItemForDel]()
     var item:TOCartItem
-    var delId:String 
-    var socket:WebSocketStream
+    var delId:String
     
     @EnvironmentObject var globalCart: TOCartViewModel
 
@@ -30,7 +29,7 @@ struct TOCartCell: View {
                             .font(.system(size: 16, weight: .medium))
                         Spacer()
                         Button {
-                            socket.removeFromCart(food: item)
+                            globalCart.removeFromCart(food: item)
                             globalCart.newCartList = globalCart.newCartList.filter({$0.sid != item.sid})
                         } label: {
                             Image(systemName: "xmark.circle")
@@ -45,7 +44,7 @@ struct TOCartCell: View {
                         .foregroundColor(Color.normalYellow)
                     HStack {
                         Button {
-                            socket.deleteFromCart(food: item)
+                            globalCart.deleteFromCart(food: item)
                             globalCart.newCartList = globalCart.newCartList.map({ one in
                                 var tmp = one
                                 if tmp.sid == item.sid {
@@ -64,7 +63,7 @@ struct TOCartCell: View {
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.themeColor)
                         Button {
-                            socket.addToCart(food: item)
+                            globalCart.addToCart(food: item)
                             globalCart.newCartList = globalCart.newCartList.map({ one in
                                 var tmp = one
                                 if tmp.sid == item.sid {
@@ -91,6 +90,6 @@ struct TOCartCell: View {
 
 struct TOCartCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOCartCell(item: TOCartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"), delId: "", socket: WebSocketStream(url: ""))
+        TOCartCell(item: TOCartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"), delId: "")
     }
 }
