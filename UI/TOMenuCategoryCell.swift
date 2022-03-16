@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TOMenuCategoryCell: View {
     var imgName = "bugger"
@@ -19,14 +20,14 @@ struct TOMenuCategoryCell: View {
         
         VStack {
             Button {
-                selItemId = item.id!.uuidString
+                selItemId = item.id!
             } label: {
-                Image(imgName)
+                KFImage.url(URL(string: item.image!))
                     .resizable()
                     .frame(width: .TOMenuCatgoryWidth, height: .TOMenuCatgoryWidth)
                     .scaledToFit()
                     //.padding(3)
-                    .background(item.id!.uuidString == selItemId ? Color.themeColor : Color.normalGray)
+                    .background(item.id! == selItemId ? Color.themeColor : Color.normalGray)
                 .cornerRadius(20)
             }
             Text(item.name ?? "name")

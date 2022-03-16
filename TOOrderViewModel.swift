@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 import Network
-import NWWebSocket
 
 class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     
@@ -22,7 +21,8 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     var cancellables = Set<AnyCancellable>()
     
     func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
-        print(error)
+        print("order ws: \(error)")
+        socket?.disconnect()
     }
     
     func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
@@ -36,13 +36,19 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     var socket: NWWebSocket?
     
     init(urlstr:String) {
+        self.buildConnect(urlstr: urlstr)
+    }
+    
+    func reConnect() {
+        socket = nil
+        self.buildConnect(urlstr: String.urlStr(req: .order))
+    }
+    
+    func buildConnect(urlstr:String) {
+        print("ws ws 3: \(urlstr)")
         socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
         socket?.ping(interval: 10)
         socket?.delegate = self
-    }
-    
-    func doRece() {
-        
     }
     
     // Delegates
@@ -51,7 +57,8 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
     
     func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
-        print("disconnected")
+        print("disconnected 2")
+        self.reConnect()
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
@@ -89,6 +96,6 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
 
     func webSocketDidReceivePong(connection: WebSocketConnection) {
-        print("received pong")
+        print("received pong 2")
     }
 }

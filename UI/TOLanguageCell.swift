@@ -11,6 +11,7 @@ struct TOLanguageCell: View {
     var item:TOLanguage
     @Binding var seledItem:TOLanguage?
     @EnvironmentObject var userSetting: TOUserViewModel
+    @Binding var lanDidchange:Bool
     var body: some View {
         HStack(spacing:2) {
             VStack {
@@ -39,11 +40,16 @@ struct TOLanguageCell: View {
         .frame(width: 200, height: 30, alignment: .leading)
         //.background(.teal)
         .onTapGesture {
+            if seledItem?.id != item.id {
+                lanDidchange = true
+            }
             self.seledItem = item
             if item.name == "En" {
                 userSetting.lang = "en"
-            } else {
+            } else if item.name == "Japan" {
                 userSetting.lang = "ja"
+            } else {
+                userSetting.lang = "zh"
             }
         }
     }
@@ -51,6 +57,6 @@ struct TOLanguageCell: View {
 
 struct TOLanguageCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOLanguageCell(item: TOLanguage(name: "Japan", flagName: "🇯🇵"), seledItem: .constant(TOLanguage(name: "Japan", flagName: "🇯🇵")))
+        TOLanguageCell(item: TOLanguage(name: "Japan", flagName: "🇯🇵"), seledItem: .constant(TOLanguage(name: "Japan", flagName: "🇯🇵")), lanDidchange: .constant(false))
     }
 }

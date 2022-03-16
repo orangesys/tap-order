@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TOOrderListCell: View {
     var item:TOCartItem
     
     var body: some View {
         HStack {
-            Image("chicken")
+            KFImage(URL(string:"\(item.foodPic)"))
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 130, alignment: .center)

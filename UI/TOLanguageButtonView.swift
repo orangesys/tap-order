@@ -34,7 +34,6 @@ struct TOLanguageButtonView: View {
 //        //.padding([.leading, .trailing], 5)
         
         Button(action: {
-            print(isSwitch)
             withAnimation(.spring()) {
                 self.isSwitch = !self.isSwitch
             }

@@ -38,6 +38,7 @@ struct TOStartView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     Spacer()
                     
+                    #if DEBUG
                     Button(action: {
                         if let window = UIApplication.shared.windows.first {
                             window.rootViewController = UIHostingController(rootView: TOMainView())
@@ -56,6 +57,8 @@ struct TOStartView: View {
                     }
                     .background(Color.white.opacity(0.85)) // If you have this
                     .cornerRadius(25)
+                    #endif
+                    
                     TOQuickSignInWithApple()
                         .frame(width: 250, height: 60, alignment: .center)
                         .onTapGesture(perform: showAppleLoginView)

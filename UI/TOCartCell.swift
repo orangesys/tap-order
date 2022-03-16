@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TOCartCell: View {
     //var model = [TOCartItemForDel]()
@@ -17,7 +18,8 @@ struct TOCartCell: View {
     var body: some View {
         VStack {
             HStack {
-                Image("chicken")
+                KFImage.url(URL(string: item.foodPic))
+                    .placeholder{Image("chicken").resizable()}
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 130, alignment: .center)
@@ -30,13 +32,14 @@ struct TOCartCell: View {
                         Spacer()
                         Button {
                             globalCart.removeFromCart(food: item)
-                            globalCart.newCartList = globalCart.newCartList.filter({$0.sid != item.sid})
+                            //globalCart.newCartList = globalCart.newCartList.filter({$0.sid != item.sid})
                         } label: {
                             Image(systemName: "xmark.circle")
-                                .foregroundColor(Color.normalRed)
+                                .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.normalRed)
                                 .font(.system(size: 20))
                         }
                         .disabled( item.userId != TOUserViewModel.shared.userid)
+                        .buttonStyle(.borderless)//fix click issue
 
                     }
                     Text("\(item.foodPrice)")
@@ -44,33 +47,37 @@ struct TOCartCell: View {
                         .foregroundColor(Color.normalYellow)
                     HStack {
                         Button {
+                            print(item.count)
+                            if item.count <= 1 {
+                                return
+                            }
                             globalCart.deleteFromCart(food: item)
-                            globalCart.newCartList = globalCart.newCartList.map({ one in
-                                var tmp = one
-                                if tmp.sid == item.sid {
-                                    tmp.count = tmp.count - 1
-                                }
-                                return tmp
-                            })
+//                            globalCart.newCartList = globalCart.newCartList.map({ one in
+//                                var tmp = one
+//                                if tmp.sid == item.sid {
+//                                    tmp.count = tmp.count - 1
+//                                }
+//                                return tmp
+//                            })
                         } label: {
                             Image(systemName: "minus.circle")
-                                .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)
+                                .foregroundColor(item.userId != TOUserViewModel.shared.userid || (item.count <= 1) ? .gray : Color.themeColor)
                                 .font(.system(size: 20))
                         }
-                        .disabled( item.userId != TOUserViewModel.shared.userid)
+                        .disabled( (item.userId != TOUserViewModel.shared.userid) || (item.count <= 1))
                         .buttonStyle(.borderless)
                         Text("\(item.count)")
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.themeColor)
                         Button {
                             globalCart.addToCart(food: item)
-                            globalCart.newCartList = globalCart.newCartList.map({ one in
-                                var tmp = one
-                                if tmp.sid == item.sid {
-                                    tmp.count = tmp.count + 1
-                                }
-                                return tmp
-                            })
+//                            globalCart.newCartList = globalCart.newCartList.map({ one in
+//                                var tmp = one
+//                                if tmp.sid == item.sid {
+//                                    tmp.count = tmp.count + 1
+//                                }
+//                                return tmp
+//                            })
                         } label: {
                             Image(systemName: "plus.circle")
                                 .foregroundColor(item.userId != TOUserViewModel.shared.userid ? .gray : Color.themeColor)

@@ -10,9 +10,11 @@ import SwiftUI
 struct TOOrderListView: View {
     let dataList = [1,2,3,1,2,3]
     
-    @StateObject var orderVM = TOOrderViewModel(urlstr: "ws://localhost:8080/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/tables/A2/current-order?language=ja")
+    @StateObject var orderVM = TOOrderViewModel(urlstr: String.urlStr(req: .order))
+    @Binding var lanDidChange:Bool
     
-    init() {
+    init(lanChange:Binding<Bool>) {
+        self._lanDidChange = lanChange
         UITableView.appearance().showsVerticalScrollIndicator = false
     }
     
@@ -29,9 +31,6 @@ struct TOOrderListView: View {
                 }
             }
             .listStyle(.plain)
-            .onAppear {
-                self.orderVM.doRece()
-            }
             
             ZStack(alignment: .bottom) {
                 HStack {
@@ -47,6 +46,11 @@ struct TOOrderListView: View {
             .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
         }
         .padding(EdgeInsets(top: 0, leading: .menuListPadding, bottom: 0, trailing: .menuListPadding))
+        .onChange(of: self.lanDidChange) { newValue in
+            if newValue {
+                orderVM.socket?.disconnect()
+            }
+        }
         
     }
     
@@ -57,6 +61,6 @@ struct TOOrderListView: View {
 
 struct TOOrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        TOOrderListView()
+        TOOrderListView(lanChange: .constant(false))
     }
 }
