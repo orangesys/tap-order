@@ -13,12 +13,7 @@ struct TOOrderListCell: View {
     
     var body: some View {
         HStack {
-            KFImage(URL(string:"\(item.foodPic)"))
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 130, alignment: .center)
-                .background(Color.normalGray)
-                .cornerRadius(20)
+            OrderImages(orderImageURLString: "nil", userImageURLString: "https://i.pinimg.com/236x/9a/32/50/9a3250ce0b20acb124664d6021a68e90.jpg")
             VStack(alignment:.leading,spacing: 15){
                 HStack {
                     Text(item.foodName)
@@ -35,6 +30,24 @@ struct TOOrderListCell: View {
                 }
             }
         }
+    }
+}
+
+struct OrderImages: View {
+    let orderImageURLString: String
+    let userImageURLString: String
+    
+    @State var useUserImageAsItem: Bool = false
+    
+    var body: some View {
+        KFImage(URL(string: (useUserImageAsItem ? orderImageURLString : userImageURLString))).onFailure({ _ in
+            useUserImageAsItem = true
+        })
+            .resizable()
+            .scaledToFit()
+            .frame(width: 100, height: 130, alignment: .center)
+            .background(Color.normalGray)
+            .cornerRadius(20)
     }
 }
 
