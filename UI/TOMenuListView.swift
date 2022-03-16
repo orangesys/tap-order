@@ -16,6 +16,7 @@ struct TOMenuListView: View {
     private var placeholderCats = [TONewFoodsCat]()
     
     @State var isLoading = false
+    @Binding var isSwitch:Bool
     
     // environment变量导致强制刷新
     // @ObservedObject变量不保存数据
@@ -24,7 +25,8 @@ struct TOMenuListView: View {
     //which cat is selected
     @State var selCatItemId: String = "All"
     
-    init() {
+    init(isSwitch: Binding<Bool>) {
+        self._isSwitch = isSwitch
         for one in 0...4 {
             placeholderFoods.append(TONewFoods(id: "\(one)", name: "name"))
             placeholderCats.append(TONewFoodsCat(name: "name", activate: true))
@@ -35,12 +37,13 @@ struct TOMenuListView: View {
     }
     
     var body: some View {
-        ZStack {
+        Self._printChanges()
+        return ZStack {
             RefreshableScrollView(refreshing: .constant(viewModel.isLoading)) {
                 LazyVGrid(columns: twoColumnGrid,spacing: .menuListPadding,pinnedViews: [.sectionHeaders]) {
                     Section {
                         ForEach(self.viewModel.isLoading ? placeholderFoods : self.viewModel.foodList, id:\.id) { one in
-                            TOMenuListCell(item: one)
+                            TOMenuListCell(item: one).equatable()
                         }
                         .redacted(reason: self.viewModel.isLoading ? .placeholder : [])
                     } header: {
@@ -81,19 +84,71 @@ struct TOMenuListView: View {
            // }
         }
         .onAppear {
+            let oldCats = TONewFoodsCat.load()
+            if oldCats.count > 0 {
+                self.viewModel.catList = oldCats
+            } else {
+                if !self.viewModel.isLoading {
+                    self.viewModel.isLoading = true
+                    self.viewModel.getFoodsCat()
+                }
+            }
+            let oldFoods = TONewFoods.load((oldCats.first?.name ?? "ssn"))
+            if oldFoods.count > 0 {
+                self.viewModel.foodList = oldFoods
+            } else {
+                if !self.viewModel.isLoading {
+                    self.viewModel.isLoading = true
+                    self.viewModel.getFoodsCat()
+                }
+            }
             // 本来已经放到init，毕竟init更像viewdidload
             // 但是environment变量强制刷，改进
-            if viewModel.foodList.count <= 0 && self.viewModel.isLoading == false{
-                self.viewModel.isLoading = true
+            if (viewModel.foodList.count <= 0 && self.viewModel.isLoading == false){
+            //    self.viewModel.isLoading = true
                 //self.isLoading = viewModel.isLoading
                 self.viewModel.getFoodsCat()
+            }
+        }
+        .onChange(of: self.isSwitch) { newValue in
+            if newValue {
+//                self.viewModel.isLoading = true
+//                self.viewModel.getFoodsCat()
+                self.isSwitch = false
+                
+                viewModel.restoreOriginalList()
+                let oldCats = TONewFoodsCat.load()
+                if oldCats.count > 0 {
+                    self.viewModel.catList = oldCats
+                } else {
+                    if !self.viewModel.isLoading {
+                        self.viewModel.isLoading = true
+                        self.viewModel.getFoodsCat()
+                    }
+                }
+                let oldFoods = TONewFoods.load((oldCats.first?.name ?? "ssn"))
+                if oldFoods.count > 0 {
+                    self.viewModel.foodList = oldFoods
+                } else {
+                    if !self.viewModel.isLoading {
+                        self.viewModel.isLoading = true
+                        self.viewModel.getFoodsCat()
+                    }
+                }
+                // 本来已经放到init，毕竟init更像viewdidload
+                // 但是environment变量强制刷，改进
+                if (viewModel.foodList.count <= 0 && self.viewModel.isLoading == false){
+                //    self.viewModel.isLoading = true
+                    //self.isLoading = viewModel.isLoading
+                    self.viewModel.getFoodsCat()
+                }
             }
         }
     }
     
     struct TOMenuListView_Previews: PreviewProvider {
         static var previews: some View {
-            TOMenuListView()
+            TOMenuListView(isSwitch: .constant(false))
         }
     }
 }

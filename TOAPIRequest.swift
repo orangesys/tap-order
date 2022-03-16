@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum TORequest {
+    case cat
+    case foods(String)
+    case cart
+    case order
+}
 
 enum TOAPIRequest {
     case foodCat
@@ -22,14 +28,16 @@ extension TOAPIRequest: RequestBuilder {
     var urlRequest: URLRequest {
         switch self {
         case .foodCat:
-            guard let url = URL(string: "\(String.APIHost)/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/categories?language=en")
+            guard let url = URL(string: String.urlStr(req: .cat))
                 else {preconditionFailure("Invalid URL format")}
-            let request = URLRequest(url: url)
+            var request = URLRequest(url: url)
+            request.addValue(TOUserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
             return request
         case .foodCatList(let cat):
-            guard let url = URL(string: "\(String.APIHost)/api/v1/shops/e988662acc1fe9b08a9e764bacfcb304/categories/\(cat)?language=ja".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+            guard let url = URL(string: String.urlStr(req: .foods(cat)).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 else {preconditionFailure("Invalid URL format")}
-            let request = URLRequest(url: url)
+            var request = URLRequest(url: url)
+            request.addValue(TOUserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
             return request
         case .foodList:
             guard let url = URL(string: "https://tap-open-default-rtdb.asia-southeast1.firebasedatabase.app/foods.json")

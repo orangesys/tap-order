@@ -9,7 +9,6 @@ import Foundation
 import Combine
 import SwiftUI
 import Network
-import NWWebSocket
 
 class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
@@ -25,7 +24,8 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     var cancellables = Set<AnyCancellable>()
     
     func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
-        print(error)
+        print("char ws: \(error)")
+        self.socket?.disconnect()
     }
     
     func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
@@ -39,6 +39,17 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     var socket: NWWebSocket?
     
     init(urlstr:String) {
+        print("ws ws 1: \(urlstr)")
+        self.buildConnect(urlstr: urlstr)
+    }
+    
+    func reConnect() {
+        socket = nil
+        self.buildConnect(urlstr: String.urlStr(req: .cart))
+    }
+    
+    func buildConnect(urlstr:String) {
+        print("ws ws 2: \(urlstr)")
         socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
         socket?.ping(interval: 10)
         socket?.delegate = self
@@ -51,9 +62,11 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
         print("disconnected")
+        self.reConnect()
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
+        self.isLoading = false
         print("Text received \(string)")
         let data = string.data(using: .utf8)!
         do {
@@ -100,10 +113,12 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     /// add from menu list
     /// - Parameter food: food object
     func sendToCart(food:TONewFoods) {
+        self.isLoading = true
         var food2 = food
         food2.customer_id = TOUserViewModel.shared.userid
+        food2.count = 1
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"+\":\(jsonString)}")
@@ -111,10 +126,11 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
     
     func addToCart(food:TOCartItem) {
+        self.isLoading = true
         var food2 = food
         food2.count = food2.count + 1
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"~\":\(jsonString)}")
@@ -122,10 +138,11 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
     
     func deleteFromCart(food:TOCartItem) {
+        self.isLoading = true
         var food2 = food
         food2.count = food2.count - 1
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"~\":\(jsonString)}")
@@ -133,8 +150,9 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
     
     func removeFromCart(food:TOCartItem) {
+        self.isLoading = true
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(food), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode([food]), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"-\":\(jsonString)}")
@@ -142,12 +160,13 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     }
     
     func sendOrder(foods:[TOCartItem]) {
-        var sendDic = [String:TOCartItem]()
+        self.isLoading = true
+        var sendDic = [TOCartSendOrder]()
         for one in foods {
-            sendDic[one.sid] = one
+            sendDic.append(TOCartSendOrder(uuid: one.sid))
         }
         let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(foods), let jsonString = String(data: jsonData, encoding: .utf8) {
+        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
             
             socket?.send(string: "{\"=\":\(jsonString)}")

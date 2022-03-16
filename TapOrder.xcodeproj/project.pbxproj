@@ -23,7 +23,6 @@
 		F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
 		F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7927C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
-		F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7B27C5223700D80724 /* FirebaseAnalytics */; };
 		F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7E27C8DDF900D80724 /* PopupView */; };
 		F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A8127C8DE7900D80724 /* Kingfisher */; };
 		F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* TOToastView.swift */; };
@@ -32,14 +31,13 @@
 		F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
 		F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
 		F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TOTestView.swift */; };
+		F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F87541B827DEDF0600480D10 /* Kingfisher */; };
+		F87541BB27DEFD1200480D10 /* ToClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ToClipModel.swift */; };
+		F87541BC27DEFD1200480D10 /* ToClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ToClipModel.swift */; };
 		F89B4C7E27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		F89B4C7F27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		F89B4C8127DB76580006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */; };
 		F89B4C8227DB76580006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */; };
-		F89B4C8527DB866B0006ED44 /* NWWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = F89B4C8427DB866B0006ED44 /* NWWebSocket */; };
-		F89B4C8A27DB8C0C0006ED44 /* NWWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = F89B4C8927DB8C0C0006ED44 /* NWWebSocket */; };
-		F89B4C8C27DB8E020006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8B27DB8E020006ED44 /* TOOrderViewModel.swift */; };
-		F89B4C8D27DB8E020006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8B27DB8E020006ED44 /* TOOrderViewModel.swift */; };
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
 		F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
@@ -85,6 +83,12 @@
 		F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
 		F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
 		F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
+		F8ED546B27DF351A00E71459 /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */; };
+		F8ED546C27DF351A00E71459 /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */; };
+		F8ED546D27DF351A00E71459 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546727DF351A00E71459 /* WebSocketConnection.swift */; };
+		F8ED546E27DF351A00E71459 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546727DF351A00E71459 /* WebSocketConnection.swift */; };
+		F8ED546F27DF351A00E71459 /* NWWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546A27DF351A00E71459 /* NWWebSocket.swift */; };
+		F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546A27DF351A00E71459 /* NWWebSocket.swift */; };
 		F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E427C3269200571A32 /* TapOrderApp.swift */; };
 		F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
@@ -154,6 +158,7 @@
 		F8639CB127C618EC00CDE134 /* TOAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIService.swift; sourceTree = "<group>"; };
 		F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListViewModel.swift; sourceTree = "<group>"; };
 		F8639CB727C74B5700CDE134 /* TOTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTestView.swift; sourceTree = "<group>"; };
+		F87541BA27DEFD1200480D10 /* ToClipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToClipModel.swift; sourceTree = "<group>"; };
 		F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
 		F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOOrderViewModel.swift; sourceTree = "<group>"; };
 		F89B4C8B27DB8E020006ED44 /* TOOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOOrderViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +177,9 @@
 		F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8C9EA6A27CA1AB200B9949F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C9EA6B27CA1AB200B9949F /* TapOrderClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapOrderClip.entitlements; sourceTree = "<group>"; };
+		F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWConnection+Extension.swift"; sourceTree = "<group>"; };
+		F8ED546727DF351A00E71459 /* WebSocketConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketConnection.swift; sourceTree = "<group>"; };
+		F8ED546A27DF351A00E71459 /* NWWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWWebSocket.swift; sourceTree = "<group>"; };
 		F8FBF7E427C3269200571A32 /* TapOrderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderApp.swift; sourceTree = "<group>"; };
 		F8FBF7E527C3269200571A32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8FBF7E627C3269300571A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -195,8 +203,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */,
 				F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */,
-				F89B4C8A27DB8C0C0006ED44 /* NWWebSocket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +214,7 @@
 			files = (
 				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
 				F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */,
-				F89B4C8527DB866B0006ED44 /* NWWebSocket in Frameworks */,
 				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
-				F8252A7C27C5223700D80724 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,10 +232,10 @@
 			isa = PBXGroup;
 			children = (
 				F8639CB727C74B5700CDE134 /* TOTestView.swift */,
-				F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */,
 				F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */,
-				F8FBF81A27C4A05900571A32 /* TOCartView.swift */,
 				F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */,
+				F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */,
+				F8FBF81A27C4A05900571A32 /* TOCartView.swift */,
 				F8FBF81727C47F2D00571A32 /* TOStartView.swift */,
 				F8FBF81427C472E500571A32 /* TOMainView.swift */,
 				F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */,
@@ -273,9 +279,53 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F8ED546327DF351A00E71459 /* NWWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED546427DF351A00E71459 /* Extension */,
+				F8ED546627DF351A00E71459 /* Protocol */,
+				F8ED546827DF351A00E71459 /* Model */,
+			);
+			path = NWWebSocket;
+			sourceTree = "<group>";
+		};
+		F8ED546427DF351A00E71459 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8ED546627DF351A00E71459 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED546727DF351A00E71459 /* WebSocketConnection.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F8ED546827DF351A00E71459 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED546927DF351A00E71459 /* Client */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8ED546927DF351A00E71459 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				F8ED546A27DF351A00E71459 /* NWWebSocket.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
+				F8ED546327DF351A00E71459 /* NWWebSocket */,
+				F87541BA27DEFD1200480D10 /* ToClipModel.swift */,
 				F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */,
 				F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */,
 				F81D5FA427D25C52009BE108 /* Localizable.strings */,
@@ -351,7 +401,7 @@
 			name = TapOrderClip;
 			packageProductDependencies = (
 				F8A6D5E927CA1C5100BA45FA /* PopupView */,
-				F89B4C8927DB8C0C0006ED44 /* NWWebSocket */,
+				F87541B827DEDF0600480D10 /* Kingfisher */,
 			);
 			productName = TapOrderClip;
 			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
@@ -373,11 +423,9 @@
 			);
 			name = "TapOrder (iOS)";
 			packageProductDependencies = (
-				F8252A7B27C5223700D80724 /* FirebaseAnalytics */,
 				F8252A7E27C8DDF900D80724 /* PopupView */,
 				F8252A8127C8DE7900D80724 /* Kingfisher */,
 				F81D5FAE27D34F0C009BE108 /* FlagKit */,
-				F89B4C8427DB866B0006ED44 /* NWWebSocket */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -408,7 +456,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					F8C9EA5E27CA1AB100B9949F = {
 						CreatedOnToolsVersion = 13.2;
@@ -432,11 +480,9 @@
 			);
 			mainGroup = F8FBF7DE27C3269100571A32;
 			packageReferences = (
-				F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */,
 				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */,
-				F89B4C8327DB866B0006ED44 /* XCRemoteSwiftPackageReference "NWWebSocket" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -503,6 +549,7 @@
 				F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */,
 				F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
 				F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */,
+				F87541BC27DEFD1200480D10 /* ToClipModel.swift in Sources */,
 				F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
 				F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */,
 				F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */,
@@ -510,6 +557,7 @@
 				F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */,
 				F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */,
 				F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */,
 				F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */,
 				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
 				F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */,
@@ -517,7 +565,8 @@
 				F81D5FB227D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
 				F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */,
 				F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */,
-				F89B4C8D27DB8E020006ED44 /* TOOrderViewModel.swift in Sources */,
+				F8ED546C27DF351A00E71459 /* NWConnection+Extension.swift in Sources */,
+				F8ED546E27DF351A00E71459 /* WebSocketConnection.swift in Sources */,
 				F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */,
 				F8C9EA7A27CA1B3C00B9949F /* TOOrderListCell.swift in Sources */,
 				F8C9EA7C27CA1B3C00B9949F /* TOCartView.swift in Sources */,
@@ -545,6 +594,7 @@
 				F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */,
 				F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
 				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
+				F87541BB27DEFD1200480D10 /* ToClipModel.swift in Sources */,
 				F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
 				F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
 				F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */,
@@ -552,6 +602,7 @@
 				F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */,
 				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				F8ED546F27DF351A00E71459 /* NWWebSocket.swift in Sources */,
 				F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
 				F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */,
@@ -559,7 +610,8 @@
 				F81D5FB127D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
 				F8FBF81E27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
-				F89B4C8C27DB8E020006ED44 /* TOOrderViewModel.swift in Sources */,
+				F8ED546B27DF351A00E71459 /* NWConnection+Extension.swift in Sources */,
+				F8ED546D27DF351A00E71459 /* WebSocketConnection.swift in Sources */,
 				F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */,
 				F8FBF81B27C4A05900571A32 /* TOCartView.swift in Sources */,
 				F8FBF82427C4AFD600571A32 /* TOOrderListCell.swift in Sources */,
@@ -634,6 +686,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,6 +723,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,6 +745,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -750,6 +805,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -877,6 +933,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
@@ -906,6 +963,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
@@ -979,14 +1037,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
 		F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/PopupView.git";
@@ -1003,14 +1053,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		F89B4C8327DB866B0006ED44 /* XCRemoteSwiftPackageReference "NWWebSocket" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pusher/NWWebSocket.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.5.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1018,11 +1060,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */;
 			productName = FlagKit;
-		};
-		F8252A7B27C5223700D80724 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F8252A7A27C5223700D80724 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
 		};
 		F8252A7E27C8DDF900D80724 /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1034,15 +1071,10 @@
 			package = F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		F89B4C8427DB866B0006ED44 /* NWWebSocket */ = {
+		F87541B827DEDF0600480D10 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F89B4C8327DB866B0006ED44 /* XCRemoteSwiftPackageReference "NWWebSocket" */;
-			productName = NWWebSocket;
-		};
-		F89B4C8927DB8C0C0006ED44 /* NWWebSocket */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F89B4C8327DB866B0006ED44 /* XCRemoteSwiftPackageReference "NWWebSocket" */;
-			productName = NWWebSocket;
+			package = F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		F8A6D5E927CA1C5100BA45FA /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;

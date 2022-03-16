@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import Firebase
+//import Firebase
 
 @main
 struct TapOrderApp: App {
     
     init() {
-      FirebaseApp.configure()
+      //FirebaseApp.configure()
     }
     
     var body: some Scene {

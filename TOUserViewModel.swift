@@ -11,9 +11,14 @@ import SwiftUI
 
 class TOUserViewModel: ObservableObject {
     static let shared = TOUserViewModel()
-    let userid = UUID().uuidString
+    var userid = UUID().uuidString
     
-    @Published var lang: String = "en"
+    @State var didChangeLan: Bool = false
+    @Published var lang: String = "en" { // en ja zh
+        didSet {
+            self.didChangeLan = true
+        }
+    }
     
     var bundle: Bundle? {
         let b = Bundle.main.path(forResource: lang, ofType: "lproj")!

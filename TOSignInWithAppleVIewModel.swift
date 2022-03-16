@@ -71,16 +71,22 @@ extension TOSignInWithAppleVIewModel {
         // API Call - Pass the email, user full name, user identity provided by Apple and other details.
         // Give Call Back to UI
         self.isSuccessLogin = .sucessNewLogin
-        swindow.rootViewController = UIHostingController(rootView: TOMainView())
-        swindow.makeKeyAndVisible()
+        if let userid = credential.user.encodeBase64() {
+            TOUserViewModel.shared.userid = userid
+            swindow.rootViewController = UIHostingController(rootView: TOMainView())
+            swindow.makeKeyAndVisible()
+        }
     }
     
     private func signInExistingUser(credential: ASAuthorizationAppleIDCredential) {
         // API Call - Pass the user identity, authorizationCode and identity token
         // Give Call Back to UI
         self.isSuccessLogin = .sucessNormalLogin
-        swindow.rootViewController = UIHostingController(rootView: TOMainView())
-        swindow.makeKeyAndVisible()
+        if let userid = credential.user.encodeBase64() {
+            TOUserViewModel.shared.userid = userid
+            swindow.rootViewController = UIHostingController(rootView: TOMainView())
+            swindow.makeKeyAndVisible()
+        }
     }
     
     private func signinWithUserNamePassword(credential: ASPasswordCredential) {

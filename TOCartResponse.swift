@@ -12,6 +12,10 @@ struct TOCartResponse: Codable {
     let total: Int
 }
 
+struct TOCartSendOrder: Codable {
+    let uuid: String
+}
+
 struct TOCartItem: Codable {
     let foodName: String
     let foodId: String

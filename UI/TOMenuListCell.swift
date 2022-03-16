@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import Kingfisher
 
-struct TOMenuListCell: View {
+struct TOMenuListCell: View , Equatable{
     var imgName = "chicken"
     var catName = "chicken\nbugger"
     var priceName = "20"
@@ -18,8 +19,8 @@ struct TOMenuListCell: View {
 
     var body: some View {
         
-        VStack {
-            Image("\(imgName)")
+       return VStack {
+           KFImage(URL(string:item.image ?? "chicken"))
                 .resizable()
                 .scaledToFit()
                 .font(.system(size: 30))
@@ -41,8 +42,7 @@ struct TOMenuListCell: View {
                 Spacer()
                 Button {
                     globalCart.sendToCart(food: item)
-                    self.globalCart.badgeNum = self.globalCart.badgeNum + 1
-                    //self.globalCart.postCart(item: TOCartItemSend(foodName: item.foodName, foodId: item.foodId, foodPrice: item.foodPrice, foodPic: item.foodPic, createAt: [".sv": "timestamp"], userId: TOUserViewModel.shared.userid))
+                    //self.globalCart.badgeNum = self.globalCart.badgeNum + 1
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.normalGreen)
@@ -54,6 +54,10 @@ struct TOMenuListCell: View {
         .frame(maxWidth: .infinity, minHeight: 180, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0xe8e8e8)), Color(uiColor:UIColor(rgb: 0xe4e4e4).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
+    }
+    
+    static func == (lhs: TOMenuListCell, rhs: TOMenuListCell) -> Bool {
+        return lhs.item.id == rhs.item.id && lhs.item.name == rhs.item.name
     }
 }
 

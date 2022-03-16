@@ -18,6 +18,7 @@ struct TOLanguageListView: View {
                                                 TOLanguage(name: "En", flagName: "🇺🇸")]
     @Binding var isSwitch:Bool
     @Binding var seledLan:TOLanguage?
+    @Binding var lanDidchange:Bool
     var body: some View {
         //ScrollView(.vertical, showsIndicators: false) {
         
@@ -30,7 +31,7 @@ struct TOLanguageListView: View {
                     .padding(EdgeInsets(top: 30, leading: 20, bottom: 0, trailing: 20))
                 List {
                     ForEach(rows) { one in
-                        TOLanguageCell(item: one, seledItem: $seledLan)
+                        TOLanguageCell(item: one, seledItem: $seledLan, lanDidchange: $lanDidchange)
                             .listRowSeparator(.hidden)
                             .padding([.leading, .trailing])
                     }
@@ -74,6 +75,6 @@ struct TOLanguageListView_Previews: PreviewProvider {
     static var previews: some View {
         TOLanguageListView(isSwitch: .constant(false), seledLan: .constant(
             TOLanguage(name: "Japan", flagName: "🇯🇵")
-        ))
+        ), lanDidchange: .constant(false))
     }
 }
