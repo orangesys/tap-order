@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F89226127E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
+		8F89226227E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
+		8F89226327E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
+		8F89226627E26E7000526662 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89226527E26E7000526662 /* LetterAvatarKit */; };
+		8F89226827E26F1300526662 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89226727E26F1300526662 /* LetterAvatarKit */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
@@ -142,6 +147,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F89226027E26D5700526662 /* LoremSwiftum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremSwiftum.swift; sourceTree = "<group>"; };
 		F81D5FA327D25C52009BE108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA527D25C70009BE108 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TapOrder (iOS).entitlements"; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */,
+				8F89226827E26F1300526662 /* LetterAvatarKit in Frameworks */,
 				F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +221,7 @@
 			files = (
 				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
 				F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */,
+				8F89226627E26E7000526662 /* LetterAvatarKit in Frameworks */,
 				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +364,7 @@
 		F8FBF7E327C3269200571A32 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8F89226027E26D5700526662 /* LoremSwiftum.swift */,
 				F8252A7727C5202B00D80724 /* GoogleService-Info.plist */,
 				F8FBF7E427C3269200571A32 /* TapOrderApp.swift */,
 				F8FBF7E527C3269200571A32 /* ContentView.swift */,
@@ -402,6 +411,7 @@
 			packageProductDependencies = (
 				F8A6D5E927CA1C5100BA45FA /* PopupView */,
 				F87541B827DEDF0600480D10 /* Kingfisher */,
+				8F89226727E26F1300526662 /* LetterAvatarKit */,
 			);
 			productName = TapOrderClip;
 			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
@@ -426,6 +436,7 @@
 				F8252A7E27C8DDF900D80724 /* PopupView */,
 				F8252A8127C8DE7900D80724 /* Kingfisher */,
 				F81D5FAE27D34F0C009BE108 /* FlagKit */,
+				8F89226527E26E7000526662 /* LetterAvatarKit */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -483,6 +494,7 @@
 				F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */,
 				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */,
+				8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -557,6 +569,7 @@
 				F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */,
 				F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */,
 				F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				8F89226327E26D5700526662 /* LoremSwiftum.swift in Sources */,
 				F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */,
 				F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */,
 				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
@@ -602,6 +615,7 @@
 				F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */,
 				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
 				F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				8F89226127E26D5700526662 /* LoremSwiftum.swift in Sources */,
 				F8ED546F27DF351A00E71459 /* NWWebSocket.swift in Sources */,
 				F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
@@ -626,6 +640,7 @@
 				F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */,
 				F8B7089E27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
+				8F89226227E26D5700526662 /* LoremSwiftum.swift in Sources */,
 				F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */,
 				F8FBF82227C4AFCB00571A32 /* TOCartCell.swift in Sources */,
 				F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */,
@@ -1029,6 +1044,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vpeschenkov/LetterAvatarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/madebybowtie/FlagKit.git";
@@ -1056,6 +1079,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F89226527E26E7000526662 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
+		};
+		8F89226727E26F1300526662 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
+		};
 		F81D5FAE27D34F0C009BE108 /* FlagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */;

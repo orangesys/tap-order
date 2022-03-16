@@ -5,7 +5,7 @@
 //  Created by solo on 2022/3/5.
 //
 
-import Foundation
+import LetterAvatarKit
 import SwiftUI
 import AuthenticationServices
 
@@ -35,6 +35,23 @@ class TOSignInWithAppleVIewModel: NSObject, ASAuthorizationControllerDelegate, O
             print(appleIdCredential.user)  // This is a user identifier
             print(appleIdCredential.identityToken?.base64EncodedString() ?? "Identity token not available") //JWT Token
             print(appleIdCredential.authorizationCode?.base64EncodedString() ?? "Authorization code not available")
+            
+            let randomNickname = Lorem.firstName
+            
+            // Square avatar image
+            let avatarImage = LetterAvatarMaker()
+                .setUsername(randomNickname)
+                .build()
+//            avatarImageView.image = avatarImage
+
+            // Circle avatar image with white border
+//            let circleAvatarImage = LetterAvatarMaker()
+//                .setCircle(true)
+//                .setUsername("Letter Avatar")
+//                .setBorderWidth(1.0)
+//                .setBackgroundColors([ .red ])
+//                .build()
+//            avatarImageView.image = circleAvatarImage
             
             if let _ = appleIdCredential.email, let _ = appleIdCredential.fullName {
                 // Apple has autherized the use with Apple ID and password
