@@ -10,6 +10,7 @@
 		8F89226127E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
 		8F89226227E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
 		8F89226327E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
+		8F89226627E26E7000526662 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89226527E26E7000526662 /* LetterAvatarKit */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
@@ -218,6 +219,7 @@
 			files = (
 				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
 				F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */,
+				8F89226627E26E7000526662 /* LetterAvatarKit in Frameworks */,
 				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +433,7 @@
 				F8252A7E27C8DDF900D80724 /* PopupView */,
 				F8252A8127C8DE7900D80724 /* Kingfisher */,
 				F81D5FAE27D34F0C009BE108 /* FlagKit */,
+				8F89226527E26E7000526662 /* LetterAvatarKit */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -488,6 +491,7 @@
 				F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */,
 				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */,
+				8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -1037,6 +1041,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vpeschenkov/LetterAvatarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/madebybowtie/FlagKit.git";
@@ -1064,6 +1076,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F89226527E26E7000526662 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
+		};
 		F81D5FAE27D34F0C009BE108 /* FlagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */;
