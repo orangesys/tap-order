@@ -1,5 +1,12 @@
-# tap-order
+# Tap-Order
 
+## 目标
+
+这是一个针对日本市场尝试的小项目，目标在于帮助微小型餐饮店实现自助型扫码点餐系统。
+
+## 原型图
+
+https://www.figma.com/file/Uz0iXmDtBXQieLae7wDLyx/Food-Ordering-App-(Community)-(Copy)?node-id=0%3A1
 ## build 方法
 
 1. 等待 swift package manager 安装依赖库之后
