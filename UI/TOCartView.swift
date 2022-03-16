@@ -43,14 +43,14 @@ struct TOCartView: View {
                     //Color.clear.padding(.bottom, 20)
                     Button(action: doSomething) {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
-                            .foregroundColor(.themeColor)
+                            .foregroundColor(self.globalCart.newCartList.isEmpty ? Color.gray : .themeColor)
                             .overlay(alignment: .center) {
                                 Text("Send order")
                                     .font(.system(size: 24,weight: .semibold))
                                     .foregroundColor(.white)
                             }
                             .frame(width:.SCREENWIDTH - 80,height: 50)
-                    }
+                    }.disabled(self.globalCart.newCartList.isEmpty)
                 }
                 .background(.white)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
