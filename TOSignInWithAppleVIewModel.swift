@@ -36,6 +36,8 @@ class TOSignInWithAppleVIewModel: NSObject, ASAuthorizationControllerDelegate, O
             print(appleIdCredential.identityToken?.base64EncodedString() ?? "Identity token not available") //JWT Token
             print(appleIdCredential.authorizationCode?.base64EncodedString() ?? "Authorization code not available")
             
+            let randomNickname = Lorem.firstName
+            
             if let _ = appleIdCredential.email, let _ = appleIdCredential.fullName {
                 // Apple has autherized the use with Apple ID and password
                 registerNewUser(credential: appleIdCredential)
