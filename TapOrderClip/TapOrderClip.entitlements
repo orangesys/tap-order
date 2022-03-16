@@ -14,5 +14,9 @@
 	<array>
 		<string>$(AppIdentifierPrefix)com.oeoly.testTapOrder</string>
 	</array>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.oeoly.TapOrder</string>
+	</array>
 </dict>
 </plist>

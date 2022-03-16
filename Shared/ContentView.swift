@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var viewModel = ContentViewModel.shared
     var body: some View {
-        TOStartView()
+        if viewModel.rootPage == .start {
+            TOStartView()
+        } else {
+            TOMainView()
+        }
     }
 }
 
