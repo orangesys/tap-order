@@ -5,21 +5,22 @@
 //  Created by solo on 2/22/22.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct TOOrderListCell: View {
-    var item:TOCartItem
-    
+    var item: TOCartItem
+
     var body: some View {
         HStack {
-            KFImage(URL(string:"\(item.foodPic)"))
+            KFImage(URL(string: "\(item.foodPic)"))
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 130, alignment: .center)
                 .background(Color.normalGray)
-                .cornerRadius(20)
-            VStack(alignment:.leading,spacing: 15){
+                .cornerRadius(20).addSourceUserIcon(item.foodPic)
+
+            VStack(alignment: .leading, spacing: 15) {
                 HStack {
                     Text(item.foodName)
                         .font(.system(size: 16, weight: .medium))
@@ -34,6 +35,23 @@ struct TOOrderListCell: View {
                         .foregroundColor(.themeColor)
                 }
             }
+        }
+    }
+}
+
+private extension View {
+    func addSourceUserIcon(_ uid: String) -> some View {
+        ZStack(alignment: .topTrailing) {
+            self
+
+            KFImage(URL(string: "\(uid)"))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 32, height: 32)
+                .background(Color.normalGray)
+                .cornerRadius(20)
+                .overlay(Circle().stroke(Color.blue))
+                .offset(x: 0, y: 130-32)
         }
     }
 }
