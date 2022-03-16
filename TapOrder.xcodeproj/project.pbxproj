@@ -11,6 +11,7 @@
 		8F89226227E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
 		8F89226327E26D5700526662 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89226027E26D5700526662 /* LoremSwiftum.swift */; };
 		8F89226627E26E7000526662 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89226527E26E7000526662 /* LetterAvatarKit */; };
+		8F89226827E26F1300526662 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89226727E26F1300526662 /* LetterAvatarKit */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
@@ -209,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */,
+				8F89226827E26F1300526662 /* LetterAvatarKit in Frameworks */,
 				F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +411,7 @@
 			packageProductDependencies = (
 				F8A6D5E927CA1C5100BA45FA /* PopupView */,
 				F87541B827DEDF0600480D10 /* Kingfisher */,
+				8F89226727E26F1300526662 /* LetterAvatarKit */,
 			);
 			productName = TapOrderClip;
 			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
@@ -1077,6 +1080,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		8F89226527E26E7000526662 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
+		};
+		8F89226727E26F1300526662 /* LetterAvatarKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8F89226427E26E7000526662 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
 			productName = LetterAvatarKit;
