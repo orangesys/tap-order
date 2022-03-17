@@ -26,11 +26,6 @@ class UserViewModel: ObservableObject {
     }
 }
 
-extension Bundle {
-    func localizedString(forKey key: String) -> String {
-      self.localizedString(forKey: key, value: nil, table: nil)
-  }
-}
 extension String {
     var localizedString: String {
         UserViewModel.shared.bundle!.localizedString(forKey: self)

@@ -6,7 +6,6 @@
 //
 
 import Combine
-import SwiftUI
 
 enum RootPage {
     case start
@@ -17,7 +16,5 @@ class ContentViewModel: ObservableObject {
     static let shared = ContentViewModel()
 
     @Published var rootPage = SignInWithApple.didExitUser() ? RootPage.main : RootPage.start
-    private init() {
-         
-    }
+    private init() {}
 }
