@@ -14,7 +14,6 @@ private let TapOrderAppGroup = "group.oeoly.TapOrder"
 class KeyChainUtil {
     
     static func saveFromApple(_ userIdentifier: String) {
-        return
         let keychain = Keychain(accessGroup: TapOrderAppGroup)
         do {
             try keychain.set("\(userIdentifier)", key: AppleUserIdentifierKey)

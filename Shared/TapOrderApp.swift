@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
-//import Firebase
+import Combine
 
 @main
 struct TapOrderApp: App {
-    
+    @ObservedObject var contentViewModel = ContentViewModel.shared
+    var cancleAble: Cancellable?
     init() {
-      //FirebaseApp.configure()
+      
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(rootPage: $contentViewModel.rootPage)
         }
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var viewModel = ContentViewModel.shared
+    @Binding var rootPage: RootPage
     var body: some View {
-        if viewModel.rootPage == .start {
+        if self.rootPage == .start {
             StartView()
         } else {
             MainView()
@@ -20,6 +20,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(rootPage: Binding.constant(ContentViewModel.shared.rootPage))
     }
 }
