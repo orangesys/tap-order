@@ -10,7 +10,13 @@ import Combine
 import SwiftUI
 import Network
 
-class CartViewModel: ObservableObject, WebSocketConnectionDelegate {
+enum InCartAction {
+    case remove
+    case plusOne
+    case subtractOne
+}
+
+class CartViewModel: ObservableObject {
     
     @Published var cartList =  [[CartItemForDel]]() // extraordinary
     @Published var newCartList =  [CartItem]()
@@ -18,10 +24,93 @@ class CartViewModel: ObservableObject, WebSocketConnectionDelegate {
     @Published var isLoading = false
     @Published var isError = false
     @Published var totalStr = ""
+    
     var errorStr = ""
     var isBackgroundLoading = false
 
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
+    
+    var socket: NWWebSocket?
+    
+    init(urlstr:String) {
+        print("ws ws 1: \(urlstr)")
+        self.buildConnect(urlstr: urlstr)
+    }
+    
+    func buildConnect(urlstr:String) {
+        print("ws ws 2: \(urlstr)")
+        socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
+        socket?.ping(interval: 10)
+        socket?.delegate = self
+    }
+    
+    func reConnect() {
+        socket = nil
+        self.buildConnect(urlstr: String.urlStr(req: .cart))
+    }
+    
+    func receives() {
+        
+    }
+    
+    /// add from menu list
+    /// - Parameter food: food object
+    func sendToCart(food:NewFoods, isPlus: Bool = false) {
+        self.isLoading = true
+        var food2 = food
+        food2.customer_id = UserViewModel.shared.userid
+        food2.count = 1
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"+\":\(jsonString)}")
+        }
+    }
+    
+    func updateFoodInCart(_ food:CartItem, action: InCartAction) {
+        self.isLoading = true
+        var food2 = food
+        var symbol = "~"
+        if action == .plusOne {
+            food2.count = food2.count + 1
+        } else if action == .subtractOne {
+            food2.count = food2.count - 1
+        } else if action == .remove {
+            symbol = "-"
+        }
+        
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"\(symbol)\":\(jsonString)}")
+        }
+    }
+    
+    func placeOrder(foods: [CartItem]) {
+        self.isLoading = true
+        var sendDic = [CartSendOrder]()
+        for one in foods {
+            sendDic.append(CartSendOrder(uuid: one.sid))
+        }
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+            
+            socket?.send(string: "{\"=\":\(jsonString)}")
+        }
+    }
+}
+
+extension CartViewModel: WebSocketConnectionDelegate {
+    func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
+        
+    }
+
+    func webSocketDidReceivePong(connection: WebSocketConnection) {
+        print("received pong")
+    }
     
     func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
         print("char ws: \(error)")
@@ -36,26 +125,6 @@ class CartViewModel: ObservableObject, WebSocketConnectionDelegate {
         
     }
     
-    var socket: NWWebSocket?
-    
-    init(urlstr:String) {
-        print("ws ws 1: \(urlstr)")
-        self.buildConnect(urlstr: urlstr)
-    }
-    
-    func reConnect() {
-        socket = nil
-        self.buildConnect(urlstr: String.urlStr(req: .cart))
-    }
-    
-    func buildConnect(urlstr:String) {
-        print("ws ws 2: \(urlstr)")
-        socket = NWWebSocket(url: URL(string: "\(urlstr)")!, connectAutomatically: true)
-        socket?.ping(interval: 10)
-        socket?.delegate = self
-    }
-    
-    // Delegates
     func webSocketDidConnect(connection: WebSocketConnection) {
         print("connected")
     }
@@ -96,81 +165,4 @@ class CartViewModel: ObservableObject, WebSocketConnectionDelegate {
             print(error)
         }
     }
-    
-    func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
-        
-    }
-
-    func webSocketDidReceivePong(connection: WebSocketConnection) {
-        print("received pong")
-    }
-    
-    func receives() {
-        
-    }
-    
-    
-    /// add from menu list
-    /// - Parameter food: food object
-    func sendToCart(food:NewFoods) {
-        self.isLoading = true
-        var food2 = food
-        food2.customer_id = UserViewModel.shared.userid
-        food2.count = 1
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-            
-            socket?.send(string: "{\"+\":\(jsonString)}")
-        }
-    }
-    
-    func addToCart(food:CartItem) {
-        self.isLoading = true
-        var food2 = food
-        food2.count = food2.count + 1
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-            
-            socket?.send(string: "{\"~\":\(jsonString)}")
-        }
-    }
-    
-    func deleteFromCart(food:CartItem) {
-        self.isLoading = true
-        var food2 = food
-        food2.count = food2.count - 1
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-            
-            socket?.send(string: "{\"~\":\(jsonString)}")
-        }
-    }
-    
-    func removeFromCart(food:CartItem) {
-        self.isLoading = true
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode([food]), let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-            
-            socket?.send(string: "{\"-\":\(jsonString)}")
-        }
-    }
-    
-    func sendOrder(foods:[CartItem]) {
-        self.isLoading = true
-        var sendDic = [CartSendOrder]()
-        for one in foods {
-            sendDic.append(CartSendOrder(uuid: one.sid))
-        }
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {
-            print(jsonString)
-            
-            socket?.send(string: "{\"=\":\(jsonString)}")
-        }
-    }
-
 }

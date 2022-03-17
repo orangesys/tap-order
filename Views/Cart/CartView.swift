@@ -62,7 +62,7 @@ struct CartView: View {
     
     private func doSomething() {
         let mycarts = globalCart.newCartList.filter({$0.userId == UserViewModel.shared.userid})
-        globalCart.sendOrder(foods: mycarts)
+        globalCart.placeOrder(foods: mycarts)
     }
 }
 

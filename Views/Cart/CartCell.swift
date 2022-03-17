@@ -31,7 +31,7 @@ struct CartCell: View {
                             .font(.system(size: 16, weight: .medium))
                         Spacer()
                         Button {
-                            globalCart.removeFromCart(food: item)
+                            globalCart.updateFoodInCart(item, action: .remove)
                             //globalCart.newCartList = globalCart.newCartList.filter({$0.sid != item.sid})
                         } label: {
                             Image(systemName: "xmark.circle")
@@ -51,7 +51,7 @@ struct CartCell: View {
                             if item.count <= 1 {
                                 return
                             }
-                            globalCart.deleteFromCart(food: item)
+                            globalCart.updateFoodInCart(item, action: .subtractOne)
 //                            globalCart.newCartList = globalCart.newCartList.map({ one in
 //                                var tmp = one
 //                                if tmp.sid == item.sid {
@@ -70,7 +70,7 @@ struct CartCell: View {
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(.themeColor)
                         Button {
-                            globalCart.addToCart(food: item)
+                            globalCart.updateFoodInCart(item, action: .plusOne)
 //                            globalCart.newCartList = globalCart.newCartList.map({ one in
 //                                var tmp = one
 //                                if tmp.sid == item.sid {
