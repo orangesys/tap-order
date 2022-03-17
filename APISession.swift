@@ -1,5 +1,5 @@
 //
-//  TOAPISession.swift
+//  APISession.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/23/22.
@@ -9,13 +9,13 @@ import Foundation
 import Combine
 import UIKit
 
-struct APISession: APIService {
+struct APISession: APIProtocol {
     func request<T>(with builder: RequestBuilder) -> AnyPublisher<T, APIError> where T: Decodable {
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        print("ssn: \(builder.urlRequest) \(builder.urlRequest.httpBody)")
+        print("ssn: \(builder.urlRequest) \(String(describing: builder.urlRequest.httpBody))")
         
         return URLSession.shared
             .dataTaskPublisher(for: builder.urlRequest)

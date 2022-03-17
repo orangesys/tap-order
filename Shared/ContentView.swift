@@ -11,9 +11,9 @@ struct ContentView: View {
     @State var viewModel = ContentViewModel.shared
     var body: some View {
         if viewModel.rootPage == .start {
-            TOStartView()
+            StartView()
         } else {
-            TOMainView()
+            MainView()
         }
     }
 }

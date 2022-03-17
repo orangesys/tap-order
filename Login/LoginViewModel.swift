@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-enum TOLoginStatus {
+enum LoginStatus {
     case notLogin
     case sucessNormalLogin
     case sucessNewLogin
@@ -16,14 +16,12 @@ enum TOLoginStatus {
 }
 
 class LoginViewModel: ObservableObject {
-    @Published var loginStatus: TOLoginStatus = .notLogin
+    @Published var loginStatus: LoginStatus = .notLogin
     
     private var cancellableSet: Set<AnyCancellable> = []
     private lazy var appleLogin = SignInWithApple()
 //    private lazy var userLogin = SelfServiceLoginInWithApple()
 
-    
-    
     func signInWithApple() {
         appleLogin.publisher
             .receive(on: RunLoop.main)
@@ -37,7 +35,7 @@ class LoginViewModel: ObservableObject {
             }, receiveValue: { user in
                 self.loginStatus = user.isNew ? .sucessNewLogin : .sucessNormalLogin
                 ContentViewModel.shared.rootPage = .main
-//                UIApplication.shared.windows.first?.rootViewController = UIHostingController(rootView: TOMainView())
+//                UIApplication.shared.windows.first?.rootViewController = UIHostingController(rootView: MainView())
 //                UIApplication.shared.windows.first?.makeKeyAndVisible()
             })
             .store(in: &cancellableSet)

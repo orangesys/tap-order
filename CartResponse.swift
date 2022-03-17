@@ -1,5 +1,5 @@
 //
-//  TOCartResponse.swift
+//  CartResponse.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/25/22.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct TOCartResponse: Codable {
-    let items: [String:TOCartItem]
+struct CartResponse: Codable {
+    let items: [String:CartItem]
     let total: Int
 }
 
-struct TOCartSendOrder: Codable {
+struct CartSendOrder: Codable {
     let uuid: String
 }
 
-struct TOCartItem: Codable {
+struct CartItem: Codable {
     let foodName: String
     let foodId: String
     let foodPrice: Int
@@ -38,7 +38,7 @@ struct TOCartItem: Codable {
     
 }
 
-extension TOCartItem {
+extension CartItem {
     // [A Workaround for a Missing Memberwise Initializer](https://cocoacasts.com/swift-fundamentals-what-is-a-memberwise-initializer)
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -63,12 +63,12 @@ extension TOCartItem {
     // }
 }
 
-struct TOCartItemForDel {
-    let item: TOCartItem
+struct CartItemForDel {
+    let item: CartItem
     var delId: String? // 为了firebase的删除
 }
 
-struct TOCartItemSend: Codable {
+struct CartItemSend: Codable {
     let foodName: String
     let foodId: Int
     let foodPrice: Double
@@ -77,7 +77,7 @@ struct TOCartItemSend: Codable {
     let userId: String
 }
 
-//struct TOCartResponse: Codable {
+//struct CartResponse: Codable {
 //    let orderId: String
 //    struct OrderList: Codable {
 //        let birthday: String

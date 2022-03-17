@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class WebSocketStream: AsyncSequence {
     
     typealias Element = URLSessionWebSocketTask.Message
@@ -95,9 +94,9 @@ class WebSocketStream: AsyncSequence {
     
     /// add from menu list
     /// - Parameter food: food object
-    func sendToCart(food:TONewFoods) {
+    func sendToCart(food:NewFoods) {
         var food2 = food
-        food2.customer_id = TOUserViewModel.shared.userid
+        food2.customer_id = UserViewModel.shared.userid
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode(food2), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
@@ -110,7 +109,7 @@ class WebSocketStream: AsyncSequence {
         }
     }
     
-    func addToCart(food:TOCartItem) {
+    func addToCart(food:CartItem) {
         var food2 = food
         food2.count = food2.count + 1
         let encoder = JSONEncoder()
@@ -125,7 +124,7 @@ class WebSocketStream: AsyncSequence {
         }
     }
     
-    func deleteFromCart(food:TOCartItem) {
+    func deleteFromCart(food:CartItem) {
         var food2 = food
         food2.count = food2.count - 1
         let encoder = JSONEncoder()
@@ -140,7 +139,7 @@ class WebSocketStream: AsyncSequence {
         }
     }
     
-    func removeFromCart(food:TOCartItem) {
+    func removeFromCart(food:CartItem) {
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode(food), let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
@@ -153,8 +152,8 @@ class WebSocketStream: AsyncSequence {
         }
     }
     
-    func sendOrder(foods:[TOCartItem]) {
-        var sendDic = [String:TOCartItem]()
+    func sendOrder(foods:[CartItem]) {
+        var sendDic = [String:CartItem]()
         for one in foods {
             sendDic[one.sid] = one
         }
@@ -172,7 +171,7 @@ class WebSocketStream: AsyncSequence {
 
     
 
-    func stringify(json: TONewFoods, prettyPrinted: Bool = false) -> String {
+    func stringify(json: NewFoods, prettyPrinted: Bool = false) -> String {
         do {
             let jsonData = try JSONEncoder().encode(json)
             let jsonString = String(data: jsonData, encoding: .utf8)

@@ -1,5 +1,5 @@
 //
-//  TOTestView.swift
+//  TestView.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/24/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TOTestView: View {
+struct TestView: View {
     private var symbols = ["keyboard", "hifispeaker.fill", "printer.fill", "tv.fill", "desktopcomputer", "headphones", "tv.music.note", "mic", "plus.bubble", "video"]
     private var colors: [Color] = [.yellow, .purple, .green]
 
@@ -31,8 +31,8 @@ struct TOTestView: View {
     }
 }
 
-struct TOTestView_Previews: PreviewProvider {
+struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        TOTestView()
+        TestView()
     }
 }

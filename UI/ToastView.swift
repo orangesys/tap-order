@@ -1,5 +1,5 @@
 //
-//  TOToastView.swift
+//  ToastView.swift
 //  TapOrder
 //
 //  Created by solo on 2022/2/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TOToastView: View {
+struct ToastView: View {
     var content: String = "something is wrong"
     var body: some View {
         HStack(spacing: 0) {
@@ -28,8 +28,8 @@ struct TOToastView: View {
     }
 }
 
-struct TOToastView_Previews: PreviewProvider {
+struct ToastView_Previews: PreviewProvider {
     static var previews: some View {
-        TOToastView()
+        ToastView()
     }
 }

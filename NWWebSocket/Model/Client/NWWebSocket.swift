@@ -10,7 +10,7 @@ open class NWWebSocket: WebSocketConnection {
     public static var defaultOptions: NWProtocolWebSocket.Options {
         let options = NWProtocolWebSocket.Options()
         options.autoReplyPing = true
-        options.setAdditionalHeaders([("Authorization", TOUserViewModel.shared.userid)])
+        options.setAdditionalHeaders([("Authorization", UserViewModel.shared.userid)])
         return options
     }
 

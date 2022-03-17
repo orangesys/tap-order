@@ -1,5 +1,5 @@
 //
-//  TOLanguageCell.swift
+//  LanguageCell.swift
 //  TapOrder
 //
 //  Created by solo on 2022/3/3.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TOLanguageCell: View {
-    var item:TOLanguage
-    @Binding var seledItem:TOLanguage?
-    @EnvironmentObject var userSetting: TOUserViewModel
+struct LanguageCell: View {
+    var item:Language
+    @Binding var seledItem:Language?
+    @EnvironmentObject var userSetting: UserViewModel
     @Binding var lanDidchange:Bool
     var body: some View {
         HStack(spacing:2) {
@@ -55,8 +55,8 @@ struct TOLanguageCell: View {
     }
 }
 
-struct TOLanguageCell_Previews: PreviewProvider {
+struct LanguageCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOLanguageCell(item: TOLanguage(name: "Japan", flagName: "🇯🇵"), seledItem: .constant(TOLanguage(name: "Japan", flagName: "🇯🇵")), lanDidchange: .constant(false))
+        LanguageCell(item: Language(name: "Japan", flagName: "🇯🇵"), seledItem: .constant(Language(name: "Japan", flagName: "🇯🇵")), lanDidchange: .constant(false))
     }
 }

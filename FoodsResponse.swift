@@ -1,5 +1,5 @@
 //
-//  TOFoodsResponse.swift
+//  FoodsResponse.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/23/22.
@@ -7,23 +7,23 @@
 
 import Foundation
 
-struct TOFoodsResposne: Codable {
+struct FoodsResposne: Codable {
     let code: Int
     let err: String
     
-    let data: [TOFoodsCatItem]
+    let data: [FoodsCatItem]
     let msg: String
 }
 
-struct TOFoodsCatItem: Codable {
+struct FoodsCatItem: Codable {
     let catgoryId: Int
     let catgoryName: String
     let catgoryPic: String
     
-    let foods: [TOFoodsItem]
+    let foods: [FoodsItem]
 }
 
-struct TOFoodsItem: Codable {
+struct FoodsItem: Codable {
     let foodName: String
     let foodPic: String
     let foodId: Int

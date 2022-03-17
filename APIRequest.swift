@@ -1,5 +1,5 @@
 //
-//  TOAPIRequest.swift
+//  APIRequest.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/23/22.
@@ -7,23 +7,23 @@
 
 import Foundation
 
-enum TORequest {
+enum Request {
     case cat
     case foods(String)
     case cart
     case order
 }
 
-enum TOAPIRequest {
+enum APIRequest {
     case foodCat
     case foodCatList(String)
     case foodList
-    case postCart(TOCartItemSend)
+    case postCart(CartItemSend)
     case delCart(String)
     case cartList2
 }
 
-extension TOAPIRequest: RequestBuilder {
+extension APIRequest: RequestBuilder {
     
     var urlRequest: URLRequest {
         switch self {
@@ -31,13 +31,13 @@ extension TOAPIRequest: RequestBuilder {
             guard let url = URL(string: String.urlStr(req: .cat))
                 else {preconditionFailure("Invalid URL format")}
             var request = URLRequest(url: url)
-            request.addValue(TOUserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
+            request.addValue(UserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
             return request
         case .foodCatList(let cat):
             guard let url = URL(string: String.urlStr(req: .foods(cat)).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
                 else {preconditionFailure("Invalid URL format")}
             var request = URLRequest(url: url)
-            request.addValue(TOUserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
+            request.addValue(UserViewModel.shared.userid, forHTTPHeaderField: "Authorization")
             return request
         case .foodList:
             guard let url = URL(string: "https://tap-open-default-rtdb.asia-southeast1.firebasedatabase.app/foods.json")

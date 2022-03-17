@@ -1,5 +1,5 @@
 //
-//  TOMainView.swift
+//  MainView.swift
 //  TapOrder
 //
 //  Created by solo on 2/22/22.
@@ -8,13 +8,13 @@
 import SwiftUI
 import PopupView
 
-struct TOMainView: View {
+struct MainView: View {
     
-    @StateObject var userSetting = TOUserViewModel.shared
-    @StateObject var globalCartList = TOCartViewModel(urlstr: String.urlStr(req: .cart))
-    @State var isSwitchLan = TOUserViewModel.shared.didChangeLan
+    @StateObject var userSetting = UserViewModel.shared
+    @StateObject var globalCartList = CartViewModel(urlstr: String.urlStr(req: .cart))
+    @State var isSwitchLan = UserViewModel.shared.didChangeLan
     @State var lanDidChange = false
-    @State var selectedLan:TOLanguage? = TOLanguage(name: "En", flagName: "🇺🇸")
+    @State var selectedLan:Language? = Language(name: "En", flagName: "🇺🇸")
     // let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     init() {
@@ -38,7 +38,7 @@ struct TOMainView: View {
         Self._printChanges()
         return ZStack {
             if isSwitchLan {
-                TOLanguageListView(isSwitch: $isSwitchLan, seledLan: $selectedLan, lanDidchange:$lanDidChange)
+                LanguageListView(isSwitch: $isSwitchLan, seledLan: $selectedLan, lanDidchange:$lanDidChange)
                     .transition(.move(edge: .bottom))
                     .animation(.spring(), value: 0.3)
                     .zIndex(1)
@@ -47,11 +47,11 @@ struct TOMainView: View {
             TabView {
                 // menu
                 NavigationView{
-                    TOMenuListView(isSwitch: $lanDidChange)
+                    MenuListView(isSwitch: $lanDidChange)
                     //.navigationBarTitle("Menu", displayMode: .large)  // << !!
                         .navigationTitle("Menu")
                         .toolbar {
-                            TOLanguageButtonView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
+                            LanguageButtonView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
                         }
                 }
                 .tabItem {
@@ -60,7 +60,7 @@ struct TOMainView: View {
                 }
                 // cart
                 NavigationView{
-                    TOCartView()
+                    CartView()
                         .navigationBarTitle("\(globalCartList.badgeNum) items in cart", displayMode: .large) // << !!
                 }
                 .tabItem {
@@ -68,7 +68,7 @@ struct TOMainView: View {
                 }.badge(globalCartList.badgeNum)
                 // order list
                 NavigationView{
-                    TOOrderListView(lanChange: $lanDidChange)
+                    OrderListView(lanChange: $lanDidChange)
                         .navigationBarTitle("Order list", displayMode: .large) // << !!
                 }
                 .tabItem {
@@ -79,10 +79,10 @@ struct TOMainView: View {
             .environmentObject(globalCartList)
             .environmentObject(userSetting)
             .popup(isPresented: $globalCartList.isError, type:.floater(verticalPadding: .TopSafePadding), position: .top, autohideIn: 2) {
-                TOToastView(content: self.globalCartList.errorStr)
+                ToastView(content: self.globalCartList.errorStr)
             }
             .overlay(
-                TOLoadingView()
+                LoadingView()
                     .opacity(self.globalCartList.isLoading ? 1 : 0)
             )
             .overlay(
@@ -101,8 +101,8 @@ struct TOMainView: View {
     }
 }
 
-struct TOMainView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        TOMainView()
+        MainView()
     }
 }

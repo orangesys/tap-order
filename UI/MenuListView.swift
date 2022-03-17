@@ -1,5 +1,5 @@
 //
-//  TOMenuListView.swift
+//  MenuListView.swift
 //  TapOrder
 //
 //  Created by solo on 2/21/22.
@@ -12,8 +12,8 @@ struct MenuListView: View {
     private var oneColumnGrid = [GridItem(.flexible())]
     private var twoColumnGrid = [GridItem(.flexible(),spacing: .menuListPadding),GridItem(.flexible(),spacing: .menuListPadding)]
     
-    private var placeholderFoods =  [TONewFoods]()
-    private var placeholderCats = [TONewFoodsCat]()
+    private var placeholderFoods =  [NewFoods]()
+    private var placeholderCats = [NewFoodsCat]()
     
     @State var isLoading = false
     @Binding var isSwitch:Bool
@@ -21,15 +21,15 @@ struct MenuListView: View {
     // environment变量导致强制刷新
     // @ObservedObject变量不保存数据
     // 替换成stateobject
-    @StateObject var viewModel = TOFoodViewModel()
+    @StateObject var viewModel = FoodViewModel()
     //which cat is selected
     @State var selCatItemId: String = "All"
     
     init(isSwitch: Binding<Bool>) {
         self._isSwitch = isSwitch
         for one in 0...4 {
-            placeholderFoods.append(TONewFoods(id: "\(one)", name: "name"))
-            placeholderCats.append(TONewFoodsCat(name: "name", activate: true))
+            placeholderFoods.append(NewFoods(id: "\(one)", name: "name"))
+            placeholderCats.append(NewFoodsCat(name: "name", activate: true))
         }
         // environment之后改变
         // self.viewModel.isLoading = true
@@ -84,7 +84,7 @@ struct MenuListView: View {
            // }
         }
         .onAppear {
-            let oldCats = TONewFoodsCat.load()
+            let oldCats = NewFoodsCat.load()
             if oldCats.count > 0 {
                 self.viewModel.catList = oldCats
             } else {
@@ -93,7 +93,7 @@ struct MenuListView: View {
                     self.viewModel.getFoodsCat()
                 }
             }
-            let oldFoods = TONewFoods.load((oldCats.first?.name ?? "ssn"))
+            let oldFoods = NewFoods.load((oldCats.first?.name ?? "ssn"))
             if oldFoods.count > 0 {
                 self.viewModel.foodList = oldFoods
             } else {
@@ -117,7 +117,7 @@ struct MenuListView: View {
                 self.isSwitch = false
                 
                 viewModel.restoreOriginalList()
-                let oldCats = TONewFoodsCat.load()
+                let oldCats = NewFoodsCat.load()
                 if oldCats.count > 0 {
                     self.viewModel.catList = oldCats
                 } else {
@@ -126,7 +126,7 @@ struct MenuListView: View {
                         self.viewModel.getFoodsCat()
                     }
                 }
-                let oldFoods = TONewFoods.load((oldCats.first?.name ?? "ssn"))
+                let oldFoods = NewFoods.load((oldCats.first?.name ?? "ssn"))
                 if oldFoods.count > 0 {
                     self.viewModel.foodList = oldFoods
                 } else {
@@ -146,7 +146,7 @@ struct MenuListView: View {
         }
     }
     
-    struct TOMenuListView_Previews: PreviewProvider {
+    struct MenuListView_Previews: PreviewProvider {
         static var previews: some View {
             MenuListView(isSwitch: .constant(false))
         }

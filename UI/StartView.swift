@@ -1,5 +1,5 @@
 //
-//  TOStartView.swift
+//  StartView.swift
 //  TapOrder
 //
 //  Created by solo on 2/22/22.
@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-struct TOStartView: View {
+struct StartView: View {
     var loginViewModel = LoginViewModel()
     
     var body: some View {
@@ -41,7 +41,7 @@ struct TOStartView: View {
                     #if DEBUG
                     Button(action: {
                         if let window = UIApplication.shared.windows.first {
-                            window.rootViewController = UIHostingController(rootView: TOMainView())
+                            window.rootViewController = UIHostingController(rootView: MainView())
                             window.makeKeyAndVisible()
                         }
                     }) {
@@ -59,7 +59,7 @@ struct TOStartView: View {
                     .cornerRadius(25)
                     #endif
                     
-                    TOQuickSignInWithApple()
+                    QuickSignInWithApple()
                         .frame(width: 250, height: 60, alignment: .center)
                         .onTapGesture(perform: signInWithApple)
                     Spacer()
@@ -73,8 +73,8 @@ struct TOStartView: View {
      }
 }
 
-struct TOStartView_Previews: PreviewProvider {
+struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        TOStartView()
+        StartView()
     }
 }

@@ -19,7 +19,7 @@ protocol RequestBuilder {
     var urlRequest: URLRequest {get}
 }
 
-protocol APIService {
+protocol APIProtocol {
     func request<T: Decodable>(with builder: RequestBuilder) -> AnyPublisher<T, APIError>
     func requestImage(with url: String) -> AnyPublisher<UIImage, APIError>
 }

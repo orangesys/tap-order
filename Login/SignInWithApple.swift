@@ -49,7 +49,7 @@ class SignInWithApple: NSObject {
         guard let userID = KeyChainUtil.fetchFromAppleUser() else {
             return false
         }
-        TOUserViewModel.shared.userid = userID
+        UserViewModel.shared.userid = userID
         return true
 
 //        let state: ASAuthorizationAppleIDProvider.CredentialState = (try? await provider.credentialState(forUserID: userID)) ?? .notFound
@@ -58,7 +58,7 @@ class SignInWithApple: NSObject {
     
     private func saveUserInKeychain(_ uid: String) {
         if let userid = uid.encodeBase64() {
-            TOUserViewModel.shared.userid = userid
+            UserViewModel.shared.userid = userid
         }
         KeyChainUtil.saveFromApple(uid)
     }

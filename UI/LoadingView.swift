@@ -1,5 +1,5 @@
 //
-//  TOLoadingView.swift
+//  LoadingView.swift
 //  TapOrder
 //
 //  Created by solo on 2022/2/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TOLoadingView: View {
+struct LoadingView: View {
     var body: some View {
         ProgressView()
             .padding()
@@ -17,8 +17,8 @@ struct TOLoadingView: View {
     }
 }
 
-struct TOLoadingView_Previews: PreviewProvider {
+struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        TOLoadingView()
+        LoadingView()
     }
 }

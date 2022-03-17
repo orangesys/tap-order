@@ -1,5 +1,5 @@
 //
-//  TOQuickSignInWithApple.swift
+//  QuickSignInWithApple.swift
 //  TapOrder
 //
 //  Created by solo on 2022/3/5.
@@ -8,7 +8,7 @@
 import SwiftUI
 import AuthenticationServices
 
-struct TOQuickSignInWithApple: UIViewRepresentable {
+struct QuickSignInWithApple: UIViewRepresentable {
     typealias UIViewType = ASAuthorizationAppleIDButton
     
     func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {

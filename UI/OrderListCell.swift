@@ -1,5 +1,5 @@
 //
-//  TOOrderCell.swift
+//  OrderCell.swift
 //  TapOrder
 //
 //  Created by solo on 2/22/22.
@@ -8,8 +8,8 @@
 import SwiftUI
 import Kingfisher
 
-struct TOOrderListCell: View {
-    var item:TOCartItem
+struct OrderListCell: View {
+    var item:CartItem
     
     var body: some View {
         HStack {
@@ -38,8 +38,8 @@ struct TOOrderListCell: View {
     }
 }
 
-struct TOOrderListCell_Previews: PreviewProvider {
+struct OrderListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOOrderListCell(item: TOCartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"))
+        OrderListCell(item: CartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"))
     }
 }

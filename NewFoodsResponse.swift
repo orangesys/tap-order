@@ -1,5 +1,5 @@
 //
-//  TONewFoodsResponse.swift
+//  NewFoodsResponse.swift
 //  TapOrder
 //
 //  Created by solo on 2022/3/8.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TONewFoodsCat: Codable, Identifiable, Equatable {
+struct NewFoodsCat: Codable, Identifiable, Equatable {
     // let id: UUID?
     var id: String?
     var name: String?
@@ -32,34 +32,34 @@ struct TONewFoodsCat: Codable, Identifiable, Equatable {
         activate = try values.decodeIfPresent(Bool.self, forKey: .activate)
     }
 
-    static let KeyForUserDefaults = "keyTONewFoodsCat_\(TOUserViewModel.shared.lang)"
+    static let KeyForUserDefaults = "keyNewFoodsCat_\(UserViewModel.shared.lang)"
 
-    static func save(_ cats: [TONewFoodsCat]) {
+    static func save(_ cats: [NewFoodsCat]) {
         if needUpdate(cats){
             let data = cats.map { try? JSONEncoder().encode($0) }
-            UserDefaults.standard.set(data, forKey: "keyTONewFoodsCat_\(TOUserViewModel.shared.lang)")
+            UserDefaults.standard.set(data, forKey: "keyNewFoodsCat_\(UserViewModel.shared.lang)")
         }
     }
     
-    static func needUpdate(_ cats: [TONewFoodsCat]) -> Bool{
+    static func needUpdate(_ cats: [NewFoodsCat]) -> Bool{
         let oldArr = load()
         let changes = cats.difference(from: oldArr)
         if !changes.isEmpty {
             let data = cats.map { try? JSONEncoder().encode($0) }
-            UserDefaults.standard.set(data, forKey: "keyTONewFoodsCat_\(TOUserViewModel.shared.lang)")
+            UserDefaults.standard.set(data, forKey: "keyNewFoodsCat_\(UserViewModel.shared.lang)")
         }
         return !changes.isEmpty
     }
 
-    static func load() -> [TONewFoodsCat] {
-        guard let encodedData = UserDefaults.standard.array(forKey: "keyTONewFoodsCat_\(TOUserViewModel.shared.lang)") as? [Data] else {
+    static func load() -> [NewFoodsCat] {
+        guard let encodedData = UserDefaults.standard.array(forKey: "keyNewFoodsCat_\(UserViewModel.shared.lang)") as? [Data] else {
             return []
         }
-        return encodedData.map { try! JSONDecoder().decode(TONewFoodsCat.self, from: $0) }
+        return encodedData.map { try! JSONDecoder().decode(NewFoodsCat.self, from: $0) }
     }
 }
 
-struct TONewFoods: Codable, Identifiable, Equatable {
+struct NewFoods: Codable, Identifiable, Equatable {
     var id: String?
     var name: String?
     var image: String?
@@ -78,7 +78,7 @@ struct TONewFoods: Codable, Identifiable, Equatable {
     
     static let KeyForUserDefaults = "keyTONewFoods"
     
-    static func needUpdate(_ cats: [TONewFoods], cat:String) -> Bool{
+    static func needUpdate(_ cats: [NewFoods], cat:String) -> Bool{
         let oldArr = load(cat)
         let changes = cats.difference(from: oldArr)
         print("ssn save:\(cat)_\("KeyForUserDefaults")")
@@ -89,16 +89,16 @@ struct TONewFoods: Codable, Identifiable, Equatable {
         return !changes.isEmpty
     }
 
-    static func save(_ cats: [TONewFoods], cat:String) {
+    static func save(_ cats: [NewFoods], cat:String) {
         let data = cats.map { try? JSONEncoder().encode($0) }
         UserDefaults.standard.set(data, forKey: "\(cat)_\("KeyForUserDefaults")".encodeBase64()!)
     }
 
-    static func load(_ cat:String) -> [TONewFoods] {
+    static func load(_ cat:String) -> [NewFoods] {
         print("ssn load:\(cat)_\("KeyForUserDefaults")")
         guard let encodedData = UserDefaults.standard.array(forKey: "\(cat)_\("KeyForUserDefaults")".encodeBase64()!) as? [Data] else {
             return []
         }
-        return encodedData.map { try! JSONDecoder().decode(TONewFoods.self, from: $0) }
+        return encodedData.map { try! JSONDecoder().decode(NewFoods.self, from: $0) }
     }
 }

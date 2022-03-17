@@ -1,5 +1,5 @@
 //
-//  TOLanguageListView.swift
+//  LanguageListView.swift
 //  TapOrder
 //
 //  Created by solo on 2022/3/3.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct TOLanguage:Identifiable {
+struct Language:Identifiable {
     var id = UUID()
     let name:String
     let flagName:String
 }
 
-struct TOLanguageListView: View {
-    let rows:[TOLanguage] = [TOLanguage(name: "Japan", flagName: "🇯🇵"),
-                                                TOLanguage(name: "En", flagName: "🇺🇸")]
+struct LanguageListView: View {
+    let rows:[Language] = [Language(name: "Japan", flagName: "🇯🇵"),
+                                                Language(name: "En", flagName: "🇺🇸")]
     @Binding var isSwitch:Bool
-    @Binding var seledLan:TOLanguage?
+    @Binding var seledLan:Language?
     @Binding var lanDidchange:Bool
     var body: some View {
         //ScrollView(.vertical, showsIndicators: false) {
@@ -31,7 +31,7 @@ struct TOLanguageListView: View {
                     .padding(EdgeInsets(top: 30, leading: 20, bottom: 0, trailing: 20))
                 List {
                     ForEach(rows) { one in
-                        TOLanguageCell(item: one, seledItem: $seledLan, lanDidchange: $lanDidchange)
+                        LanguageCell(item: one, seledItem: $seledLan, lanDidchange: $lanDidchange)
                             .listRowSeparator(.hidden)
                             .padding([.leading, .trailing])
                     }
@@ -71,10 +71,10 @@ struct TOLanguageListView: View {
 //    }
 }
 
-struct TOLanguageListView_Previews: PreviewProvider {
+struct LanguageListView_Previews: PreviewProvider {
     static var previews: some View {
-        TOLanguageListView(isSwitch: .constant(false), seledLan: .constant(
-            TOLanguage(name: "Japan", flagName: "🇯🇵")
+        LanguageListView(isSwitch: .constant(false), seledLan: .constant(
+            Language(name: "Japan", flagName: "🇯🇵")
         ), lanDidchange: .constant(false))
     }
 }

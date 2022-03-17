@@ -1,5 +1,5 @@
 //
-//  TOLanguageButtonView.swift
+//  LanguageButtonView.swift
 //  TapOrder
 //
 //  Created by solo on 2022/3/3.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TOLanguageButtonView: View {
+struct LanguageButtonView: View {
     @Binding var isSwitch:Bool
-    @Binding var seledLan:TOLanguage?
+    @Binding var seledLan:Language?
     var body: some View {
         
 //        Button(action: {
@@ -47,8 +47,8 @@ struct TOLanguageButtonView: View {
     }
 }
 
-struct TOLanguageButtonView_Previews: PreviewProvider {
+struct LanguageButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TOLanguageButtonView(isSwitch: .constant(false), seledLan: .constant(TOLanguage(name: "Japan", flagName: "🇯🇵")))
+        LanguageButtonView(isSwitch: .constant(false), seledLan: .constant(Language(name: "Japan", flagName: "🇯🇵")))
     }
 }

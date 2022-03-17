@@ -1,5 +1,5 @@
 //
-//  TOUserViewModel.swift
+//  UserViewModel.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/25/22.
@@ -9,8 +9,8 @@ import Foundation
 import Combine
 import SwiftUI
 
-class TOUserViewModel: ObservableObject {
-    static let shared = TOUserViewModel()
+class UserViewModel: ObservableObject {
+    static let shared = UserViewModel()
     var userid = UUID().uuidString
     
     @State var didChangeLan: Bool = false
@@ -33,6 +33,6 @@ extension Bundle {
 }
 extension String {
     var localizedString: String {
-        TOUserViewModel.shared.bundle!.localizedString(forKey: self)
+        UserViewModel.shared.bundle!.localizedString(forKey: self)
     }
 }

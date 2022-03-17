@@ -1,5 +1,5 @@
 //
-//  TOMenuListViewModel.swift
+//  MenuListViewModel.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/23/22.
@@ -10,16 +10,16 @@ import Combine
 import SwiftUI
 
 // firebase api 版本
-class TOMenuListViewModel: ObservableObject, TOAPIService {
-    var apiSession: APIService
-    var orginalList = [TOFoodsCatItem]()
-    @Published var foodList = [TOFoodsItem]()
-    @Published var catList = [TOFoodsCatItem]()
+class MenuListViewModel: ObservableObject, APIService {
+    var apiSession: APIProtocol
+    var orginalList = [FoodsCatItem]()
+    @Published var foodList = [FoodsItem]()
+    @Published var catList = [FoodsCatItem]()
     @Published var isLoading = false
 
     var cancellables = Set<AnyCancellable>()
     
-    init(apiSession: APIService = APISession()) {
+    init(apiSession: APIProtocol = APISession()) {
         self.apiSession = apiSession
     }
     
@@ -35,12 +35,12 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
                 }
                 
             }) { (rst) in
-                var allFoods = [TOFoodsItem]()
+                var allFoods = [FoodsItem]()
                 for one in rst.data {
                     allFoods.append(contentsOf: one.foods)
                 }
                 // insert all cat
-                self.orginalList.append(TOFoodsCatItem(catgoryId: 0, catgoryName: "All", catgoryPic: "image", foods: allFoods))
+                self.orginalList.append(FoodsCatItem(catgoryId: 0, catgoryName: "All", catgoryPic: "image", foods: allFoods))
                 self.orginalList.append(contentsOf: rst.data)
                 withAnimation {
                     self.foodList = allFoods
@@ -53,7 +53,7 @@ class TOMenuListViewModel: ObservableObject, TOAPIService {
     
     func switchCat(catId:Int) {
         //var isAllCat = true
-        var childFoods = [TOFoodsItem]()
+        var childFoods = [FoodsItem]()
         for one in orginalList {
             if one.catgoryId == catId {
                 //isAllCat = false

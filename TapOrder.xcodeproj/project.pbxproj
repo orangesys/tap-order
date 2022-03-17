@@ -23,81 +23,96 @@
 		8F89225627E2511400526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		8F89225727E2511500526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		8F89225927E2518A00526662 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89225827E2518A00526662 /* KeychainAccess */; };
+		DC931B8C27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
+		DC931B8D27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
+		DC931B8F27E3675300B4169C /* Color+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8E27E3675300B4169C /* Color+TapOrder.swift */; };
+		DC931B9027E3675300B4169C /* Color+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8E27E3675300B4169C /* Color+TapOrder.swift */; };
+		DC931B9127E3675300B4169C /* Color+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8E27E3675300B4169C /* Color+TapOrder.swift */; };
+		DC931B9327E36A9400B4169C /* View+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9227E36A9400B4169C /* View+TapOrder.swift */; };
+		DC931B9427E36A9400B4169C /* View+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9227E36A9400B4169C /* View+TapOrder.swift */; };
+		DC931B9527E36A9400B4169C /* View+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9227E36A9400B4169C /* View+TapOrder.swift */; };
+		DC931B9727E36ABE00B4169C /* String+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9627E36ABE00B4169C /* String+TapOrder.swift */; };
+		DC931B9827E36ABE00B4169C /* String+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9627E36ABE00B4169C /* String+TapOrder.swift */; };
+		DC931B9927E36ABE00B4169C /* String+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9627E36ABE00B4169C /* String+TapOrder.swift */; };
+		DC931B9B27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9A27E36AE900B4169C /* UITabBarController+TapOrder.swift */; };
+		DC931B9C27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9A27E36AE900B4169C /* UITabBarController+TapOrder.swift */; };
+		DC931B9E27E36B5F00B4169C /* Number+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */; };
+		DC931B9F27E36B5F00B4169C /* Number+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */; };
+		DC931BA027E36B5F00B4169C /* Number+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
-		F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
-		F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */; };
+		F81D5FA827D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */; };
+		F81D5FA927D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */; };
 		F81D5FAB27D2F50D009BE108 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */; };
 		F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = F81D5FAE27D34F0C009BE108 /* FlagKit */; };
-		F81D5FB127D76039009BE108 /* TONewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */; };
-		F81D5FB227D76039009BE108 /* TONewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */; };
-		F81D5FB427D764CC009BE108 /* TOFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */; };
-		F81D5FB527D764CC009BE108 /* TOFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */; };
-		F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
-		F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
-		F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
+		F81D5FB127D76039009BE108 /* NewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */; };
+		F81D5FB227D76039009BE108 /* NewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */; };
+		F81D5FB427D764CC009BE108 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* FoodViewModel.swift */; };
+		F81D5FB527D764CC009BE108 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* FoodViewModel.swift */; };
+		F81F14E527C75FE00069FFA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
+		F81F14E727C87C540069FFA8 /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* CartResponse.swift */; };
+		F81F14E927C8BBAA0069FFA8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */; };
 		F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7927C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
 		F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A7E27C8DDF900D80724 /* PopupView */; };
 		F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F8252A8127C8DE7900D80724 /* Kingfisher */; };
-		F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* TOToastView.swift */; };
-		F8252A8527C8E72200D80724 /* TOToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* TOToastView.swift */; };
-		F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
-		F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
-		F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
-		F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TOTestView.swift */; };
+		F8252A8427C8E72200D80724 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* ToastView.swift */; };
+		F8252A8527C8E72200D80724 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* ToastView.swift */; };
+		F8639CB027C615BB00CDE134 /* FoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* FoodsResponse.swift */; };
+		F8639CB227C618EC00CDE134 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* APIService.swift */; };
+		F8639CB427C6198400CDE134 /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* MenuListViewModel.swift */; };
+		F8639CB827C74B5700CDE134 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TestView.swift */; };
 		F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F87541B827DEDF0600480D10 /* Kingfisher */; };
-		F87541BB27DEFD1200480D10 /* ToClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ToClipModel.swift */; };
-		F87541BC27DEFD1200480D10 /* ToClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ToClipModel.swift */; };
+		F87541BB27DEFD1200480D10 /* ClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ClipModel.swift */; };
+		F87541BC27DEFD1200480D10 /* ClipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87541BA27DEFD1200480D10 /* ClipModel.swift */; };
 		F89B4C7E27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		F89B4C7F27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
-		F89B4C8127DB76580006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */; };
-		F89B4C8227DB76580006ED44 /* TOOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */; };
+		F89B4C8127DB76580006ED44 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* OrderViewModel.swift */; };
+		F89B4C8227DB76580006ED44 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C8027DB76580006ED44 /* OrderViewModel.swift */; };
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
-		F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
-		F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */; };
+		F8A57CD827C611BB00138905 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* APIRequest.swift */; };
+		F8A6D5E727CA1B8900BA45FA /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
 		F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = F8A6D5E927CA1C5100BA45FA /* PopupView */; };
 		F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
-		F8B7089927D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
-		F8B7089A27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
-		F8B7089B27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */; };
-		F8B7089D27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
-		F8B7089E27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
-		F8B7089F27D11AD00017AF53 /* TOLanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */; };
-		F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
-		F8B708A227D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
-		F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */; };
+		F8B7089927D09BE20017AF53 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
+		F8B7089A27D09BE20017AF53 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
+		F8B7089B27D09BE20017AF53 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
+		F8B7089D27D11AD00017AF53 /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* LanguageListView.swift */; };
+		F8B7089E27D11AD00017AF53 /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* LanguageListView.swift */; };
+		F8B7089F27D11AD00017AF53 /* LanguageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089C27D11AD00017AF53 /* LanguageListView.swift */; };
+		F8B708A127D11B6B0017AF53 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* LanguageCell.swift */; };
+		F8B708A227D11B6B0017AF53 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* LanguageCell.swift */; };
+		F8B708A327D11B6B0017AF53 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B708A027D11B6B0017AF53 /* LanguageCell.swift */; };
 		F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */; };
 		F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */; };
-		F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
-		F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
+		F8C9EA5927C9F7AB00B9949F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
+		F8C9EA5A27C9F7AB00B9949F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
 		F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */; };
 		F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6327CA1AB100B9949F /* ContentView.swift */; };
 		F8C9EA6627CA1AB200B9949F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6527CA1AB200B9949F /* Assets.xcassets */; };
 		F8C9EA6927CA1AB200B9949F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */; };
 		F8C9EA6E27CA1AB200B9949F /* TapOrderClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
-		F8C9EA7427CA1B1300B9949F /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
-		F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
-		F8C9EA7627CA1B3500B9949F /* TOLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */; };
-		F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* TOToastView.swift */; };
-		F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */; };
-		F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TOTestView.swift */; };
-		F8C9EA7A27CA1B3C00B9949F /* TOOrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */; };
-		F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* TOMenuListView.swift */; };
-		F8C9EA7C27CA1B3C00B9949F /* TOCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* TOCartView.swift */; };
-		F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */; };
-		F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */; };
-		F8C9EA7F27CA1B3C00B9949F /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
+		F8C9EA7327CA1B0C00B9949F /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
+		F8C9EA7527CA1B2300B9949F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* MainView.swift */; };
+		F8C9EA7627CA1B3500B9949F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
+		F8C9EA7727CA1B3700B9949F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* ToastView.swift */; };
+		F8C9EA7827CA1B3C00B9949F /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* OrderListView.swift */; };
+		F8C9EA7927CA1B3C00B9949F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB727C74B5700CDE134 /* TestView.swift */; };
+		F8C9EA7A27CA1B3C00B9949F /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* OrderListCell.swift */; };
+		F8C9EA7B27CA1B3C00B9949F /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* MenuListView.swift */; };
+		F8C9EA7C27CA1B3C00B9949F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* CartView.swift */; };
+		F8C9EA7D27CA1B3C00B9949F /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* CartCell.swift */; };
+		F8C9EA7E27CA1B3C00B9949F /* MenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */; };
+		F8C9EA7F27CA1B3C00B9949F /* MenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* MenuListCell.swift */; };
 		F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
-		F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */; };
-		F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* TOAPIRequest.swift */; };
+		F8C9EA8127CA1B4500B9949F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */; };
+		F8C9EA8227CA1B4500B9949F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* APIRequest.swift */; };
 		F8C9EA8327CA1B4500B9949F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
-		F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */; };
-		F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */; };
-		F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* TOAPIService.swift */; };
-		F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* TOCartResponse.swift */; };
+		F8C9EA8427CA1B4500B9949F /* MenuListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB327C6198400CDE134 /* MenuListViewModel.swift */; };
+		F8C9EA8627CA1B4500B9949F /* FoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CAF27C615BB00CDE134 /* FoodsResponse.swift */; };
+		F8C9EA8727CA1B4500B9949F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8639CB127C618EC00CDE134 /* APIService.swift */; };
+		F8C9EA8827CA1B4500B9949F /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* CartResponse.swift */; };
 		F8ED546B27DF351A00E71459 /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */; };
 		F8ED546C27DF351A00E71459 /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546527DF351A00E71459 /* NWConnection+Extension.swift */; };
 		F8ED546D27DF351A00E71459 /* WebSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ED546727DF351A00E71459 /* WebSocketConnection.swift */; };
@@ -110,26 +125,24 @@
 		F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
 		F8FBF7F827C3269300571A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
 		F8FBF7F927C3269300571A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
-		F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
-		F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80227C343A000571A32 /* TOUtils.swift */; };
-		F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* TOMenuListView.swift */; };
-		F8FBF80D27C363F700571A32 /* TOMenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* TOMenuListView.swift */; };
-		F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */; };
-		F8FBF81027C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */; };
-		F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
-		F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */; };
-		F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
-		F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* TOMainView.swift */; };
-		F8FBF81827C47F2D00571A32 /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
-		F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* TOStartView.swift */; };
-		F8FBF81B27C4A05900571A32 /* TOCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* TOCartView.swift */; };
-		F8FBF81C27C4A05900571A32 /* TOCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* TOCartView.swift */; };
-		F8FBF81E27C4A06C00571A32 /* TOOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */; };
-		F8FBF81F27C4A06C00571A32 /* TOOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */; };
-		F8FBF82127C4AFCB00571A32 /* TOCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */; };
-		F8FBF82227C4AFCB00571A32 /* TOCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */; };
-		F8FBF82427C4AFD600571A32 /* TOOrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */; };
-		F8FBF82527C4AFD600571A32 /* TOOrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */; };
+		F8FBF80C27C363F700571A32 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* MenuListView.swift */; };
+		F8FBF80D27C363F700571A32 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80B27C363F700571A32 /* MenuListView.swift */; };
+		F8FBF80F27C36FF300571A32 /* MenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */; };
+		F8FBF81027C36FF300571A32 /* MenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */; };
+		F8FBF81227C3769E00571A32 /* MenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* MenuListCell.swift */; };
+		F8FBF81327C3769E00571A32 /* MenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* MenuListCell.swift */; };
+		F8FBF81527C472E500571A32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* MainView.swift */; };
+		F8FBF81627C472E500571A32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* MainView.swift */; };
+		F8FBF81827C47F2D00571A32 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
+		F8FBF81927C47F2D00571A32 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
+		F8FBF81B27C4A05900571A32 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* CartView.swift */; };
+		F8FBF81C27C4A05900571A32 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* CartView.swift */; };
+		F8FBF81E27C4A06C00571A32 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* OrderListView.swift */; };
+		F8FBF81F27C4A06C00571A32 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* OrderListView.swift */; };
+		F8FBF82127C4AFCB00571A32 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* CartCell.swift */; };
+		F8FBF82227C4AFCB00571A32 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82027C4AFCB00571A32 /* CartCell.swift */; };
+		F8FBF82427C4AFD600571A32 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* OrderListCell.swift */; };
+		F8FBF82527C4AFD600571A32 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF82327C4AFD600571A32 /* OrderListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,34 +174,39 @@
 		8F89224727E21E8000526662 /* KeyChainUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainUtil.swift; sourceTree = "<group>"; };
 		8F89224A27E2211B00526662 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		8F89224F27E24DC400526662 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931B8E27E3675300B4169C /* Color+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931B9227E36A9400B4169C /* View+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931B9627E36ABE00B4169C /* String+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931B9A27E36AE900B4169C /* UITabBarController+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+TapOrder.swift"; sourceTree = "<group>"; };
 		F81D5FA327D25C52009BE108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA527D25C70009BE108 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TapOrder (iOS).entitlements"; sourceTree = "<group>"; };
-		F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOQuickSignInWithApple.swift; sourceTree = "<group>"; };
+		F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSignInWithApple.swift; sourceTree = "<group>"; };
 		F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TONewFoodsResponse.swift; sourceTree = "<group>"; };
-		F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOFoodViewModel.swift; sourceTree = "<group>"; };
-		F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartViewModel.swift; sourceTree = "<group>"; };
-		F81F14E627C87C540069FFA8 /* TOCartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartResponse.swift; sourceTree = "<group>"; };
-		F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUserViewModel.swift; sourceTree = "<group>"; };
+		F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodsResponse.swift; sourceTree = "<group>"; };
+		F81D5FB327D764CC009BE108 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
+		F81F14E427C75FE00069FFA8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		F81F14E627C87C540069FFA8 /* CartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartResponse.swift; sourceTree = "<group>"; };
+		F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		F8252A7727C5202B00D80724 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		F8252A8327C8E72200D80724 /* TOToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOToastView.swift; sourceTree = "<group>"; };
-		F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOFoodsResponse.swift; sourceTree = "<group>"; };
-		F8639CB127C618EC00CDE134 /* TOAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIService.swift; sourceTree = "<group>"; };
-		F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListViewModel.swift; sourceTree = "<group>"; };
-		F8639CB727C74B5700CDE134 /* TOTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTestView.swift; sourceTree = "<group>"; };
-		F87541BA27DEFD1200480D10 /* ToClipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToClipModel.swift; sourceTree = "<group>"; };
+		F8252A8327C8E72200D80724 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		F8639CAF27C615BB00CDE134 /* FoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsResponse.swift; sourceTree = "<group>"; };
+		F8639CB127C618EC00CDE134 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F8639CB327C6198400CDE134 /* MenuListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListViewModel.swift; sourceTree = "<group>"; };
+		F8639CB727C74B5700CDE134 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		F87541BA27DEFD1200480D10 /* ClipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipModel.swift; sourceTree = "<group>"; };
 		F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
-		F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOOrderViewModel.swift; sourceTree = "<group>"; };
-		F89B4C8B27DB8E020006ED44 /* TOOrderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOOrderViewModel.swift; sourceTree = "<group>"; };
+		F89B4C8027DB76580006ED44 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		F8A57CD327C6091900138905 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F8A57CD527C6098000138905 /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
-		F8A57CD727C611BB00138905 /* TOAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOAPIRequest.swift; sourceTree = "<group>"; };
-		F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageButtonView.swift; sourceTree = "<group>"; };
-		F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageListView.swift; sourceTree = "<group>"; };
-		F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLanguageCell.swift; sourceTree = "<group>"; };
+		F8A57CD727C611BB00138905 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageButtonView.swift; sourceTree = "<group>"; };
+		F8B7089C27D11AD00017AF53 /* LanguageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListView.swift; sourceTree = "<group>"; };
+		F8B708A027D11B6B0017AF53 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStream.swift; sourceTree = "<group>"; };
-		F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOLoadingView.swift; sourceTree = "<group>"; };
+		F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrderClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderClipApp.swift; sourceTree = "<group>"; };
 		F8C9EA6327CA1AB100B9949F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -205,16 +223,15 @@
 		F8FBF7EB27C3269300571A32 /* TapOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FBF7F127C3269300571A32 /* TapOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8FBF7F327C3269300571A32 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		F8FBF80227C343A000571A32 /* TOUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOUtils.swift; sourceTree = "<group>"; };
-		F8FBF80B27C363F700571A32 /* TOMenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListView.swift; sourceTree = "<group>"; };
-		F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuCategoryCell.swift; sourceTree = "<group>"; };
-		F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMenuListCell.swift; sourceTree = "<group>"; };
-		F8FBF81427C472E500571A32 /* TOMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOMainView.swift; sourceTree = "<group>"; };
-		F8FBF81727C47F2D00571A32 /* TOStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOStartView.swift; sourceTree = "<group>"; };
-		F8FBF81A27C4A05900571A32 /* TOCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartView.swift; sourceTree = "<group>"; };
-		F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOOrderListView.swift; sourceTree = "<group>"; };
-		F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCartCell.swift; sourceTree = "<group>"; };
-		F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOOrderListCell.swift; sourceTree = "<group>"; };
+		F8FBF80B27C363F700571A32 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCell.swift; sourceTree = "<group>"; };
+		F8FBF81127C3769E00571A32 /* MenuListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListCell.swift; sourceTree = "<group>"; };
+		F8FBF81427C472E500571A32 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F8FBF81727C47F2D00571A32 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F8FBF81A27C4A05900571A32 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		F8FBF81D27C4A06C00571A32 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
+		F8FBF82027C4AFCB00571A32 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		F8FBF82327C4AFD600571A32 /* OrderListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,14 +266,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F89224227E2190700526662 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				F89B4C8027DB76580006ED44 /* TOOrderViewModel.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		8F89224327E21E4100526662 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +280,12 @@
 			children = (
 				8F89224A27E2211B00526662 /* AppInfo.swift */,
 				8F89224727E21E8000526662 /* KeyChainUtil.swift */,
+				DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */,
+				DC931B8E27E3675300B4169C /* Color+TapOrder.swift */,
+				DC931B9227E36A9400B4169C /* View+TapOrder.swift */,
+				DC931B9627E36ABE00B4169C /* String+TapOrder.swift */,
+				DC931B9A27E36AE900B4169C /* UITabBarController+TapOrder.swift */,
+				DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -278,31 +293,24 @@
 		F8A57CD227C607DB00138905 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F8639CB727C74B5700CDE134 /* TOTestView.swift */,
-				F8FBF82327C4AFD600571A32 /* TOOrderListCell.swift */,
-				F8FBF81D27C4A06C00571A32 /* TOOrderListView.swift */,
-				F8FBF82027C4AFCB00571A32 /* TOCartCell.swift */,
-				F8FBF81A27C4A05900571A32 /* TOCartView.swift */,
-				F8FBF81727C47F2D00571A32 /* TOStartView.swift */,
-				F8FBF81427C472E500571A32 /* TOMainView.swift */,
-				F8FBF81127C3769E00571A32 /* TOMenuListCell.swift */,
-				F8FBF80E27C36FF300571A32 /* TOMenuCategoryCell.swift */,
-				F8FBF80B27C363F700571A32 /* TOMenuListView.swift */,
-				F8252A8327C8E72200D80724 /* TOToastView.swift */,
-				F8C9EA5827C9F7AB00B9949F /* TOLoadingView.swift */,
-				F8B7089827D09BE20017AF53 /* TOLanguageButtonView.swift */,
-				F8B7089C27D11AD00017AF53 /* TOLanguageListView.swift */,
-				F8B708A027D11B6B0017AF53 /* TOLanguageCell.swift */,
+				F8639CB727C74B5700CDE134 /* TestView.swift */,
+				F8FBF82327C4AFD600571A32 /* OrderListCell.swift */,
+				F8FBF81D27C4A06C00571A32 /* OrderListView.swift */,
+				F8FBF82027C4AFCB00571A32 /* CartCell.swift */,
+				F8FBF81A27C4A05900571A32 /* CartView.swift */,
+				F8FBF81727C47F2D00571A32 /* StartView.swift */,
+				F8FBF81427C472E500571A32 /* MainView.swift */,
+				F8FBF81127C3769E00571A32 /* MenuListCell.swift */,
+				F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */,
+				F8FBF80B27C363F700571A32 /* MenuListView.swift */,
+				F8252A8327C8E72200D80724 /* ToastView.swift */,
+				F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */,
+				F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */,
+				F8B7089C27D11AD00017AF53 /* LanguageListView.swift */,
+				F8B708A027D11B6B0017AF53 /* LanguageCell.swift */,
 				F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		F8A6D5E827CA1C5100BA45FA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F8C9EA6027CA1AB100B9949F /* TapOrderClip */ = {
@@ -380,24 +388,22 @@
 				F81D5FA627D2F30A009BE108 /* TapOrder (iOS).entitlements */,
 				F8A57CD327C6091900138905 /* API.swift */,
 				F8A57CD527C6098000138905 /* APISession.swift */,
-				F8A57CD727C611BB00138905 /* TOAPIRequest.swift */,
-				F8639CB127C618EC00CDE134 /* TOAPIService.swift */,
+				F8A57CD727C611BB00138905 /* APIRequest.swift */,
+				F8639CB127C618EC00CDE134 /* APIService.swift */,
 				8F89224327E21E4100526662 /* Login */,
 				8F89224627E21E5900526662 /* Util */,
-				F81F14E627C87C540069FFA8 /* TOCartResponse.swift */,
-				F81F14E427C75FE00069FFA8 /* TOCartViewModel.swift */,
-				F87541BA27DEFD1200480D10 /* ToClipModel.swift */,
-				F8639CAF27C615BB00CDE134 /* TOFoodsResponse.swift */,
-				F81D5FB327D764CC009BE108 /* TOFoodViewModel.swift */,
-				F8639CB327C6198400CDE134 /* TOMenuListViewModel.swift */,
-				F81D5FB027D76039009BE108 /* TONewFoodsResponse.swift */,
-				F81D5FA727D2F3F0009BE108 /* TOQuickSignInWithApple.swift */,
-				F81F14E827C8BBAA0069FFA8 /* TOUserViewModel.swift */,
+				F81F14E627C87C540069FFA8 /* CartResponse.swift */,
+				F81F14E427C75FE00069FFA8 /* CartViewModel.swift */,
+				F87541BA27DEFD1200480D10 /* ClipModel.swift */,
+				F8639CAF27C615BB00CDE134 /* FoodsResponse.swift */,
+				F81D5FB327D764CC009BE108 /* FoodViewModel.swift */,
+				F8639CB327C6198400CDE134 /* MenuListViewModel.swift */,
+				F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */,
+				F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */,
+				F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */,
 				F8BFABDC27CBCEF600C69D32 /* WebSocketStream.swift */,
-				F8A6D5E827CA1C5100BA45FA /* Frameworks */,
+				F89B4C8027DB76580006ED44 /* OrderViewModel.swift */,
 				F81D5FA427D25C52009BE108 /* Localizable.strings */,
-				F89B4C8B27DB8E020006ED44 /* TOOrderViewModel.swift */,
-				8F89224227E2190700526662 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,7 +415,6 @@
 				F8FBF7E527C3269200571A32 /* ContentView.swift */,
 				8F89224F27E24DC400526662 /* ContentViewModel.swift */,
 				F8FBF7E627C3269300571A32 /* Assets.xcassets */,
-				F8FBF80227C343A000571A32 /* TOUtils.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -587,47 +592,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8C9EA7427CA1B1300B9949F /* TOUtils.swift in Sources */,
-				F8B7089B27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
+				F8B7089B27D09BE20017AF53 /* LanguageButtonView.swift in Sources */,
+				DC931B9127E3675300B4169C /* Color+TapOrder.swift in Sources */,
 				F8C9EA8327CA1B4500B9949F /* API.swift in Sources */,
-				F8C9EA7727CA1B3700B9949F /* TOToastView.swift in Sources */,
+				F8C9EA7727CA1B3700B9949F /* ToastView.swift in Sources */,
 				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
 				8F89225527E2510A00526662 /* LoginViewModel.swift in Sources */,
-				F89B4C8227DB76580006ED44 /* TOOrderViewModel.swift in Sources */,
-				F8C9EA7E27CA1B3C00B9949F /* TOMenuCategoryCell.swift in Sources */,
-				F81D5FB527D764CC009BE108 /* TOFoodViewModel.swift in Sources */,
+				DC931B9927E36ABE00B4169C /* String+TapOrder.swift in Sources */,
+				F89B4C8227DB76580006ED44 /* OrderViewModel.swift in Sources */,
+				F8C9EA7E27CA1B3C00B9949F /* MenuCategoryCell.swift in Sources */,
+				F81D5FB527D764CC009BE108 /* FoodViewModel.swift in Sources */,
 				F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */,
-				F8C9EA7527CA1B2300B9949F /* TOMainView.swift in Sources */,
-				F8B7089F27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
-				F8C9EA7627CA1B3500B9949F /* TOLoadingView.swift in Sources */,
-				F8C9EA8627CA1B4500B9949F /* TOFoodsResponse.swift in Sources */,
+				F8C9EA7527CA1B2300B9949F /* MainView.swift in Sources */,
+				F8B7089F27D11AD00017AF53 /* LanguageListView.swift in Sources */,
+				F8C9EA7627CA1B3500B9949F /* LoadingView.swift in Sources */,
+				F8C9EA8627CA1B4500B9949F /* FoodsResponse.swift in Sources */,
+				DC931B8D27E3672900B4169C /* UIColor+TapOrder.swift in Sources */,
 				F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
-				F8C9EA7827CA1B3C00B9949F /* TOOrderListView.swift in Sources */,
-				F87541BC27DEFD1200480D10 /* ToClipModel.swift in Sources */,
-				F81D5FA927D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
-				F8C9EA8827CA1B4500B9949F /* TOCartResponse.swift in Sources */,
-				F8C9EA7927CA1B3C00B9949F /* TOTestView.swift in Sources */,
+				F8C9EA7827CA1B3C00B9949F /* OrderListView.swift in Sources */,
+				F87541BC27DEFD1200480D10 /* ClipModel.swift in Sources */,
+				F81D5FA927D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */,
+				DC931B9C27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */,
+				F8C9EA8827CA1B4500B9949F /* CartResponse.swift in Sources */,
+				F8C9EA7927CA1B3C00B9949F /* TestView.swift in Sources */,
+				DC931B9527E36A9400B4169C /* View+TapOrder.swift in Sources */,
 				F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */,
 				8F89224D27E2211B00526662 /* AppInfo.swift in Sources */,
-				F8C9EA7327CA1B0C00B9949F /* TOStartView.swift in Sources */,
+				F8C9EA7327CA1B0C00B9949F /* StartView.swift in Sources */,
 				8F89224927E21E8000526662 /* KeyChainUtil.swift in Sources */,
-				F8C9EA8427CA1B4500B9949F /* TOMenuListViewModel.swift in Sources */,
+				F8C9EA8427CA1B4500B9949F /* MenuListViewModel.swift in Sources */,
 				8F89225227E24DC400526662 /* ContentViewModel.swift in Sources */,
-				F8B708A327D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				F8B708A327D11B6B0017AF53 /* LanguageCell.swift in Sources */,
 				F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */,
-				F8C9EA8727CA1B4500B9949F /* TOAPIService.swift in Sources */,
-				F8C9EA8227CA1B4500B9949F /* TOAPIRequest.swift in Sources */,
-				F8A6D5E727CA1B8900BA45FA /* TOCartViewModel.swift in Sources */,
-				F8C9EA7F27CA1B3C00B9949F /* TOMenuListCell.swift in Sources */,
-				F81D5FB227D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
-				F8C9EA7B27CA1B3C00B9949F /* TOMenuListView.swift in Sources */,
+				F8C9EA8727CA1B4500B9949F /* APIService.swift in Sources */,
+				F8C9EA8227CA1B4500B9949F /* APIRequest.swift in Sources */,
+				F8A6D5E727CA1B8900BA45FA /* CartViewModel.swift in Sources */,
+				F8C9EA7F27CA1B3C00B9949F /* MenuListCell.swift in Sources */,
+				DC931BA027E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
+				F81D5FB227D76039009BE108 /* NewFoodsResponse.swift in Sources */,
+				F8C9EA7B27CA1B3C00B9949F /* MenuListView.swift in Sources */,
 				8F89225727E2511500526662 /* SignInWithApple.swift in Sources */,
-				F8C9EA7D27CA1B3C00B9949F /* TOCartCell.swift in Sources */,
+				F8C9EA7D27CA1B3C00B9949F /* CartCell.swift in Sources */,
 				F8ED546C27DF351A00E71459 /* NWConnection+Extension.swift in Sources */,
 				F8ED546E27DF351A00E71459 /* WebSocketConnection.swift in Sources */,
-				F8C9EA8127CA1B4500B9949F /* TOUserViewModel.swift in Sources */,
-				F8C9EA7A27CA1B3C00B9949F /* TOOrderListCell.swift in Sources */,
-				F8C9EA7C27CA1B3C00B9949F /* TOCartView.swift in Sources */,
+				F8C9EA8127CA1B4500B9949F /* UserViewModel.swift in Sources */,
+				F8C9EA7A27CA1B3C00B9949F /* OrderListCell.swift in Sources */,
+				F8C9EA7C27CA1B3C00B9949F /* CartView.swift in Sources */,
 				F89B4C7F27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,47 +646,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FBF81827C47F2D00571A32 /* TOStartView.swift in Sources */,
-				F8B7089927D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
+				F8FBF81827C47F2D00571A32 /* StartView.swift in Sources */,
+				F8B7089927D09BE20017AF53 /* LanguageButtonView.swift in Sources */,
+				DC931B8F27E3675300B4169C /* Color+TapOrder.swift in Sources */,
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
 				F8A57CD627C6098000138905 /* APISession.swift in Sources */,
 				F81D5FAB27D2F50D009BE108 /* LoginViewModel.swift in Sources */,
-				F8FBF81227C3769E00571A32 /* TOMenuListCell.swift in Sources */,
-				F89B4C8127DB76580006ED44 /* TOOrderViewModel.swift in Sources */,
+				F8FBF81227C3769E00571A32 /* MenuListCell.swift in Sources */,
+				DC931B9727E36ABE00B4169C /* String+TapOrder.swift in Sources */,
+				F89B4C8127DB76580006ED44 /* OrderViewModel.swift in Sources */,
 				8F89224827E21E8000526662 /* KeyChainUtil.swift in Sources */,
-				F8639CB427C6198400CDE134 /* TOMenuListViewModel.swift in Sources */,
-				F81D5FB427D764CC009BE108 /* TOFoodViewModel.swift in Sources */,
-				F81F14E527C75FE00069FFA8 /* TOCartViewModel.swift in Sources */,
-				F8639CB227C618EC00CDE134 /* TOAPIService.swift in Sources */,
-				F8B7089D27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
-				F8FBF82127C4AFCB00571A32 /* TOCartCell.swift in Sources */,
-				F81F14E727C87C540069FFA8 /* TOCartResponse.swift in Sources */,
+				F8639CB427C6198400CDE134 /* MenuListViewModel.swift in Sources */,
+				F81D5FB427D764CC009BE108 /* FoodViewModel.swift in Sources */,
+				F81F14E527C75FE00069FFA8 /* CartViewModel.swift in Sources */,
+				F8639CB227C618EC00CDE134 /* APIService.swift in Sources */,
+				F8B7089D27D11AD00017AF53 /* LanguageListView.swift in Sources */,
+				F8FBF82127C4AFCB00571A32 /* CartCell.swift in Sources */,
+				DC931B8C27E3672900B4169C /* UIColor+TapOrder.swift in Sources */,
+				F81F14E727C87C540069FFA8 /* CartResponse.swift in Sources */,
 				F8BFABDD27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
-				F8FBF81527C472E500571A32 /* TOMainView.swift in Sources */,
-				F87541BB27DEFD1200480D10 /* ToClipModel.swift in Sources */,
+				F8FBF81527C472E500571A32 /* MainView.swift in Sources */,
+				F87541BB27DEFD1200480D10 /* ClipModel.swift in Sources */,
+				DC931B9B27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */,
 				8F89224B27E2211B00526662 /* AppInfo.swift in Sources */,
-				F81D5FA827D2F3F0009BE108 /* TOQuickSignInWithApple.swift in Sources */,
-				F8C9EA5927C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
-				F81F14E927C8BBAA0069FFA8 /* TOUserViewModel.swift in Sources */,
-				F8FBF80327C343A000571A32 /* TOUtils.swift in Sources */,
-				F8252A8427C8E72200D80724 /* TOToastView.swift in Sources */,
+				F81D5FA827D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */,
+				DC931B9327E36A9400B4169C /* View+TapOrder.swift in Sources */,
+				F8C9EA5927C9F7AB00B9949F /* LoadingView.swift in Sources */,
+				F81F14E927C8BBAA0069FFA8 /* UserViewModel.swift in Sources */,
+				F8252A8427C8E72200D80724 /* ToastView.swift in Sources */,
 				8F89224527E21E5400526662 /* SignInWithApple.swift in Sources */,
-				F8FBF80C27C363F700571A32 /* TOMenuListView.swift in Sources */,
-				F8B708A127D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
+				F8FBF80C27C363F700571A32 /* MenuListView.swift in Sources */,
+				F8B708A127D11B6B0017AF53 /* LanguageCell.swift in Sources */,
 				F8ED546F27DF351A00E71459 /* NWWebSocket.swift in Sources */,
-				F8A57CD827C611BB00138905 /* TOAPIRequest.swift in Sources */,
-				F8FBF80F27C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
-				F8639CB827C74B5700CDE134 /* TOTestView.swift in Sources */,
+				F8A57CD827C611BB00138905 /* APIRequest.swift in Sources */,
+				F8FBF80F27C36FF300571A32 /* MenuCategoryCell.swift in Sources */,
+				F8639CB827C74B5700CDE134 /* TestView.swift in Sources */,
 				F8A57CD427C6091900138905 /* API.swift in Sources */,
-				F81D5FB127D76039009BE108 /* TONewFoodsResponse.swift in Sources */,
+				DC931B9E27E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
+				F81D5FB127D76039009BE108 /* NewFoodsResponse.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
-				F8FBF81E27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
+				F8FBF81E27C4A06C00571A32 /* OrderListView.swift in Sources */,
 				F8ED546B27DF351A00E71459 /* NWConnection+Extension.swift in Sources */,
 				F8ED546D27DF351A00E71459 /* WebSocketConnection.swift in Sources */,
-				F8639CB027C615BB00CDE134 /* TOFoodsResponse.swift in Sources */,
+				F8639CB027C615BB00CDE134 /* FoodsResponse.swift in Sources */,
 				8F89225027E24DC400526662 /* ContentViewModel.swift in Sources */,
-				F8FBF81B27C4A05900571A32 /* TOCartView.swift in Sources */,
-				F8FBF82427C4AFD600571A32 /* TOOrderListCell.swift in Sources */,
+				F8FBF81B27C4A05900571A32 /* CartView.swift in Sources */,
+				F8FBF82427C4AFD600571A32 /* OrderListCell.swift in Sources */,
 				F89B4C7E27DA292F0006ED44 /* RefreshableScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,25 +700,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FBF81927C47F2D00571A32 /* TOStartView.swift in Sources */,
-				F8B7089E27D11AD00017AF53 /* TOLanguageListView.swift in Sources */,
+				F8FBF81927C47F2D00571A32 /* StartView.swift in Sources */,
+				F8B7089E27D11AD00017AF53 /* LanguageListView.swift in Sources */,
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
-				F8FBF81327C3769E00571A32 /* TOMenuListCell.swift in Sources */,
+				F8FBF81327C3769E00571A32 /* MenuListCell.swift in Sources */,
 				8F89225127E24DC400526662 /* ContentViewModel.swift in Sources */,
 				8F89224E27E2246500526662 /* KeyChainUtil.swift in Sources */,
-				F8FBF82227C4AFCB00571A32 /* TOCartCell.swift in Sources */,
-				F8FBF81627C472E500571A32 /* TOMainView.swift in Sources */,
-				F8252A8527C8E72200D80724 /* TOToastView.swift in Sources */,
-				F8FBF80427C343A000571A32 /* TOUtils.swift in Sources */,
-				F8B708A227D11B6B0017AF53 /* TOLanguageCell.swift in Sources */,
-				F8FBF80D27C363F700571A32 /* TOMenuListView.swift in Sources */,
-				F8FBF81027C36FF300571A32 /* TOMenuCategoryCell.swift in Sources */,
+				F8FBF82227C4AFCB00571A32 /* CartCell.swift in Sources */,
+				DC931B9027E3675300B4169C /* Color+TapOrder.swift in Sources */,
+				F8FBF81627C472E500571A32 /* MainView.swift in Sources */,
+				DC931B9F27E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
+				F8252A8527C8E72200D80724 /* ToastView.swift in Sources */,
+				F8B708A227D11B6B0017AF53 /* LanguageCell.swift in Sources */,
+				F8FBF80D27C363F700571A32 /* MenuListView.swift in Sources */,
+				DC931B9827E36ABE00B4169C /* String+TapOrder.swift in Sources */,
+				DC931B9427E36A9400B4169C /* View+TapOrder.swift in Sources */,
+				F8FBF81027C36FF300571A32 /* MenuCategoryCell.swift in Sources */,
 				F8FBF7F527C3269300571A32 /* TapOrderApp.swift in Sources */,
-				F8B7089A27D09BE20017AF53 /* TOLanguageButtonView.swift in Sources */,
-				F8FBF81F27C4A06C00571A32 /* TOOrderListView.swift in Sources */,
-				F8FBF81C27C4A05900571A32 /* TOCartView.swift in Sources */,
-				F8C9EA5A27C9F7AB00B9949F /* TOLoadingView.swift in Sources */,
-				F8FBF82527C4AFD600571A32 /* TOOrderListCell.swift in Sources */,
+				F8B7089A27D09BE20017AF53 /* LanguageButtonView.swift in Sources */,
+				F8FBF81F27C4A06C00571A32 /* OrderListView.swift in Sources */,
+				F8FBF81C27C4A05900571A32 /* CartView.swift in Sources */,
+				F8C9EA5A27C9F7AB00B9949F /* LoadingView.swift in Sources */,
+				F8FBF82527C4AFD600571A32 /* OrderListCell.swift in Sources */,
 				8F89224C27E2211B00526662 /* AppInfo.swift in Sources */,
 				8F89225627E2511400526662 /* SignInWithApple.swift in Sources */,
 				8F89225427E2510A00526662 /* LoginViewModel.swift in Sources */,
@@ -741,7 +759,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 22031701;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -759,7 +777,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -778,7 +796,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 22031701;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -796,7 +814,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -930,7 +948,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TapOrder (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 22031701;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -945,7 +963,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order";
 				PRODUCT_NAME = TapOrder;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -966,7 +984,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TapOrder (iOS).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 22031701;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -981,7 +999,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order";
 				PRODUCT_NAME = TapOrder;
 				PROVISIONING_PROFILE_SPECIFIER = "";

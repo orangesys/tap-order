@@ -1,5 +1,5 @@
 //
-//  TOCartViewModel.swift
+//  CartViewModel.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/24/22.
@@ -10,9 +10,9 @@ import Combine
 import SwiftUI
 import Network
 
-class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
+class OrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     
-    @Published var newOrderList =  [TOCartItem]()
+    @Published var newOrderList =  [CartItem]()
     @Published var isError = false
     @Published var totalStr = ""
     var errorStr = ""
@@ -64,13 +64,13 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
         let data = string.data(using: .utf8)!
         do {
-            let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
+            let fjson = try JSONDecoder().decode(CartResponse.self, from: data)
             print("Text received \(string), \(fjson.items.count)")
             //print(fjson)
             //print(fjson.items.map({$0.value}))
             let farrJson = fjson.items.map({$0.value})
-//            let currentUser = TOUserViewModel.shared.userid
-//            var currentUserValue = [TOCartItem]()
+//            let currentUser = UserViewModel.shared.userid
+//            var currentUserValue = [CartItem]()
 //            let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
 //                .filter() {
 //                    // array first to group by dic
@@ -82,7 +82,7 @@ class TOOrderViewModel: ObservableObject, WebSocketConnectionDelegate {
 //                }
 //            //print(groupUserDic)
 //            // 排序当前用户最上面
-//            var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
+//            var allarr:[CartItem] = groupUserDic.flatMap({$0.value})
 //            allarr.insert(contentsOf: currentUserValue, at: 0)
             self.newOrderList = farrJson
             self.totalStr = "\(fjson.total)"

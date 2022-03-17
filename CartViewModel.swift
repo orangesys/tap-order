@@ -1,5 +1,5 @@
 //
-//  TOCartViewModel.swift
+//  CartViewModel.swift
 //  TapOrder (iOS)
 //
 //  Created by solo on 2/24/22.
@@ -10,10 +10,10 @@ import Combine
 import SwiftUI
 import Network
 
-class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
+class CartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
-    @Published var cartList =  [[TOCartItemForDel]]() // extraordinary
-    @Published var newCartList =  [TOCartItem]()
+    @Published var cartList =  [[CartItemForDel]]() // extraordinary
+    @Published var newCartList =  [CartItem]()
     @Published var badgeNum = 0
     @Published var isLoading = false
     @Published var isError = false
@@ -70,12 +70,12 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
         print("Text received \(string)")
         let data = string.data(using: .utf8)!
         do {
-            let fjson = try JSONDecoder().decode(TOCartResponse.self, from: data)
+            let fjson = try JSONDecoder().decode(CartResponse.self, from: data)
             //print(fjson)
             //print(fjson.items.map({$0.value}))
             let farrJson = fjson.items.map({$0.value})
-            let currentUser = TOUserViewModel.shared.userid
-            var currentUserValue = [TOCartItem]()
+            let currentUser = UserViewModel.shared.userid
+            var currentUserValue = [CartItem]()
             let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
                 .filter() {
                     // array first to group by dic
@@ -87,7 +87,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
                 }
             //print(groupUserDic)
             // 排序当前用户最上面
-            var allarr:[TOCartItem] = groupUserDic.flatMap({$0.value})
+            var allarr:[CartItem] = groupUserDic.flatMap({$0.value})
             allarr.insert(contentsOf: currentUserValue, at: 0)
             self.newCartList = allarr
             self.badgeNum = fjson.items.count
@@ -112,10 +112,10 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     /// add from menu list
     /// - Parameter food: food object
-    func sendToCart(food:TONewFoods) {
+    func sendToCart(food:NewFoods) {
         self.isLoading = true
         var food2 = food
-        food2.customer_id = TOUserViewModel.shared.userid
+        food2.customer_id = UserViewModel.shared.userid
         food2.count = 1
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode([food2]), let jsonString = String(data: jsonData, encoding: .utf8) {
@@ -125,7 +125,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
         }
     }
     
-    func addToCart(food:TOCartItem) {
+    func addToCart(food:CartItem) {
         self.isLoading = true
         var food2 = food
         food2.count = food2.count + 1
@@ -137,7 +137,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
         }
     }
     
-    func deleteFromCart(food:TOCartItem) {
+    func deleteFromCart(food:CartItem) {
         self.isLoading = true
         var food2 = food
         food2.count = food2.count - 1
@@ -149,7 +149,7 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
         }
     }
     
-    func removeFromCart(food:TOCartItem) {
+    func removeFromCart(food:CartItem) {
         self.isLoading = true
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode([food]), let jsonString = String(data: jsonData, encoding: .utf8) {
@@ -159,11 +159,11 @@ class TOCartViewModel: ObservableObject, WebSocketConnectionDelegate {
         }
     }
     
-    func sendOrder(foods:[TOCartItem]) {
+    func sendOrder(foods:[CartItem]) {
         self.isLoading = true
-        var sendDic = [TOCartSendOrder]()
+        var sendDic = [CartSendOrder]()
         for one in foods {
-            sendDic.append(TOCartSendOrder(uuid: one.sid))
+            sendDic.append(CartSendOrder(uuid: one.sid))
         }
         let encoder = JSONEncoder()
         if let jsonData = try? encoder.encode(sendDic), let jsonString = String(data: jsonData, encoding: .utf8) {

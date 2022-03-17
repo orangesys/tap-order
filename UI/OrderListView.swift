@@ -1,5 +1,5 @@
 //
-//  TOOrderListView.swift
+//  OrderListView.swift
 //  TapOrder
 //
 //  Created by solo on 2/22/22.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct TOOrderListView: View {
+struct OrderListView: View {
     let dataList = [1,2,3,1,2,3]
     
-    @StateObject var orderVM = TOOrderViewModel(urlstr: String.urlStr(req: .order))
+    @StateObject var orderVM = OrderViewModel(urlstr: String.urlStr(req: .order))
     @Binding var lanDidChange:Bool
     
     init(lanChange:Binding<Bool>) {
@@ -24,7 +24,7 @@ struct TOOrderListView: View {
         VStack {
             List {
                 ForEach(orderVM.newOrderList, id:\.sid) { one in
-                    TOOrderListCell(item: one)
+                    OrderListCell(item: one)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                         .listRowSeparator(.hidden)
@@ -59,8 +59,8 @@ struct TOOrderListView: View {
     }
 }
 
-struct TOOrderListView_Previews: PreviewProvider {
+struct OrderListView_Previews: PreviewProvider {
     static var previews: some View {
-        TOOrderListView(lanChange: .constant(false))
+        OrderListView(lanChange: .constant(false))
     }
 }

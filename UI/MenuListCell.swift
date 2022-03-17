@@ -1,5 +1,5 @@
 //
-//  TOMenuListCell.swift
+//  MenuListCell.swift
 //  TapOrder
 //
 //  Created by solo on 2/21/22.
@@ -8,14 +8,14 @@
 import SwiftUI
 import Kingfisher
 
-struct TOMenuListCell: View , Equatable{
+struct MenuListCell: View , Equatable{
     var imgName = "chicken"
     var catName = "chicken\nbugger"
     var priceName = "20"
     
-    var item:TONewFoods
+    var item:NewFoods
     
-    @EnvironmentObject var globalCart: TOCartViewModel
+    @EnvironmentObject var globalCart: CartViewModel
 
     var body: some View {
         
@@ -24,7 +24,7 @@ struct TOMenuListCell: View , Equatable{
                 .resizable()
                 .scaledToFit()
                 .font(.system(size: 30))
-                .frame(width: .TOMenuCardWidth - 20, height: 65)
+                .frame(width: .MenuCardWidth - 20, height: 65)
                 //.background(Color.themeColor)
                 .cornerRadius(20)
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
@@ -56,13 +56,13 @@ struct TOMenuListCell: View , Equatable{
         .cornerRadius(20)
     }
     
-    static func == (lhs: TOMenuListCell, rhs: TOMenuListCell) -> Bool {
+    static func == (lhs: MenuListCell, rhs: MenuListCell) -> Bool {
         return lhs.item.id == rhs.item.id && lhs.item.name == rhs.item.name
     }
 }
 
-struct TOMenuListCell_Previews: PreviewProvider {
+struct MenuListCell_Previews: PreviewProvider {
     static var previews: some View {
-        TOMenuListCell(item: TONewFoods(id: "123", name: "name"))
+        MenuListCell(item: NewFoods(id: "123", name: "name"))
     }
 }
