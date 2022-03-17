@@ -9,20 +9,22 @@ import KeychainAccess
 
 private let AppleUserIdentifierKey = "kTapOrderAppleUserIdentifier"
 private let AppleUserIdentifierVersionKey = "kAppleUserIdentifierVersion"
-private let TapOrderAppGroup = "group.oeoly.TapOrder"
+private let TapOrderAppGroup = "VBHPLCMQNB.io.orangesys.tap-order"
 
 class KeyChainUtil {
     
     static func saveFromApple(_ userIdentifier: String) {
-        let keychain = Keychain(accessGroup: TapOrderAppGroup)
+        let keychain = Keychain(service: TapOrderAppGroup)
         do {
             try keychain.set("\(userIdentifier)", key: AppleUserIdentifierKey)
             try keychain.set("\(AppInfo.appVersion),\(AppInfo.buildNumber)", key: AppleUserIdentifierVersionKey)
-        } catch {}
+        } catch let error {
+            print(error)
+        }
     }
     
     static func fetchFromAppleUser() -> String? {
-        let keychain = Keychain(accessGroup: TapOrderAppGroup)
+        let keychain = Keychain(service: TapOrderAppGroup)
         
         var uid: String?
         do {
@@ -33,7 +35,7 @@ class KeyChainUtil {
     }
     
     static func clearAppleID() {
-        let keychain = Keychain(accessGroup: TapOrderAppGroup)
+        let keychain = Keychain(service: TapOrderAppGroup)
         do {
             try keychain.remove(AppleUserIdentifierKey)
             try keychain.remove(AppleUserIdentifierVersionKey)

@@ -11,7 +11,6 @@ import Combine
 @main
 struct TapOrderApp: App {
     @ObservedObject var contentViewModel = ContentViewModel.shared
-    var cancleAble: Cancellable?
     init() {
       
     }

@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct TapOrderClipApp: App {
+    @ObservedObject var contentViewModel = ContentViewModel.shared
+    init() {
+      
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(rootPage: $contentViewModel.rootPage)
         }
     }
 }

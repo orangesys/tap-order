@@ -48,6 +48,7 @@
 		DC931BB127E39CC000B4169C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
 		DC931BB227E39CD200B4169C /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		DC931BB327E39CDB00B4169C /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
+		DC931BB427E3B15E00B4169C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA827D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */; };
@@ -95,7 +96,6 @@
 		F8C9EA5927C9F7AB00B9949F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
 		F8C9EA5A27C9F7AB00B9949F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
 		F8C9EA6227CA1AB100B9949F /* TapOrderClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */; };
-		F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA6327CA1AB100B9949F /* ContentView.swift */; };
 		F8C9EA6627CA1AB200B9949F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6527CA1AB200B9949F /* Assets.xcassets */; };
 		F8C9EA6927CA1AB200B9949F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */; };
 		F8C9EA6E27CA1AB200B9949F /* TapOrderClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -606,7 +606,7 @@
 			files = (
 				DC931B9127E3675300B4169C /* Color+TapOrder.swift in Sources */,
 				F8C9EA8327CA1B4500B9949F /* API.swift in Sources */,
-				F8C9EA6427CA1AB100B9949F /* ContentView.swift in Sources */,
+				DC931BB427E3B15E00B4169C /* ContentView.swift in Sources */,
 				8F89225527E2510A00526662 /* LoginViewModel.swift in Sources */,
 				DC931B9927E36ABE00B4169C /* String+TapOrder.swift in Sources */,
 				F89B4C8227DB76580006ED44 /* OrderViewModel.swift in Sources */,
@@ -773,7 +773,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -810,7 +810,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -962,7 +962,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -998,7 +998,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1035,7 +1035,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1065,7 +1065,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 22031801;
+				CURRENT_PROJECT_VERSION = 22031802;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

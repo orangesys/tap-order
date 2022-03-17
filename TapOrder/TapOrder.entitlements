@@ -10,5 +10,9 @@
 	<array>
 		<string>group.oeoly.TapOrder</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>VBHPLCMQNB.io.orangesys.tap-order</string>
+	</array>
 </dict>
 </plist>
