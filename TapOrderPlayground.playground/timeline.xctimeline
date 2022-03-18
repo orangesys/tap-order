@@ -2,5 +2,10 @@
 <Timeline
    version = "3.0">
    <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/felix/Developer/tap-order/TapOrderPlayground.playground#CharacterRangeLen=1962&amp;CharacterRangeLoc=0&amp;EndingColumnNumber=0&amp;EndingLineNumber=76&amp;StartingColumnNumber=0&amp;StartingLineNumber=0&amp;Timestamp=669269324.245019"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>
