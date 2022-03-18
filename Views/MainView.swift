@@ -14,7 +14,7 @@ struct MainView: View {
     @StateObject var globalCartList = CartViewModel(urlstr: String.urlStr(req: .cart))
     @State var isSwitchLan = UserViewModel.shared.didChangeLan
     @State var lanDidChange = false
-    @State var selectedLan:Language? = Language(name: "En", flagName: "🇺🇸")
+    @State var selectedLan:Language? = .en
     // let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     init() {

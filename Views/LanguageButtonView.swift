@@ -38,7 +38,7 @@ struct LanguageButtonView: View {
                 self.isSwitch = !self.isSwitch
             }
         }) {
-            Text(seledLan!.flagName)
+            Text(seledLan!.flag)
                 .foregroundColor(Color.black)
                 .font(.system(size: 20))
         }
@@ -49,6 +49,6 @@ struct LanguageButtonView: View {
 
 struct LanguageButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageButtonView(isSwitch: .constant(false), seledLan: .constant(Language(name: "Japan", flagName: "🇯🇵")))
+        LanguageButtonView(isSwitch: .constant(false), seledLan: .constant(.ja))
     }
 }

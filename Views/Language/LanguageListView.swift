@@ -7,18 +7,23 @@
 
 import SwiftUI
 
-struct Language:Identifiable {
+struct Language: Identifiable {
+    static let zh: Language = Language(flag: "🇨🇳", displayName: "中文")
+    static let ja: Language = Language(flag: "🇯🇵", displayName: "日本語")
+    static let en: Language = Language(flag: "🇺🇸", displayName: "English")
+    
     var id = UUID()
-    let name:String
-    let flagName:String
+    var flag: String
+    var displayName: String
 }
 
 struct LanguageListView: View {
-    let rows:[Language] = [Language(name: "Japan", flagName: "🇯🇵"),
-                                                Language(name: "En", flagName: "🇺🇸")]
+    let rows: [Language] = [.ja, .en, .zh]
+    
     @Binding var isSwitch:Bool
     @Binding var seledLan:Language?
     @Binding var lanDidchange:Bool
+    
     var body: some View {
         //ScrollView(.vertical, showsIndicators: false) {
         
@@ -73,8 +78,8 @@ struct LanguageListView: View {
 
 struct LanguageListView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageListView(isSwitch: .constant(false), seledLan: .constant(
-            Language(name: "Japan", flagName: "🇯🇵")
-        ), lanDidchange: .constant(false))
+        LanguageListView(isSwitch: .constant(false),
+                         seledLan: .constant(.ja),
+                         lanDidchange: .constant(false))
     }
 }

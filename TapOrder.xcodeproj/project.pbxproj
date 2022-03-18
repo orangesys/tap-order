@@ -184,6 +184,7 @@
 		DC931B9D27E36B5F00B4169C /* Number+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+TapOrder.swift"; sourceTree = "<group>"; };
 		DC931BA227E3998F00B4169C /* TapOrderPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TapOrderPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC931BA927E39BA100B4169C /* Bundle+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+TapOrder.swift"; sourceTree = "<group>"; };
+		DC931BB627E4EEF600B4169C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F81D5FA327D25C52009BE108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA527D25C70009BE108 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA627D2F30A009BE108 /* TapOrder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapOrder.entitlements; sourceTree = "<group>"; };
@@ -547,6 +548,7 @@
 				en,
 				Base,
 				ja,
+				"zh-Hant",
 			);
 			mainGroup = F8FBF7DE27C3269100571A32;
 			packageReferences = (
@@ -758,6 +760,7 @@
 			children = (
 				F81D5FA327D25C52009BE108 /* en */,
 				F81D5FA527D25C70009BE108 /* ja */,
+				DC931BB627E4EEF600B4169C /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
