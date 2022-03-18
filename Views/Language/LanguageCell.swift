@@ -10,6 +10,7 @@ import SwiftUI
 struct LanguageCell: View {
     var item: Language
     @Binding var seledItem:Language?
+    @Binding var isSwitch:Bool
     @EnvironmentObject var userSetting: UserViewModel
     @Binding var lanDidchange:Bool
     var body: some View {
@@ -51,12 +52,15 @@ struct LanguageCell: View {
             } else {
                 userSetting.lang = "zh-Hant"
             }
+            isSwitch.toggle()
         }
     }
 }
 
 struct LanguageCell_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageCell(item: .ja, seledItem: .constant(.ja), lanDidchange: .constant(false))
+        LanguageCell(item: .ja, seledItem: .constant(.ja),
+                     isSwitch: .constant(false),
+                     lanDidchange: .constant(false))
     }
 }

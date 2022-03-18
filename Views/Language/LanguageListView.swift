@@ -36,7 +36,7 @@ struct LanguageListView: View {
                     .padding(EdgeInsets(top: 30, leading: 20, bottom: 0, trailing: 20))
                 List {
                     ForEach(rows) { one in
-                        LanguageCell(item: one, seledItem: $seledLan, lanDidchange: $lanDidchange)
+                        LanguageCell(item: one, seledItem: $seledLan, isSwitch: $isSwitch, lanDidchange: $lanDidchange)
                             .listRowSeparator(.hidden)
                             .padding([.leading, .trailing])
                     }
@@ -44,29 +44,10 @@ struct LanguageListView: View {
                 .listStyle(.plain)
                 .background(.white)
                 .padding()
-                Button(action: {
-                    //withAnimation(.spring()) {
-                        self.isSwitch = !self.isSwitch
-                    //}
-                }) {
-                    Text("OK".localizedString)
-                        .frame(minWidth: 220)
-                        .font(.system(size: 24, weight: .semibold))
-                        .padding()
-                        .foregroundColor(.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.red, lineWidth: 0)
-                        )
-                }
-                .frame(width:169,height:48)
-                .background(Color.themeColor.opacity(0.85)) // If you have this
-                .cornerRadius(25)
-                .padding()
             }
             //.padding([.leading,.trailing], 20)
             .background(.white)
-            .frame(width:.SCREENWIDTH-100, height: 350)
+            .frame(width:.SCREENWIDTH-100, height: 238)
             .cornerRadius(40)
         }
 //        .padding()
