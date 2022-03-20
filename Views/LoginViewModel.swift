@@ -34,7 +34,7 @@ class LoginViewModel: ObservableObject {
                 }
             }, receiveValue: { user in
                 self.loginStatus = user.isNew ? .sucessNewLogin : .sucessNormalLogin
-                ContentViewModel.shared.rootPage = .main
+                ContentViewModel.shared.rootPagePublisher.send(.main)
 //                UIApplication.shared.windows.first?.rootViewController = UIHostingController(rootView: MainView())
 //                UIApplication.shared.windows.first?.makeKeyAndVisible()
             })

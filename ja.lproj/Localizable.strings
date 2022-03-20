@@ -7,3 +7,10 @@
 */
 "Japan"="日本";
 "OK"="はい";
+"Menu" = "メニュー";
+"Food List" = "食品一覧";
+"N items in cart" = "%@件がカートに";
+"Total:" = "合計:";
+"Send order" = "注文する";
+"Order list" = "注文書";
+"Get Started" = "はじめに";

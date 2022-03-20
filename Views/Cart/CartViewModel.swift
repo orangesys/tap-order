@@ -21,6 +21,7 @@ class CartViewModel: ObservableObject {
     @Published var cartList =  [[CartItemForDel]]() // extraordinary
     @Published var newCartList =  [CartItem]()
     @Published var badgeNum = 0
+    @Published var numbelString = ""
     @Published var isLoading = false
     @Published var isError = false
     @Published var totalStr = ""
@@ -159,6 +160,9 @@ extension CartViewModel: WebSocketConnectionDelegate {
             var allarr:[CartItem] = groupUserDic.flatMap({$0.value})
             allarr.insert(contentsOf: currentUserValue, at: 0)
             self.newCartList = allarr
+            
+            let numberString = "\(fjson.items.count)"
+            self.numbelString = String(format: "N items in cart".localizedString, numberString)
             self.badgeNum = fjson.items.count
             self.totalStr = "\(fjson.total)"
         } catch {

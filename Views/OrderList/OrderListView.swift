@@ -34,7 +34,7 @@ struct OrderListView: View {
             
             ZStack(alignment: .bottom) {
                 HStack {
-                    Text("Total:")
+                    Text("Total:".localizedString)
                         .font(.system(size: 22, weight: .semibold))
                     Spacer()
                     Text("\(self.orderVM.totalStr)")

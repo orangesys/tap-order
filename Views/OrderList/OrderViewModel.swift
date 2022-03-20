@@ -15,6 +15,7 @@ class OrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     @Published var newOrderList =  [CartItem]()
     @Published var isError = false
     @Published var totalStr = ""
+    
     var errorStr = ""
     var isBackgroundLoading = false
 

@@ -5,4 +5,11 @@
   Created by solo on 2022/3/4.
   
 */
-"OK"="OK";
+"OK" = "OK";
+"Menu" = "Menu";
+"Food List" = "Food List";
+"N items in cart" = "%@ items in cart";
+"Total:" = "Total:";
+"Send order" = "Send order";
+"Order list" = "Order list";
+"Get Started" = "Get Started";

@@ -6,3 +6,10 @@
   
 */
 "OK"="好的";
+"Menu" = "目錄";
+"Food List" = "菜單";
+"N items in cart" = "已添加%@種";
+"Total:" = "總計:";
+"Send order" = "下單";
+"Order list" = "已下單";
+"Get Started" = "直接開始";

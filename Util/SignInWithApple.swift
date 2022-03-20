@@ -62,6 +62,11 @@ class SignInWithApple: NSObject {
         }
         KeyChainUtil.saveFromApple(uid)
     }
+    
+    private func saveUserInUserDefaults(_ uid: String) {
+        let groupUserDefaults = UserDefaults(suiteName: "group.oeoly.TapOrder")
+        groupUserDefaults?.set(uid, forKey: "SavedUserID")
+    }
 }
 
 extension SignInWithApple: ASAuthorizationControllerDelegate {

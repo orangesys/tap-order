@@ -58,7 +58,7 @@ struct MenuListView: View {
                                 }
                             }
                             .frame(height: 110)
-                            Text("Food List")
+                            Text("Food List".localizedString)
                                 .font(.system(size: 24))
                                 .frame(height: 40)
                         }

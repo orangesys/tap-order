@@ -11,13 +11,16 @@ import Combine
 @main
 struct TapOrderApp: App {
     @ObservedObject var contentViewModel = ContentViewModel.shared
+    @State var rootPage: RootPage = .start
     init() {
       
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(rootPage: $contentViewModel.rootPage)
+            ContentView(rootPage: $rootPage).onReceive(contentViewModel.rootPagePublisher) {
+                self.rootPage = $0
+            }
         }
     }
 }

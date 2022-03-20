@@ -20,6 +20,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(rootPage: Binding.constant(ContentViewModel.shared.rootPage))
+        ContentView(rootPage: Binding.constant(.start))
     }
 }

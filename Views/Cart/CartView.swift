@@ -22,7 +22,7 @@ struct CartView: View {
             ZStack(alignment: .bottom) {
                 VStack(spacing:20) {
                     HStack {
-                        Text("Total:")
+                        Text("Total:".localizedString)
                             .font(.system(size: 22, weight: .semibold))
                         Spacer()
                         Text(self.globalCart.totalStr)
@@ -34,7 +34,7 @@ struct CartView: View {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
                             .foregroundColor(self.globalCart.newCartList.isEmpty ? Color.gray : .themeColor)
                             .overlay(alignment: .center) {
-                                Text("Send order")
+                                Text("Send order".localizedString)
                                     .font(.system(size: 24,weight: .semibold))
                                     .foregroundColor(.white)
                             }

@@ -49,7 +49,7 @@ struct MainView: View {
                 NavigationView{
                     MenuListView(isSwitch: $lanDidChange)
                     //.navigationBarTitle("Menu", displayMode: .large)  // << !!
-                        .navigationTitle("Menu")
+                        .navigationTitle("Menu".localizedString)
                         .toolbar {
                             LanguageButtonView(isSwitch: $isSwitchLan, seledLan: $selectedLan)
                         }
@@ -61,7 +61,7 @@ struct MainView: View {
                 // cart
                 NavigationView{
                     CartView()
-                        .navigationBarTitle("\(globalCartList.badgeNum) items in cart", displayMode: .large) // << !!
+                        .navigationBarTitle(globalCartList.numbelString, displayMode: .large) // << !!
                 }
                 .tabItem {
                     Image(systemName: "cart.fill")
@@ -69,7 +69,7 @@ struct MainView: View {
                 // order list
                 NavigationView{
                     OrderListView(lanChange: $lanDidChange)
-                        .navigationBarTitle("Order list", displayMode: .large) // << !!
+                        .navigationBarTitle("Order list".localizedString, displayMode: .large) // << !!
                 }
                 .tabItem {
                     Image(systemName: "person.fill")
