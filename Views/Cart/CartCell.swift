@@ -10,18 +10,15 @@ import Kingfisher
 
 struct CartCell: View {
     //var model = [CartItemForDel]()
-    var item:CartItem
-    var delId:String
+    var item: CartItem
+    var delId: String
     
     @EnvironmentObject var globalCart: CartViewModel
 
     var body: some View {
         VStack {
             HStack {
-                KFImage.url(URL(string: item.foodPic))
-                    .placeholder{Image("chicken").resizable()}
-                    .resizable()
-                    .scaledToFit()
+                CartImages(orderImageURLString:  item.foodPic, userImageURLString: item.userId)
                 VStack(alignment:.leading,spacing: 15){
                     HStack {
                         Text(item.foodName)
@@ -92,8 +89,30 @@ struct CartCell: View {
     }
 }
 
+struct CartImages: View {
+    let orderImageURLString: String
+    let userImageURLString: String
+    
+    @State var useUserImageAsItem: Bool = false
+    
+    var body: some View {
+        KFImage(URL(string: (useUserImageAsItem ? orderImageURLString : userImageURLString))).onFailure({ _ in
+            useUserImageAsItem = true
+        })
+            .resizable()
+            .scaledToFit()
+    }
+}
+
+
 struct CartCell_Previews: PreviewProvider {
     static var previews: some View {
-        CartCell(item: CartItem(foodName: "food", foodId: "12", foodPrice: 12, foodPic: "image", userId: "12", count: 2, sid: "12"), delId: "")
+        CartCell(item: CartItem(foodName: "food",
+                                foodId: "12",
+                                foodPrice: 12,
+                                foodPic: "https://i.pinimg.cm/236x/9a/32/50/9a3250ce0b20acb124664d6021a68e90.jpg",
+                                userId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEB3Y66JcK_cgf1bCVn1a0JUhbUU7_GMlvA&usqp=CAU",
+                                count: 2,
+                                sid: "12"), delId: "")
     }
 }
