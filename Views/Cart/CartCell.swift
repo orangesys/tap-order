@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import LetterAvatarKit
 
 struct CartCell: View {
     //var model = [CartItemForDel]()
@@ -18,7 +19,8 @@ struct CartCell: View {
     var body: some View {
         VStack {
             HStack {
-                CartImages(orderImageURLString:  item.foodPic, userImageURLString: item.userId)
+                CartImages(orderImageURLString:  item.foodPic,
+                           userImageURLString: item.userId)
                 VStack(alignment:.leading,spacing: 15){
                     HStack {
                         Text(item.foodName)
@@ -92,27 +94,39 @@ struct CartCell: View {
 struct CartImages: View {
     let orderImageURLString: String
     let userImageURLString: String
-    
-    @State var useUserImageAsItem: Bool = false
-    
     var body: some View {
-        KFImage(URL(string: (useUserImageAsItem ? orderImageURLString : userImageURLString))).onFailure({ _ in
-            useUserImageAsItem = true
-        })
+        KFImage(URL(string: ( orderImageURLString ))).onFailureImage( userAvatar() )
             .resizable()
             .scaledToFit()
+    }
+    
+    func userAvatar() -> UIImage {
+        let avatarImage = LetterAvatarMaker()
+            .setBackgroundColors([UIColor.gray])
+            .setUsername(SignInWithApple.randomNickname())
+            .build()
+        return avatarImage ?? UIImage(named: "AppIcon")!
     }
 }
 
 
 struct CartCell_Previews: PreviewProvider {
     static var previews: some View {
-        CartCell(item: CartItem(foodName: "food",
-                                foodId: "12",
-                                foodPrice: 12,
-                                foodPic: "https://i.pinimg.cm/236x/9a/32/50/9a3250ce0b20acb124664d6021a68e90.jpg",
-                                userId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEB3Y66JcK_cgf1bCVn1a0JUhbUU7_GMlvA&usqp=CAU",
-                                count: 2,
-                                sid: "12"), delId: "")
+        Group {
+            CartCell(item: CartItem(foodName: "food",
+                                    foodId: "12",
+                                    foodPrice: 12,
+                                    foodPic: "https://i.pinimg.cm/236x/9a/32/50/9a3250ce0b20acb124664d6021a68e90.jpg",
+                                    userId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEB3Y66JcK_cgf1bCVn1a0JUhbUU7_GMlvA&usqp=CAU",
+                                    count: 2,
+                                    sid: "12"), delId: "")
+            CartCell(item: CartItem(foodName: "food",
+                                    foodId: "12",
+                                    foodPrice: 12,
+                                    foodPic: "https://i.pinimg.cm/236x/9a/32/50/9a3250ce0b20acb124664d6021a68e90.jpg",
+                                    userId: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEB3Y66JcK_cgf1bCVn1a0JUhbUU7_GMlvA&usqp=CAU",
+                                    count: 2,
+                                    sid: "12"), delId: "")
+        }
     }
 }

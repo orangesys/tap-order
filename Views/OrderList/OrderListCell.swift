@@ -5,8 +5,9 @@
 //  Created by solo on 2/22/22.
 //
 
-import SwiftUI
 import Kingfisher
+import LetterAvatarKit
+import SwiftUI
 
 struct OrderListCell: View {
     var item:CartItem
@@ -37,17 +38,21 @@ struct OrderListCell: View {
 }
 
 private extension View {
+    private func userAvatar() -> UIImage {
+        let circleAvatarImage = LetterAvatarMaker()
+                .setCircle(true)
+                .setUsername(SignInWithApple.randomNickname())
+                .setBorderWidth(2.0)
+                .setSize(CGSize(width: 32, height: 32))
+                .setBackgroundColors([ UIColor.systemBrown ])
+                .build()
+        return circleAvatarImage ?? UIImage(named: "AppIcon")!
+    }
+    
     func addSourceUserIcon(_ uid: String) -> some View {
         ZStack(alignment: .topLeading) {
             self
-            KFImage(URL(string: "\(uid)"))
-                .resizable()
-                .scaledToFit()
-                .frame(width: 32, height: 32)
-                .background(Color.normalGray)
-                .cornerRadius(20)
-                .overlay(Circle().stroke(Color.blue))
-                .offset(x: 12, y: 12)
+            Image(uiImage: userAvatar()).offset(x: 12, y: 12)
         }
     }
 }

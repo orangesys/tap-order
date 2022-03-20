@@ -5,6 +5,7 @@
 //  Created by solo on 2/22/22.
 //
 
+import AuthenticationServices
 import Combine
 import SwiftUI
 
@@ -72,6 +73,19 @@ struct StartView: View {
         loginViewModel.signInWithApple()
      }
 }
+
+fileprivate struct QuickSignInWithApple: UIViewRepresentable {
+    typealias UIViewType = ASAuthorizationAppleIDButton
+    
+    func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
+        let bt = ASAuthorizationAppleIDButton(type:.signIn, style: .white)
+        bt.cornerRadius = 30
+        return bt
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {}
+}
+
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {

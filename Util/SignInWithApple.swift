@@ -7,6 +7,7 @@
 
 import AuthenticationServices
 import Combine
+import LetterAvatarKit
 
 struct AppleUser {
     let name: PersonNameComponents?
@@ -54,6 +55,16 @@ class SignInWithApple: NSObject {
 
 //        let state: ASAuthorizationAppleIDProvider.CredentialState = (try? await provider.credentialState(forUserID: userID)) ?? .notFound
 //        return state == .authorized
+    }
+    
+    static func randomNickname() -> String {
+        let groupUserDefaults = UserDefaults(suiteName: "group.oeoly.TapOrder")
+        if let name = groupUserDefaults?.value(forKey: "RandomNickname"), let notNilName = name as? String {
+            return notNilName
+        }
+        let nickname = "\(Lorem.firstName) \(Lorem.lastName) "
+        groupUserDefaults?.set(nickname, forKey: "RandomNickname")
+        return nickname
     }
     
     private func saveUserInKeychain(_ uid: String) {

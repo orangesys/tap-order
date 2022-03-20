@@ -23,6 +23,10 @@
 		8F89225627E2511400526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		8F89225727E2511500526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		8F89225927E2518A00526662 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 8F89225827E2518A00526662 /* KeychainAccess */; };
+		DC45D71A27E782910011F2C3 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45D71927E782910011F2C3 /* LoremSwiftum.swift */; };
+		DC45D71B27E782910011F2C3 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45D71927E782910011F2C3 /* LoremSwiftum.swift */; };
+		DC45D71E27E7841E0011F2C3 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC45D71D27E7841E0011F2C3 /* LetterAvatarKit */; };
+		DC45D72127E7842A0011F2C3 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC45D72027E7842A0011F2C3 /* LetterAvatarKit */; };
 		DC931B8C27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
 		DC931B8D27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
 		DC931B8F27E3675300B4169C /* Color+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8E27E3675300B4169C /* Color+TapOrder.swift */; };
@@ -51,8 +55,6 @@
 		DC931BB427E3B15E00B4169C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
-		F81D5FA827D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */; };
-		F81D5FA927D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */; };
 		F81D5FAB27D2F50D009BE108 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */; };
 		F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = F81D5FAE27D34F0C009BE108 /* FlagKit */; };
 		F81D5FB127D76039009BE108 /* NewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */; };
@@ -176,6 +178,7 @@
 		8F89224727E21E8000526662 /* KeyChainUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainUtil.swift; sourceTree = "<group>"; };
 		8F89224A27E2211B00526662 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		8F89224F27E24DC400526662 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		DC45D71927E782910011F2C3 /* LoremSwiftum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremSwiftum.swift; sourceTree = "<group>"; };
 		DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TapOrder.swift"; sourceTree = "<group>"; };
 		DC931B8E27E3675300B4169C /* Color+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TapOrder.swift"; sourceTree = "<group>"; };
 		DC931B9227E36A9400B4169C /* View+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TapOrder.swift"; sourceTree = "<group>"; };
@@ -188,7 +191,6 @@
 		F81D5FA327D25C52009BE108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA527D25C70009BE108 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F81D5FA627D2F30A009BE108 /* TapOrder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapOrder.entitlements; sourceTree = "<group>"; };
-		F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSignInWithApple.swift; sourceTree = "<group>"; };
 		F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodsResponse.swift; sourceTree = "<group>"; };
 		F81D5FB327D764CC009BE108 /* FoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewModel.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			files = (
 				F87541B927DEDF0600480D10 /* Kingfisher in Frameworks */,
 				F8A6D5EA27CA1C5100BA45FA /* PopupView in Frameworks */,
+				DC45D72127E7842A0011F2C3 /* LetterAvatarKit in Frameworks */,
 				8F89225927E2518A00526662 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +260,7 @@
 				F8252A8227C8DE7900D80724 /* Kingfisher in Frameworks */,
 				F81D5FAF27D34F0C009BE108 /* FlagKit in Frameworks */,
 				F8252A7F27C8DDF900D80724 /* PopupView in Frameworks */,
+				DC45D71E27E7841E0011F2C3 /* LetterAvatarKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +279,8 @@
 			children = (
 				8F89224A27E2211B00526662 /* AppInfo.swift */,
 				8F89224727E21E8000526662 /* KeyChainUtil.swift */,
+				DC45D71927E782910011F2C3 /* LoremSwiftum.swift */,
 				8F89224427E21E5400526662 /* SignInWithApple.swift */,
-				F81D5FA727D2F3F0009BE108 /* QuickSignInWithApple.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -470,6 +474,7 @@
 				F8A6D5E927CA1C5100BA45FA /* PopupView */,
 				F87541B827DEDF0600480D10 /* Kingfisher */,
 				8F89225827E2518A00526662 /* KeychainAccess */,
+				DC45D72027E7842A0011F2C3 /* LetterAvatarKit */,
 			);
 			productName = TapOrderClip;
 			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
@@ -495,6 +500,7 @@
 				F8252A8127C8DE7900D80724 /* Kingfisher */,
 				F81D5FAE27D34F0C009BE108 /* FlagKit */,
 				8F89224027E20EE400526662 /* KeychainAccess */,
+				DC45D71D27E7841E0011F2C3 /* LetterAvatarKit */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -557,6 +563,7 @@
 				F8252A8027C8DE7900D80724 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */,
 				8F89223F27E20EE400526662 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				DC45D71C27E7841E0011F2C3 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */,
 			);
 			productRefGroup = F8FBF7EC27C3269300571A32 /* Products */;
 			projectDirPath = "";
@@ -624,7 +631,6 @@
 				F8BFABDE27CBCEF600C69D32 /* WebSocketStream.swift in Sources */,
 				F8C9EA7827CA1B3C00B9949F /* OrderListView.swift in Sources */,
 				F87541BC27DEFD1200480D10 /* ClipModel.swift in Sources */,
-				F81D5FA927D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */,
 				DC931B9C27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */,
 				DC931BB327E39CDB00B4169C /* LanguageButtonView.swift in Sources */,
 				F8C9EA8827CA1B4500B9949F /* CartResponse.swift in Sources */,
@@ -634,6 +640,7 @@
 				8F89224927E21E8000526662 /* KeyChainUtil.swift in Sources */,
 				DC931BB027E39CB700B4169C /* StartView.swift in Sources */,
 				F8C9EA8427CA1B4500B9949F /* MenuListViewModel.swift in Sources */,
+				DC45D71B27E782910011F2C3 /* LoremSwiftum.swift in Sources */,
 				8F89225227E24DC400526662 /* ContentViewModel.swift in Sources */,
 				F8B708A327D11B6B0017AF53 /* LanguageCell.swift in Sources */,
 				F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */,
@@ -684,10 +691,10 @@
 				F87541BB27DEFD1200480D10 /* ClipModel.swift in Sources */,
 				DC931B9B27E36AE900B4169C /* UITabBarController+TapOrder.swift in Sources */,
 				8F89224B27E2211B00526662 /* AppInfo.swift in Sources */,
-				F81D5FA827D2F3F0009BE108 /* QuickSignInWithApple.swift in Sources */,
 				DC931B9327E36A9400B4169C /* View+TapOrder.swift in Sources */,
 				F8C9EA5927C9F7AB00B9949F /* LoadingView.swift in Sources */,
 				F81F14E927C8BBAA0069FFA8 /* UserViewModel.swift in Sources */,
+				DC45D71A27E782910011F2C3 /* LoremSwiftum.swift in Sources */,
 				F8252A8427C8E72200D80724 /* ToastView.swift in Sources */,
 				8F89224527E21E5400526662 /* SignInWithApple.swift in Sources */,
 				F8FBF80C27C363F700571A32 /* MenuListView.swift in Sources */,
@@ -1140,6 +1147,14 @@
 				kind = branch;
 			};
 		};
+		DC45D71C27E7841E0011F2C3 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vpeschenkov/LetterAvatarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F81D5FAD27D34F0C009BE108 /* XCRemoteSwiftPackageReference "FlagKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/madebybowtie/FlagKit.git";
@@ -1176,6 +1191,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F89223F27E20EE400526662 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		DC45D71D27E7841E0011F2C3 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC45D71C27E7841E0011F2C3 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
+		};
+		DC45D72027E7842A0011F2C3 /* LetterAvatarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC45D71C27E7841E0011F2C3 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
+			productName = LetterAvatarKit;
 		};
 		F81D5FAE27D34F0C009BE108 /* FlagKit */ = {
 			isa = XCSwiftPackageProductDependency;
