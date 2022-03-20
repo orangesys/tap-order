@@ -30,7 +30,10 @@ extension String {
         let path = "/api/v1/shops/"
         let vendorId = ClipViewModel.shared.vendorId
         let tableId = ClipViewModel.shared.tableId
-        let lan = UserViewModel.shared.lang
+        var lan = UserViewModel.shared.lang
+        if lan.lowercased().hasPrefix("zh") {
+            lan = "zh"
+        }
         switch req {
         case .cat:
             urlStr = "\(APIHost)\(path)\(vendorId)/categories?language=\(lan)"

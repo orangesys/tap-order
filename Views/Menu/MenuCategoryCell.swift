@@ -20,17 +20,17 @@ struct MenuCategoryCell: View {
         
         VStack {
             Button {
-                selItemId = item.id!
+                selItemId = item.id
             } label: {
                 KFImage.url(URL(string: item.image!))
                     .resizable()
                     .frame(width: .MenuCatgoryWidth, height: .MenuCatgoryWidth)
                     .scaledToFit()
                     //.padding(3)
-                    .background(item.id! == selItemId ? Color.themeColor : Color.normalGray)
+                    .background(item.id == selItemId ? Color.themeColor : Color.normalGray)
                 .cornerRadius(20)
             }
-            Text(item.name ?? "name")
+            Text(item.name)
                 .font(.system(size: 17))
                 .foregroundColor(.themeColor)
         }

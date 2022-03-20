@@ -9,8 +9,8 @@ import Foundation
 
 struct NewFoodsCat: Codable, Identifiable, Equatable {
     // let id: UUID?
-    var id: String?
-    var name: String?
+    var id: String
+    var name: String
     var image: String?
     var activate: Bool?
 
@@ -27,7 +27,7 @@ struct NewFoodsCat: Codable, Identifiable, Equatable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         // id = try values.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
         id = try values.decodeIfPresent(String.self, forKey: .name) ?? "id"
-        name = try values.decodeIfPresent(String.self, forKey: .name)
+        name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""
         image = try values.decodeIfPresent(String.self, forKey: .image)
         activate = try values.decodeIfPresent(Bool.self, forKey: .activate)
     }

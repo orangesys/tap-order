@@ -549,6 +549,7 @@
 				Base,
 				ja,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = F8FBF7DE27C3269100571A32;
 			packageReferences = (
@@ -776,7 +777,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031901;
+				CURRENT_PROJECT_VERSION = 22032001;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -813,7 +814,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031901;
+				CURRENT_PROJECT_VERSION = 22032001;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -965,7 +966,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031901;
+				CURRENT_PROJECT_VERSION = 22032001;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1001,7 +1002,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22031901;
+				CURRENT_PROJECT_VERSION = 22032001;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -34,7 +34,7 @@ class FoodViewModel: ObservableObject, APIService {
     func restoreOriginalList() {
         let oldCats = NewFoodsCat.load()
         for cat in oldCats {
-            self.orginalList[cat.name!] = NewFoods.load(cat.name!)
+            self.orginalList[cat.name] = NewFoods.load(cat.name)
         }
     }
     
@@ -52,9 +52,9 @@ class FoodViewModel: ObservableObject, APIService {
                 
             }) { (rst) in
                 
-                let sortRst = rst.sorted{$0.value.name! > $1.value.name!}
+                let sortRst = rst.sorted{$0.value.name > $1.value.name}
                 // cats
-                let ctsArr =  Array(rst.values).sorted{$0.name! > $1.name!}
+                let ctsArr =  Array(rst.values).sorted{$0.name > $1.name}
                 self.getFoodsCatList(cat: sortRst.first!.key, name: (ctsArr.first?.name)! )
                 if NewFoodsCat.needUpdate(ctsArr) {
                     self.catList = ctsArr
@@ -65,7 +65,7 @@ class FoodViewModel: ObservableObject, APIService {
                     // enter group request
                     self.concurrentFetchGroup.enter()
                     // use id for key
-                    self.orginalList[one.value.id!] = [NewFoods]()
+                    self.orginalList[one.value.id] = [NewFoods]()
                     self.concurrentQueue.async {
                         let cancellable2 = self.getFoodsCatList(cat: one.key)
                             .sink(receiveCompletion: { result in
@@ -87,8 +87,8 @@ class FoodViewModel: ObservableObject, APIService {
                                 }
                                 DispatchQueue.main.async {
                                     let newArr = configFoodsArr.sorted{$0.id! > $1.id!}
-                                    if NewFoods.needUpdate(newArr, cat: one.value.id!) {
-                                        self.orginalList[one.value.id!] = newArr
+                                    if NewFoods.needUpdate(newArr, cat: one.value.id) {
+                                        self.orginalList[one.value.id] = newArr
                                     }
                                 }
                         }
