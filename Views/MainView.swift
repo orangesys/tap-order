@@ -9,7 +9,7 @@ import SwiftUI
 import PopupView
 
 struct MainView: View {
-    
+    @State private var showWebView = false
     @StateObject var userSetting = UserViewModel.shared
     @StateObject var globalCartList = CartViewModel(urlstr: String.urlStr(req: .cart))
     @State var isSwitchLan = UserViewModel.shared.didChangeLan
@@ -69,7 +69,15 @@ struct MainView: View {
                 // order list
                 NavigationView{
                     OrderListView(lanChange: $lanDidChange)
+                        .navigationBarItems(leading: Button {} label: {},
+                                            trailing: Button {
+                            showWebView.toggle()
+                        } label: {
+                            Image(systemName: "info.circle")
+                        })
                         .navigationBarTitle("Order list".localizedString, displayMode: .large) // << !!
+                }.sheet(isPresented: $showWebView) {
+                    WebView(url:  URL.init(string: "https://orangesys.io/law")!)
                 }
                 .tabItem {
                     Image(systemName: "person.fill")

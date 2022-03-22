@@ -11,7 +11,7 @@ struct ContentView: View {
     @Binding var rootPage: RootPage
     var body: some View {
         if self.rootPage == .start {
-            StartView()
+            LoginView()
         } else {
             MainView()
         }

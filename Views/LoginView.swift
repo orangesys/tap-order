@@ -1,5 +1,5 @@
 //
-//  StartView.swift
+//  LoginView.swift
 //  TapOrder
 //
 //  Created by solo on 2/22/22.
@@ -8,10 +8,11 @@
 import AuthenticationServices
 import Combine
 import SwiftUI
+import WebKit
 
-struct StartView: View {
+struct LoginView: View {
     var loginViewModel = LoginViewModel()
-    
+    @State private var showWebView = false
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0x412F96)), Color(uiColor:UIColor(rgb: 0x944AB5).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea(.all) // Ignore just for the color
@@ -63,6 +64,21 @@ struct StartView: View {
                     QuickSignInWithApple()
                         .frame(width: 250, height: 60, alignment: .center)
                         .onTapGesture(perform: signInWithApple)
+                    
+                    Button {
+                        showWebView.toggle()
+                    } label: {
+                        Text("Items of Use").font(.system(size: 13, weight: .medium))
+                            .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
+                                Rectangle()
+                                    .frame(height: 1)
+                                    .foregroundColor(.yellow),
+                                alignment: .bottom
+                        )
+                    }
+                    .sheet(isPresented: $showWebView) {
+                        WebView(url:  Bundle.main.url(forResource: "policy", withExtension: "html")!)
+                    }
                     Spacer()
                 }
                 ,alignment: .top)
@@ -72,6 +88,18 @@ struct StartView: View {
     private func signInWithApple() {
         loginViewModel.signInWithApple()
      }
+}
+
+
+struct WebView: UIViewRepresentable {
+    var url: URL
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    func updateUIView(_ webView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
 }
 
 fileprivate struct QuickSignInWithApple: UIViewRepresentable {
@@ -89,6 +117,6 @@ fileprivate struct QuickSignInWithApple: UIViewRepresentable {
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView()
+        LoginView()
     }
 }

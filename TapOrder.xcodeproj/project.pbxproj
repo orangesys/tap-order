@@ -27,6 +27,8 @@
 		DC45D71B27E782910011F2C3 /* LoremSwiftum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45D71927E782910011F2C3 /* LoremSwiftum.swift */; };
 		DC45D71E27E7841E0011F2C3 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC45D71D27E7841E0011F2C3 /* LetterAvatarKit */; };
 		DC45D72127E7842A0011F2C3 /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC45D72027E7842A0011F2C3 /* LetterAvatarKit */; };
+		DC45D72327EA325F0011F2C3 /* policy.html in Resources */ = {isa = PBXBuildFile; fileRef = DC45D72227EA325F0011F2C3 /* policy.html */; };
+		DC45D72427EA325F0011F2C3 /* policy.html in Resources */ = {isa = PBXBuildFile; fileRef = DC45D72227EA325F0011F2C3 /* policy.html */; };
 		DC931B8C27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
 		DC931B8D27E3672900B4169C /* UIColor+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */; };
 		DC931B8F27E3675300B4169C /* Color+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931B8E27E3675300B4169C /* Color+TapOrder.swift */; };
@@ -48,7 +50,7 @@
 		DC931BAC27E39BA100B4169C /* Bundle+TapOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC931BA927E39BA100B4169C /* Bundle+TapOrder.swift */; };
 		DC931BAD27E39BFF00B4169C /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		DC931BAF27E39CA200B4169C /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8252A8327C8E72200D80724 /* ToastView.swift */; };
-		DC931BB027E39CB700B4169C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
+		DC931BB027E39CB700B4169C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* LoginView.swift */; };
 		DC931BB127E39CC000B4169C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */; };
 		DC931BB227E39CD200B4169C /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		DC931BB327E39CDB00B4169C /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
@@ -137,8 +139,8 @@
 		F8FBF81327C3769E00571A32 /* MenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81127C3769E00571A32 /* MenuListCell.swift */; };
 		F8FBF81527C472E500571A32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* MainView.swift */; };
 		F8FBF81627C472E500571A32 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81427C472E500571A32 /* MainView.swift */; };
-		F8FBF81827C47F2D00571A32 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
-		F8FBF81927C47F2D00571A32 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* StartView.swift */; };
+		F8FBF81827C47F2D00571A32 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* LoginView.swift */; };
+		F8FBF81927C47F2D00571A32 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81727C47F2D00571A32 /* LoginView.swift */; };
 		F8FBF81B27C4A05900571A32 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* CartView.swift */; };
 		F8FBF81C27C4A05900571A32 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81A27C4A05900571A32 /* CartView.swift */; };
 		F8FBF81E27C4A06C00571A32 /* OrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF81D27C4A06C00571A32 /* OrderListView.swift */; };
@@ -179,6 +181,7 @@
 		8F89224A27E2211B00526662 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		8F89224F27E24DC400526662 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		DC45D71927E782910011F2C3 /* LoremSwiftum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremSwiftum.swift; sourceTree = "<group>"; };
+		DC45D72227EA325F0011F2C3 /* policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = policy.html; sourceTree = "<group>"; };
 		DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TapOrder.swift"; sourceTree = "<group>"; };
 		DC931B8E27E3675300B4169C /* Color+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+TapOrder.swift"; sourceTree = "<group>"; };
 		DC931B9227E36A9400B4169C /* View+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TapOrder.swift"; sourceTree = "<group>"; };
@@ -233,7 +236,7 @@
 		F8FBF80E27C36FF300571A32 /* MenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCell.swift; sourceTree = "<group>"; };
 		F8FBF81127C3769E00571A32 /* MenuListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListCell.swift; sourceTree = "<group>"; };
 		F8FBF81427C472E500571A32 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		F8FBF81727C47F2D00571A32 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F8FBF81727C47F2D00571A32 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F8FBF81A27C4A05900571A32 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		F8FBF81D27C4A06C00571A32 /* OrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListView.swift; sourceTree = "<group>"; };
 		F8FBF82027C4AFCB00571A32 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
@@ -324,7 +327,7 @@
 		DC931BA527E39ADB00B4169C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8FBF81727C47F2D00571A32 /* StartView.swift */,
+				F8FBF81727C47F2D00571A32 /* LoginView.swift */,
 				F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */,
 				F8FBF81427C472E500571A32 /* MainView.swift */,
 				F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */,
@@ -416,6 +419,7 @@
 		F8FBF7DE27C3269100571A32 = {
 			isa = PBXGroup;
 			children = (
+				DC45D72227EA325F0011F2C3 /* policy.html */,
 				DC931BA227E3998F00B4169C /* TapOrderPlayground.playground */,
 				DC931BA127E3994D00B4169C /* HttpAPI */,
 				F8ED546327DF351A00E71459 /* WebSocket */,
@@ -581,6 +585,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45D72427EA325F0011F2C3 /* policy.html in Resources */,
 				F8C9EA6927CA1AB200B9949F /* Preview Assets.xcassets in Resources */,
 				F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */,
 				F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */,
@@ -594,6 +599,7 @@
 			files = (
 				F8FBF7F827C3269300571A32 /* Assets.xcassets in Resources */,
 				F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */,
+				DC45D72327EA325F0011F2C3 /* policy.html in Resources */,
 				F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,7 +644,7 @@
 				F8C9EA8027CA1B4500B9949F /* APISession.swift in Sources */,
 				8F89224D27E2211B00526662 /* AppInfo.swift in Sources */,
 				8F89224927E21E8000526662 /* KeyChainUtil.swift in Sources */,
-				DC931BB027E39CB700B4169C /* StartView.swift in Sources */,
+				DC931BB027E39CB700B4169C /* LoginView.swift in Sources */,
 				F8C9EA8427CA1B4500B9949F /* MenuListViewModel.swift in Sources */,
 				DC45D71B27E782910011F2C3 /* LoremSwiftum.swift in Sources */,
 				8F89225227E24DC400526662 /* ContentViewModel.swift in Sources */,
@@ -668,7 +674,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FBF81827C47F2D00571A32 /* StartView.swift in Sources */,
+				F8FBF81827C47F2D00571A32 /* LoginView.swift in Sources */,
 				F8B7089927D09BE20017AF53 /* LanguageButtonView.swift in Sources */,
 				DC931B8F27E3675300B4169C /* Color+TapOrder.swift in Sources */,
 				F8FBF7F627C3269300571A32 /* ContentView.swift in Sources */,
@@ -722,7 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FBF81927C47F2D00571A32 /* StartView.swift in Sources */,
+				F8FBF81927C47F2D00571A32 /* LoginView.swift in Sources */,
 				F8B7089E27D11AD00017AF53 /* LanguageListView.swift in Sources */,
 				F8FBF7F727C3269300571A32 /* ContentView.swift in Sources */,
 				F8FBF81327C3769E00571A32 /* MenuListCell.swift in Sources */,
@@ -784,7 +790,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22032001;
+				CURRENT_PROJECT_VERSION = 22032301;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -821,7 +827,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22032001;
+				CURRENT_PROJECT_VERSION = 22032301;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -973,7 +979,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22032001;
+				CURRENT_PROJECT_VERSION = 22032301;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1009,7 +1015,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22032001;
+				CURRENT_PROJECT_VERSION = 22032301;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
