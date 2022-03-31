@@ -1,0 +1,5 @@
+SVG File Name,URL,Background Color,Foreground Color,Type,Logo
+camera_standalone.svg,https://clip.orangesys.io/order?p=133&p1=a1b1,FFFFFF,6644AB,cam,none
+nfc_standalone.svg,https://clip.orangesys.io/order?p=1033&p1=a1b3,FFFFFF,6644AB,nfc,none
+camera_badge.svg,https://clip.orangesys.io/order?p=203&p1=a3b1,FFFFFF,6644AB,cam,badge
+nfc_badge.svg,https://clip.orangesys.io/order?p=2033&p1=a3b1,FFFFFF,6644AB,nfc,badge
