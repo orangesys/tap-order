@@ -5,9 +5,9 @@
 //  Created by solo on 2/23/22.
 //
 
+import Combine
 import Foundation
 import UIKit
-import Combine
 
 enum APIError: Error {
     case decodingError
@@ -16,7 +16,7 @@ enum APIError: Error {
 }
 
 protocol RequestBuilder {
-    var urlRequest: URLRequest {get}
+    var urlRequest: URLRequest { get }
 }
 
 protocol APIProtocol {
