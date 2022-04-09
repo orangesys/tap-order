@@ -5,10 +5,8 @@
 //  Created by Felix Yuan on 2022/4/9.
 //
 
-import StripeApplePay
-import StripeCore
 import PassKit
-
+import StripeApplePay
 
 typealias PaymentCompletionHandler = (Bool) -> Void
 
@@ -35,41 +33,14 @@ class PaymentHandler: NSObject {
             PKPaymentSummaryItem(label: "OrangeSys, Inc.", amount: NSDecimalNumber(value: amount)),
         ]
         paymentRequest.supportedNetworks = PaymentHandler.supportedNetworks
-
-        // Initialize an STPApplePayContext instance
-
-//    if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
-//        // Present Apple Pay payment sheet
-//        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.keyWindow else { return }
-//        applePayContext.presentApplePay(from: window) {
-//
-//        }
-//    } else {
-//        // There is a problem with your Apple Pay configuration
-//    }
-        self.completionHandler = completion
-
-//     Create our payment request
-//    let paymentRequest = PKPaymentRequest()
-        paymentRequest.paymentSummaryItems = self.paymentSummaryItems
-        paymentRequest.merchantIdentifier = merchantIdentifier
-        paymentRequest.merchantCapabilities = .capability3DS
-        paymentRequest.countryCode = "ZH"
-        paymentRequest.currencyCode = "CNY"
-        paymentRequest.requiredShippingContactFields = [.phoneNumber, .emailAddress]
-        paymentRequest.supportedNetworks = PaymentHandler.supportedNetworks
-
-//     Display our payment request
-        self.paymentController = PKPaymentAuthorizationController(paymentRequest: paymentRequest)
-        self.paymentController?.delegate = self
-        self.paymentController?.present(completion: { (presented: Bool) in
-            if presented {
-                NSLog("Presented payment controller")
-            } else {
-                NSLog("Failed to present payment controller")
-                self.completionHandler!(false)
-            }
-        })
+        if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
+            // Present Apple Pay payment sheet
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.keyWindow else { return }
+            applePayContext.presentApplePay(from: window)
+        } else {
+            // There is a problem with your Apple Pay configuration
+            
+        }
     }
 }
 
@@ -117,4 +88,3 @@ extension PaymentHandler: PKPaymentAuthorizationControllerDelegate {
         }
     }
 }
-

@@ -25,12 +25,13 @@
 		DC1646662801B0F400EF7DB4 /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = DC1646652801B0F400EF7DB4 /* StripeApplePay */; };
 		DC1646682801B1BF00EF7DB4 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646672801B1BF00EF7DB4 /* PaymentHandler.swift */; };
 		DC16466A2801B30D00EF7DB4 /* ClipCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646692801B30D00EF7DB4 /* ClipCartViewModel.swift */; };
+		DC16466F2801B90100EF7DB4 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
+		DC1646712801B92B00EF7DB4 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = DC1646702801B92B00EF7DB4 /* Stripe */; };
 		DC183B1328006E0F000051FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1228006E0F000051FB /* PopupView */; };
 		DC183B1528006E0F000051FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1428006E0F000051FB /* Kingfisher */; };
 		DC183B1728006E0F000051FB /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1628006E0F000051FB /* FlagKit */; };
 		DC183B1928006E0F000051FB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1828006E0F000051FB /* KeychainAccess */; };
 		DC183B1B28006E0F000051FB /* LetterAvatarKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1A28006E0F000051FB /* LetterAvatarKit */; };
-		DC183B1D28006E0F000051FB /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1C28006E0F000051FB /* Stripe */; };
 		DC183B1F28006E20000051FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1E28006E20000051FB /* Kingfisher */; };
 		DC183B2128006E30000051FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B2028006E30000051FB /* PopupView */; };
 		DC183B2328006E40000051FB /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B2228006E40000051FB /* KeychainAccess */; };
@@ -72,7 +73,6 @@
 		F81D5FB227D76039009BE108 /* NewFoodsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB027D76039009BE108 /* NewFoodsResponse.swift */; };
 		F81D5FB427D764CC009BE108 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* FoodViewModel.swift */; };
 		F81D5FB527D764CC009BE108 /* FoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FB327D764CC009BE108 /* FoodViewModel.swift */; };
-		F81F14E527C75FE00069FFA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
 		F81F14E727C87C540069FFA8 /* CartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E627C87C540069FFA8 /* CartResponse.swift */; };
 		F81F14E927C8BBAA0069FFA8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E827C8BBAA0069FFA8 /* UserViewModel.swift */; };
 		F8252A7827C5202B00D80724 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8252A7727C5202B00D80724 /* GoogleService-Info.plist */; };
@@ -261,7 +261,7 @@
 				DC183B1528006E0F000051FB /* Kingfisher in Frameworks */,
 				DC183B1328006E0F000051FB /* PopupView in Frameworks */,
 				DC183B1B28006E0F000051FB /* LetterAvatarKit in Frameworks */,
-				DC183B1D28006E0F000051FB /* Stripe in Frameworks */,
+				DC1646712801B92B00EF7DB4 /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +516,7 @@
 				DC183B1628006E0F000051FB /* FlagKit */,
 				DC183B1828006E0F000051FB /* KeychainAccess */,
 				DC183B1A28006E0F000051FB /* LetterAvatarKit */,
-				DC183B1C28006E0F000051FB /* Stripe */,
+				DC1646702801B92B00EF7DB4 /* Stripe */,
 			);
 			productName = "TapOrder (iOS)";
 			productReference = F8FBF7EB27C3269300571A32 /* TapOrder.app */;
@@ -721,7 +721,6 @@
 				F8639CB427C6198400CDE134 /* MenuListViewModel.swift in Sources */,
 				DC0451742800616C00EFB2B2 /* AppDelegate.swift in Sources */,
 				F81D5FB427D764CC009BE108 /* FoodViewModel.swift in Sources */,
-				F81F14E527C75FE00069FFA8 /* CartViewModel.swift in Sources */,
 				F8639CB227C618EC00CDE134 /* APIService.swift in Sources */,
 				F8B7089D27D11AD00017AF53 /* LanguageListView.swift in Sources */,
 				F8FBF82127C4AFCB00571A32 /* CartCell.swift in Sources */,
@@ -745,6 +744,7 @@
 				F8A57CD827C611BB00138905 /* APIRequest.swift in Sources */,
 				F8FBF80F27C36FF300571A32 /* MenuCategoryCell.swift in Sources */,
 				F8A57CD427C6091900138905 /* API.swift in Sources */,
+				DC16466F2801B90100EF7DB4 /* CartViewModel.swift in Sources */,
 				DC931B9E27E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
 				F81D5FB127D76039009BE108 /* NewFoodsResponse.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
@@ -817,7 +817,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22040902;
+				CURRENT_PROJECT_VERSION = 22040903;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -856,7 +856,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22040902;
+				CURRENT_PROJECT_VERSION = 22040903;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -1010,7 +1010,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22040902;
+				CURRENT_PROJECT_VERSION = 22040903;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1032,6 +1032,7 @@
 				PRODUCT_NAME = TapOrder;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1049,7 +1050,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22040902;
+				CURRENT_PROJECT_VERSION = 22040903;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1071,6 +1072,7 @@
 				PRODUCT_NAME = TapOrder;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1238,6 +1240,11 @@
 			package = DC04516A280048C300EFB2B2 /* XCRemoteSwiftPackageReference "stripe-ios" */;
 			productName = StripeApplePay;
 		};
+		DC1646702801B92B00EF7DB4 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC04516A280048C300EFB2B2 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
+		};
 		DC183B1228006E0F000051FB /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8252A7D27C8DDF800D80724 /* XCRemoteSwiftPackageReference "PopupView" */;
@@ -1262,11 +1269,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC45D71C27E7841E0011F2C3 /* XCRemoteSwiftPackageReference "LetterAvatarKit" */;
 			productName = LetterAvatarKit;
-		};
-		DC183B1C28006E0F000051FB /* Stripe */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC04516A280048C300EFB2B2 /* XCRemoteSwiftPackageReference "stripe-ios" */;
-			productName = Stripe;
 		};
 		DC183B1E28006E20000051FB /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
