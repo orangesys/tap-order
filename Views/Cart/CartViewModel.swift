@@ -144,11 +144,11 @@ class CartViewModel: ObservableObject, APIService {
     }
 
     func preparePaymentSheet() {
-        guard let total = Int(totalStr), total > 0 else {
+        guard let total = Int(totalStr), total > 0, paying == false else {
             return
         }
         self.paying = true
-        createPayOrder(orderInfo: "{amount: \(total)}").sink { _ in
+        createPayOrder(orderInfo: ["amount": total]).sink { _ in
 
         } receiveValue: { json in
             guard let customerId = json["customer"],

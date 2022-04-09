@@ -17,7 +17,7 @@ protocol APIService {
     func getFoodsList() -> AnyPublisher<FoodsResposne, APIError>
     func postCart(cartSend: CartItemSend) -> AnyPublisher<[String: String], APIError>
     func delCart(delId: String) -> AnyPublisher<[String: String], APIError>
-    func createPayOrder(orderInfo: String) -> AnyPublisher<[String: String], APIError>
+    func createPayOrder(orderInfo: [String: Int]) -> AnyPublisher<[String: String], APIError>
     func getCartList2() -> AnyPublisher<[String: CartItem], APIError>
 }
 
@@ -52,7 +52,7 @@ extension APIService {
             .eraseToAnyPublisher()
     }
 
-    func createPayOrder(orderInfo: String) -> AnyPublisher<[String: String], APIError> {
+    func createPayOrder(orderInfo: [String: Int]) -> AnyPublisher<[String: String], APIError> {
         return apiSession.request(with: APIRequest.createPayOrder(orderInfo))
             .eraseToAnyPublisher()
     }

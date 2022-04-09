@@ -22,7 +22,7 @@ enum APIRequest {
     case postCart(CartItemSend)
     case delCart(String)
     case cartList2
-    case createPayOrder(String)
+    case createPayOrder([String: Int])
 }
 
 extension APIRequest: RequestBuilder {
