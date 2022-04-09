@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @Binding var rootPage: RootPage
+    
     var body: some View {
         if self.rootPage == .start {
             LoginView()
@@ -17,6 +19,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

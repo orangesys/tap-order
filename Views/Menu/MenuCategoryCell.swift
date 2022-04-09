@@ -5,19 +5,18 @@
 //  Created by solo on 2/21/22.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct MenuCategoryCell: View {
     var imgName = "bugger"
     var catName = "bugger"
     var isSelected = false
-    
+
     var item: NewFoodsCat
     @Binding var selItemId: String
 
     var body: some View {
-        
         VStack {
             Button {
                 selItemId = item.id
@@ -26,20 +25,20 @@ struct MenuCategoryCell: View {
                     .resizable()
                     .frame(width: .MenuCatgoryWidth, height: .MenuCatgoryWidth)
                     .scaledToFit()
-                    //.padding(3)
+                    // .padding(3)
                     .background(item.id == selItemId ? Color.themeColor : Color.normalGray)
-                .cornerRadius(20)
+                    .cornerRadius(20)
             }
             Text(item.name)
                 .font(.system(size: 17))
                 .foregroundColor(.themeColor)
         }
-        .frame(width:.MenuCatgoryWidth)
+        .frame(width: .MenuCatgoryWidth)
     }
 }
 
-//struct MenuCategoryCell_Previews: PreviewProvider {
+// struct MenuCategoryCell_Previews: PreviewProvider {
 //    static var previews: some View {
 //        MenuCategoryCell()
 //    }
-//}
+// }

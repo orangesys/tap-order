@@ -13,12 +13,5 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSAppClip</key>
-	<dict>
-		<key>NSAppClipRequestEphemeralUserNotification</key>
-		<false/>
-		<key>NSAppClipRequestLocationConfirmation</key>
-		<false/>
-	</dict>
 </dict>
 </plist>

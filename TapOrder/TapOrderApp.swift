@@ -10,6 +10,8 @@ import Combine
 
 @main
 struct TapOrderApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     @ObservedObject var contentViewModel = ContentViewModel.shared
     @State var rootPage: RootPage = .start
     init() {
