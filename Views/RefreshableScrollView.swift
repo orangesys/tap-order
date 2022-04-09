@@ -130,7 +130,8 @@ public struct RefreshableScrollView<Content: View>: View {
             }
             .frame(height: height)
             .fixedSize()
-            .animation(.easeInOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.3), value: true)
+//            .animation(.easeInOut(duration: 0.3))
             .offset(y: -height + (refreshing && frozen ? +height : 0.0))
         }
         

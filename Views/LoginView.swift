@@ -42,7 +42,7 @@ struct LoginView: View {
                     
                     #if DEBUG
                     Button(action: {
-                        if let window = UIApplication.shared.windows.first {
+                        if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.keyWindow {
                             window.rootViewController = UIHostingController(rootView: MainView())
                             window.makeKeyAndVisible()
                         }

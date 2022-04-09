@@ -6,7 +6,6 @@
 //
 
 import Combine
-import Stripe
 import SwiftUI
 
 struct CartView: View {
@@ -31,6 +30,22 @@ struct CartView: View {
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(.normalYellow)
                     }
+                    #if TAPORDERCLIP
+                    Button(action: self.globalCart.callApplePay) {
+                        RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
+                            .foregroundColor(self.globalCart.newCartList.isEmpty ? Color.gray : .themeColor)
+                            .overlay(alignment: .center) {
+                                Text("Send order".localizedString)
+                                    .font(.system(size: 24, weight: .semibold))
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: .SCREENWIDTH - 80, height: 50)
+                    }.disabled(sendButtonEnable)
+                        .onReceive(globalCart.sendEnable) { result in
+                            self.sendButtonEnable = result
+                        }
+
+                    #else
 
                     Button(action: self.globalCart.preparePaymentSheet) {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
@@ -56,6 +71,7 @@ struct CartView: View {
                             Text("Payment canceled.")
                         }
                     }
+                    #endif
                 }
                 .background(.white)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))

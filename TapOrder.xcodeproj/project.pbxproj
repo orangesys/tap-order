@@ -22,7 +22,9 @@
 		8F89225627E2511400526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		8F89225727E2511500526662 /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89224427E21E5400526662 /* SignInWithApple.swift */; };
 		DC0451742800616C00EFB2B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0451732800616C00EFB2B2 /* AppDelegate.swift */; };
-		DC16EE9628016B7A00853115 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = DC16EE9528016B7A00853115 /* Stripe */; };
+		DC1646662801B0F400EF7DB4 /* StripeApplePay in Frameworks */ = {isa = PBXBuildFile; productRef = DC1646652801B0F400EF7DB4 /* StripeApplePay */; };
+		DC1646682801B1BF00EF7DB4 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646672801B1BF00EF7DB4 /* PaymentHandler.swift */; };
+		DC16466A2801B30D00EF7DB4 /* ClipCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646692801B30D00EF7DB4 /* ClipCartViewModel.swift */; };
 		DC183B1328006E0F000051FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1228006E0F000051FB /* PopupView */; };
 		DC183B1528006E0F000051FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1428006E0F000051FB /* Kingfisher */; };
 		DC183B1728006E0F000051FB /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1628006E0F000051FB /* FlagKit */; };
@@ -88,7 +90,6 @@
 		F8A57CD427C6091900138905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD327C6091900138905 /* API.swift */; };
 		F8A57CD627C6098000138905 /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD527C6098000138905 /* APISession.swift */; };
 		F8A57CD827C611BB00138905 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A57CD727C611BB00138905 /* APIRequest.swift */; };
-		F8A6D5E727CA1B8900BA45FA /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
 		F8A6D5EB27CA1C7200BA45FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FBF7E627C3269300571A32 /* Assets.xcassets */; };
 		F8B7089927D09BE20017AF53 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
 		F8B7089A27D09BE20017AF53 /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
@@ -173,6 +174,8 @@
 		8F89224F27E24DC400526662 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		DC0451732800616C00EFB2B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC045175280063D400EFB2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DC1646672801B1BF00EF7DB4 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
+		DC1646692801B30D00EF7DB4 /* ClipCartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipCartViewModel.swift; sourceTree = "<group>"; };
 		DC45D71927E782910011F2C3 /* LoremSwiftum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremSwiftum.swift; sourceTree = "<group>"; };
 		DC45D72227EA325F0011F2C3 /* policy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = policy.html; sourceTree = "<group>"; };
 		DC931B8B27E3672900B4169C /* UIColor+TapOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TapOrder.swift"; sourceTree = "<group>"; };
@@ -241,7 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC16EE9628016B7A00853115 /* Stripe in Frameworks */,
+				DC1646662801B0F400EF7DB4 /* StripeApplePay in Frameworks */,
 				DC183B2328006E40000051FB /* KeychainAccess in Frameworks */,
 				DC183B2128006E30000051FB /* PopupView in Frameworks */,
 				DC183B1F28006E20000051FB /* Kingfisher in Frameworks */,
@@ -382,6 +385,7 @@
 				F8FBF82027C4AFCB00571A32 /* CartCell.swift */,
 				F8FBF81A27C4A05900571A32 /* CartView.swift */,
 				F81F14E427C75FE00069FFA8 /* CartViewModel.swift */,
+				DC1646692801B30D00EF7DB4 /* ClipCartViewModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -391,6 +395,7 @@
 			children = (
 				F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */,
 				F8C9EA6327CA1AB100B9949F /* ContentView.swift */,
+				DC1646672801B1BF00EF7DB4 /* PaymentHandler.swift */,
 				F8C9EA6B27CA1AB200B9949F /* TapOrderClip.entitlements */,
 				F8C9EA6527CA1AB200B9949F /* Assets.xcassets */,
 				F8C9EA6A27CA1AB200B9949F /* Info.plist */,
@@ -484,7 +489,7 @@
 				DC183B2028006E30000051FB /* PopupView */,
 				DC183B2228006E40000051FB /* KeychainAccess */,
 				DC183B2428006E40000051FB /* LetterAvatarKit */,
-				DC16EE9528016B7A00853115 /* Stripe */,
+				DC1646652801B0F400EF7DB4 /* StripeApplePay */,
 			);
 			productName = TapOrderClip;
 			productReference = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */;
@@ -680,9 +685,9 @@
 				F8ED547027DF351A00E71459 /* NWWebSocket.swift in Sources */,
 				DC931BAC27E39BA100B4169C /* Bundle+TapOrder.swift in Sources */,
 				DC931BAF27E39CA200B4169C /* ToastView.swift in Sources */,
+				DC16466A2801B30D00EF7DB4 /* ClipCartViewModel.swift in Sources */,
 				F8C9EA8727CA1B4500B9949F /* APIService.swift in Sources */,
 				F8C9EA8227CA1B4500B9949F /* APIRequest.swift in Sources */,
-				F8A6D5E727CA1B8900BA45FA /* CartViewModel.swift in Sources */,
 				F8C9EA7F27CA1B3C00B9949F /* MenuListCell.swift in Sources */,
 				DC931BA027E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
 				F81D5FB227D76039009BE108 /* NewFoodsResponse.swift in Sources */,
@@ -691,6 +696,7 @@
 				8F89225727E2511500526662 /* SignInWithApple.swift in Sources */,
 				F8C9EA7D27CA1B3C00B9949F /* CartCell.swift in Sources */,
 				F8ED546C27DF351A00E71459 /* NWConnection+Extension.swift in Sources */,
+				DC1646682801B1BF00EF7DB4 /* PaymentHandler.swift in Sources */,
 				F8ED546E27DF351A00E71459 /* WebSocketConnection.swift in Sources */,
 				F8C9EA8127CA1B4500B9949F /* UserViewModel.swift in Sources */,
 				F8C9EA7A27CA1B3C00B9949F /* OrderListCell.swift in Sources */,
@@ -834,6 +840,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TAPORDERCLIP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -872,6 +879,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = TAPORDERCLIP;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1225,10 +1233,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC16EE9528016B7A00853115 /* Stripe */ = {
+		DC1646652801B0F400EF7DB4 /* StripeApplePay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC04516A280048C300EFB2B2 /* XCRemoteSwiftPackageReference "stripe-ios" */;
-			productName = Stripe;
+			productName = StripeApplePay;
 		};
 		DC183B1228006E0F000051FB /* PopupView */ = {
 			isa = XCSwiftPackageProductDependency;

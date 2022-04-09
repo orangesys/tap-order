@@ -8,7 +8,6 @@
 import Combine
 import Network
 import PassKit
-import Stripe
 import SwiftUI
 
 enum InCartAction {
@@ -18,8 +17,8 @@ enum InCartAction {
 }
 
 class CartViewModel: ObservableObject, APIService {
-    @Published var paymentSheet: PaymentSheet?
-    @Published var paymentResult: PaymentSheetResult?
+    @Published var paymentSheet: Any?
+    @Published var paymentResult: Any?
 
     @Published var newCartList = [CartItem]()
     @Published var badgeNum = 0
@@ -51,7 +50,8 @@ class CartViewModel: ObservableObject, APIService {
 
     var cancellables = Set<AnyCancellable>()
     var apiSession: APIProtocol
-
+    
+    let paymentHandler = PaymentHandler()
     var errorStr = ""
     var isBackgroundLoading = false
 
@@ -132,58 +132,18 @@ class CartViewModel: ObservableObject, APIService {
         }
     }
 
-    func preparePaymentSheet() {
+    func callApplePay() {
         guard let total = Int(totalStr), total > 0, paying == false else {
             return
         }
         self.paying = true
-        createPayOrder(orderInfo: ["amount": total]).sink { _ in
-
-        } receiveValue: { json in
-            guard let customerId = json["customer"],
-                  let customerEphemeralKeySecret = json["ephemeralKey"],
-                  let paymentIntentClientSecret = json["paymentIntent"],
-                  let publishableKey = json["publishableKey"]
-            else {
-                self.paying = false
-                return
+        self.paymentHandler.startPayment(amount: total, completion: { success in
+            if success {
+                print("Success")
+            } else {
+                print("Failed")
             }
-
-            STPAPIClient.shared.publishableKey = publishableKey
-
-            // MARK: Create a PaymentSheet instance
-
-            var configuration = PaymentSheet.Configuration()
-            configuration.merchantDisplayName = "OrangeSys, Inc."
-            configuration.applePay = .init(
-                merchantId: "merchant.io.orangesys.tap-order", merchantCountryCode: "JP"
-            )
-            configuration.customer = .init(id: customerId, ephemeralKeySecret: customerEphemeralKeySecret)
-            // Set `allowsDelayedPaymentMethods` to true if your business can handle payment
-            // methods that complete payment after a delay, like SEPA Debit and Sofort.
-            configuration.allowsDelayedPaymentMethods = true
-
-            DispatchQueue.main.async {
-                self.paymentSheet = PaymentSheet(paymentIntentClientSecret: paymentIntentClientSecret, configuration: configuration)
-                // Present Apple Pay payment sheet
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let rootViewController = windowScene.keyWindow?.rootViewController else { return }
-                self.paymentSheet?.present(from: rootViewController, completion: { result in
-                    switch result {
-                    case .completed:
-                        self.doSomething()
-                    case .canceled:
-                        break
-                    case .failed(let error):
-                        print(error)
-                    }
-                    self.paying = false
-                })
-            }
-        }.store(in: &self.cancellables)
-    }
-
-    func onPaymentCompletion(result: PaymentSheetResult) {
-        self.paymentResult = result
+        })
     }
 }
 
