@@ -25,7 +25,7 @@ extension String {
         return nil
     }
     
-    static func urlStr(req:Request) -> String {
+    static func urlStr(req: Request) -> String {
         var urlStr = ""
         let path = "/api/v1/shops/"
         let vendorId = ClipViewModel.shared.vendorId
@@ -43,6 +43,8 @@ extension String {
             urlStr = "\(String.WSHost)\(path)\(vendorId)/tables/\(tableId)/carts?language=\(lan)"
         case .order:
             urlStr = "\(String.WSHost)\(path)\(vendorId)/tables/\(tableId)/current-order?language=\(lan)"
+        case .payment:
+            urlStr = "\(APIHost)/api/v1/shops/\(vendorId)/tables/\(tableId)/payment"
         }
         
         return urlStr
