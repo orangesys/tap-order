@@ -23,6 +23,7 @@ class PaymentHandler: NSObject {
     var completionHandler: PaymentCompletionHandler?
 
     func startPayment(amount: Int, completion: @escaping PaymentCompletionHandler) {
+        self.completionHandler = completion
         let merchantIdentifier = "merchant.io.orangesys.tap-order"
         let paymentRequest = StripeAPI.paymentRequest(withMerchantIdentifier: merchantIdentifier, country: "JP", currency: "JPY")
         StripeAPI.jcbPaymentNetworkSupported = true
@@ -50,13 +51,21 @@ extension PaymentHandler: ApplePayContextDelegate {
         didCreatePaymentMethod paymentMethod: StripeAPI.PaymentMethod,
         paymentInformation: PKPayment,
         completion: @escaping STPIntentClientSecretCompletionBlock
-    ) {}
+    ) {
+        self.completionHandler!(true)
+    }
 
     func applePayContext(
         _ context: STPApplePayContext,
         didCompleteWith status: STPApplePayContext.PaymentStatus,
         error: Error?
-    ) {}
+    ) {
+        if status == .success {
+            self.completionHandler!(true)
+        } else {
+            self.completionHandler!(false)
+        }
+    }
 }
 
 /*

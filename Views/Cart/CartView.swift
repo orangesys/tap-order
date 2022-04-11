@@ -6,12 +6,21 @@
 //
 
 import Combine
+import StripeCore
 import SwiftUI
 
 struct CartView: View {
     let dataList = [1, 2, 3]
     @EnvironmentObject var globalCart: CartViewModel
-    @State var sendButtonEnable = true
+    @State var sendButtonDisabled = true
+
+    private var sendButtonAction: () -> Void {
+        #if TAPORDERCLIP
+            return self.globalCart.callApplePay
+        #else
+            return StripeAPI.deviceSupportsApplePay() ? self.globalCart.callApplePay : self.globalCart.preparePaymentSheet
+        #endif
+    }
 
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
@@ -30,47 +39,38 @@ struct CartView: View {
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(.normalYellow)
                     }
-                    #if TAPORDERCLIP
-                    Button(action: self.globalCart.callApplePay) {
+
+                    Button(action: self.sendButtonAction) {
                         RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
                             .foregroundColor(self.globalCart.newCartList.isEmpty ? Color.gray : .themeColor)
                             .overlay(alignment: .center) {
-                                Text("Send order".localizedString)
-                                    .font(.system(size: 24, weight: .semibold))
-                                    .foregroundColor(.white)
+                                if !sendButtonDisabled {
+                                    Text("Send order".localizedString)
+                                        .font(.system(size: 24, weight: .semibold))
+                                        .foregroundColor(.white)
+                                } else {
+                                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                }
+                               
                             }
                             .frame(width: .SCREENWIDTH - 80, height: 50)
-                    }.disabled(sendButtonEnable)
-                        .onReceive(globalCart.sendEnable) { result in
-                            self.sendButtonEnable = result
+                    }.disabled(sendButtonDisabled)
+                        .onReceive(globalCart.sendDisabled) { result in
+                            print("sendButtonEnable: \(result)")
+                            self.sendButtonDisabled = result
                         }
 
-                    #else
-
-                    Button(action: self.globalCart.preparePaymentSheet) {
-                        RoundedRectangle(cornerSize: CGSize(width: 25, height: 25))
-                            .foregroundColor(self.globalCart.newCartList.isEmpty ? Color.gray : .themeColor)
-                            .overlay(alignment: .center) {
-                                Text("Send order".localizedString)
-                                    .font(.system(size: 24, weight: .semibold))
-                                    .foregroundColor(.white)
+                    #if !TAPORDERCLIP
+                        if let result = globalCart.paymentResult {
+                            switch result {
+                            case .completed:
+                                Text("Payment complete")
+                            case .failed(let error):
+                                Text("Payment failed: \(error.localizedDescription)")
+                            case .canceled:
+                                Text("Payment canceled.")
                             }
-                            .frame(width: .SCREENWIDTH - 80, height: 50)
-                    }.disabled(sendButtonEnable)
-                        .onReceive(globalCart.sendEnable) { result in
-                            self.sendButtonEnable = result
                         }
-
-                    if let result = globalCart.paymentResult {
-                        switch result {
-                        case .completed:
-                            Text("Payment complete")
-                        case .failed(let error):
-                            Text("Payment failed: \(error.localizedDescription)")
-                        case .canceled:
-                            Text("Payment canceled.")
-                        }
-                    }
                     #endif
                 }
                 .background(.white)

@@ -29,6 +29,15 @@ class CartViewModel: ObservableObject, APIService {
     @Published var isError = false
     @Published var totalStr = ""
 
+    private lazy var paymentHandler = PaymentHandler()
+    var cancellables = Set<AnyCancellable>()
+    var apiSession: APIProtocol
+
+    var errorStr = ""
+    var isBackgroundLoading = false
+
+    var socket: NWWebSocket?
+    
     private var newCartListEmpty: AnyPublisher<Bool, Never> {
         return $newCartList.map { items in
             items.isEmpty
@@ -41,21 +50,13 @@ class CartViewModel: ObservableObject, APIService {
         }.eraseToAnyPublisher()
     }
 
-    var sendEnable: AnyPublisher<Bool, Never> {
+    var sendDisabled: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest(self.newCartListEmpty, self.isPaying)
             .map { value2, value1 in
                 value2 || value1
             }
             .eraseToAnyPublisher()
     }
-
-    var cancellables = Set<AnyCancellable>()
-    var apiSession: APIProtocol
-
-    var errorStr = ""
-    var isBackgroundLoading = false
-
-    var socket: NWWebSocket?
 
     init(urlstr: String, apiSession: APIProtocol = APISession()) {
         self.apiSession = apiSession
@@ -184,6 +185,21 @@ class CartViewModel: ObservableObject, APIService {
 
     func onPaymentCompletion(result: PaymentSheetResult) {
         self.paymentResult = result
+    }
+    
+    func callApplePay() {
+        guard let total = Int(totalStr), total > 0, paying == false else {
+            return
+        }
+        self.paying = true
+        self.paymentHandler.startPayment(amount: total, completion: { success in
+            self.paying = false
+            if success {
+                print("Success")
+            } else {
+                print("Failed")
+            }
+        })
     }
 }
 

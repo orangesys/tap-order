@@ -40,10 +40,10 @@ class CartViewModel: ObservableObject, APIService {
         }.eraseToAnyPublisher()
     }
 
-    var sendEnable: AnyPublisher<Bool, Never> {
+    var sendDisabled: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest(self.newCartListEmpty, self.isPaying)
-            .map { value2, value1 in
-                value2 || value1
+            .map { _,_ in
+                false
             }
             .eraseToAnyPublisher()
     }

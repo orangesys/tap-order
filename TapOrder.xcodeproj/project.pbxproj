@@ -27,6 +27,7 @@
 		DC16466A2801B30D00EF7DB4 /* ClipCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646692801B30D00EF7DB4 /* ClipCartViewModel.swift */; };
 		DC16466F2801B90100EF7DB4 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81F14E427C75FE00069FFA8 /* CartViewModel.swift */; };
 		DC1646712801B92B00EF7DB4 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = DC1646702801B92B00EF7DB4 /* Stripe */; };
+		DC1646722801B96500EF7DB4 /* TapOrderClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DC183B1328006E0F000051FB /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1228006E0F000051FB /* PopupView */; };
 		DC183B1528006E0F000051FB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1428006E0F000051FB /* Kingfisher */; };
 		DC183B1728006E0F000051FB /* FlagKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC183B1628006E0F000051FB /* FlagKit */; };
@@ -66,6 +67,7 @@
 		DC931BB227E39CD200B4169C /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89B4C7D27DA292F0006ED44 /* RefreshableScrollView.swift */; };
 		DC931BB327E39CDB00B4169C /* LanguageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B7089827D09BE20017AF53 /* LanguageButtonView.swift */; };
 		DC931BB427E3B15E00B4169C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBF7E527C3269200571A32 /* ContentView.swift */; };
+		DCC636B12804880800ED980C /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1646672801B1BF00EF7DB4 /* PaymentHandler.swift */; };
 		F81D5FA127D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FA227D25C52009BE108 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F81D5FA427D25C52009BE108 /* Localizable.strings */; };
 		F81D5FAB27D2F50D009BE108 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81D5FAA27D2F50D009BE108 /* LoginViewModel.swift */; };
@@ -161,6 +163,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
 			dstSubfolderSpec = 16;
 			files = (
+				DC1646722801B96500EF7DB4 /* TapOrderClip.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,7 +647,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#./update_build_number.sh\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#./update_build_number.sh\n./utils.sh io.orangesys.tap-order \n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -746,6 +749,7 @@
 				F8A57CD427C6091900138905 /* API.swift in Sources */,
 				DC16466F2801B90100EF7DB4 /* CartViewModel.swift in Sources */,
 				DC931B9E27E36B5F00B4169C /* Number+TapOrder.swift in Sources */,
+				DCC636B12804880800ED980C /* PaymentHandler.swift in Sources */,
 				F81D5FB127D76039009BE108 /* NewFoodsResponse.swift in Sources */,
 				F8FBF7F427C3269300571A32 /* TapOrderApp.swift in Sources */,
 				F8FBF81E27C4A06C00571A32 /* OrderListView.swift in Sources */,
@@ -836,7 +840,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(AppIdentifierPrefix)io.orangesys.tap-order.Clip";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -858,7 +862,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 22040903;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TapOrderClip/Info.plist;
@@ -875,7 +879,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(AppIdentifierPrefix)io.orangesys.tap-order.Clip";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.orangesys.tap-order.Clip";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
