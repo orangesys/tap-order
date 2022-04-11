@@ -13,6 +13,7 @@ import WebKit
 struct LoginView: View {
     var loginViewModel = LoginViewModel()
     @State private var showWebView = false
+    @State private var showWebView2 = false
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0x412F96)), Color(uiColor:UIColor(rgb: 0x944AB5).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea(.all) // Ignore just for the color
@@ -64,21 +65,43 @@ struct LoginView: View {
                     QuickSignInWithApple()
                         .frame(width: 250, height: 60, alignment: .center)
                         .onTapGesture(perform: signInWithApple)
-                    
-                    Button {
-                        showWebView.toggle()
-                    } label: {
-                        Text("Items of Use").font(.system(size: 13, weight: .medium))
-                            .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
-                                Rectangle()
-                                    .frame(height: 1)
-                                    .foregroundColor(.yellow),
-                                alignment: .bottom
-                        )
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            showWebView.toggle()
+                        } label: {
+                            Text("Items of Use").font(.system(size: 13, weight: .medium))
+                                .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(.yellow),
+                                    alignment: .bottom
+                            )
+                        }
+                        .sheet(isPresented: $showWebView) {
+                            WebView(url:  URL(string: "https://tap-order-website.orangesys.io/policy/")!)
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            showWebView2.toggle()
+                        } label: {
+                            Text("Business Cooperation").font(.system(size: 13, weight: .medium))
+                                .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(.yellow),
+                                    alignment: .bottom
+                            )
+                        }
+                        .sheet(isPresented: $showWebView2) {
+                            WebView(url:  URL(string: "https://tap-order-website.orangesys.io/business/")!)
+                        }
+                        Spacer()
                     }
-                    .sheet(isPresented: $showWebView) {
-                        WebView(url:  Bundle.main.url(forResource: "policy", withExtension: "html")!)
-                    }
+                   
                     Spacer()
                 }
                 ,alignment: .top)
