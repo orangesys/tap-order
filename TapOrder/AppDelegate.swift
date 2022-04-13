@@ -15,6 +15,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         #else
         StripeAPI.defaultPublishableKey = "pk_live_CvWJdjGhMMZf1dsGyXZh2J2i"
         #endif
+        
+        StripeAPI.additionalEnabledApplePayNetworks = PaymentHandler.supportedNetworks
         return true
     }
     

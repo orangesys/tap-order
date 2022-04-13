@@ -8,8 +8,11 @@
 import Combine
 import Network
 import PassKit
-import Stripe
 import SwiftUI
+
+#if !TAPORDERCLIP
+import Stripe
+#endif
 
 enum InCartAction {
     case remove
@@ -18,10 +21,16 @@ enum InCartAction {
 }
 
 class CartViewModel: ObservableObject, APIService {
+#if TAPORDERCLIP
+    @Published var paymentSheet: Any?
+    @Published var paymentResult: Any?
+#else
     @Published var paymentSheet: PaymentSheet?
     @Published var paymentResult: PaymentSheetResult?
-
+#endif
+   
     @Published var newCartList = [CartItem]()
+    @Published var myAddToCart =  [CartItem]()
     @Published var badgeNum = 0
     @Published var numbelString = ""
     @Published var isLoading = false
@@ -53,7 +62,11 @@ class CartViewModel: ObservableObject, APIService {
     var sendDisabled: AnyPublisher<Bool, Never> {
         return Publishers.CombineLatest(self.newCartListEmpty, self.isPaying)
             .map { value2, value1 in
+                #if TAPORDERCLIP
+                false
+                #else
                 value2 || value1
+                #endif
             }
             .eraseToAnyPublisher()
     }
@@ -133,10 +146,14 @@ class CartViewModel: ObservableObject, APIService {
         }
     }
 
+    #if !TAPORDERCLIP
     func preparePaymentSheet() {
-        guard let total = Int(totalStr), total > 0, paying == false else {
+        let total = needPayValue()
+        guard total > 0, paying == false else {
+            doSomething()
             return
         }
+        
         self.paying = true
         createPayOrder(orderInfo: ["amount": total]).sink { _ in
 
@@ -186,20 +203,34 @@ class CartViewModel: ObservableObject, APIService {
     func onPaymentCompletion(result: PaymentSheetResult) {
         self.paymentResult = result
     }
-    
+    #endif
     func callApplePay() {
-        guard let total = Int(totalStr), total > 0, paying == false else {
+        let total = needPayValue()
+        guard total > 0, paying == false else {
+            doSomething()
             return
         }
+        
         self.paying = true
         self.paymentHandler.startPayment(amount: total, completion: { success in
             self.paying = false
             if success {
+                self.doSomething()
                 print("Success")
             } else {
                 print("Failed")
             }
         })
+    }
+    
+    private func needPayValue() -> Int {
+        guard !myAddToCart.isEmpty else {
+            return 0
+        }
+        
+        return myAddToCart.reduce(0) { partialResult, item in
+            partialResult + item.count * item.foodPrice
+        }
     }
 }
 
@@ -233,31 +264,18 @@ extension CartViewModel: WebSocketConnectionDelegate {
         print("Text received \(string)")
         let data = string.data(using: .utf8)!
         do {
-            let fjson = try JSONDecoder().decode(CartResponse.self, from: data)
-            // print(fjson)
-            // print(fjson.items.map({$0.value}))
-            let farrJson = fjson.items.map { $0.value }
-            let currentUser = UserViewModel.shared.userid
-            var currentUserValue = [CartItem]()
-            let groupUserDic = Dictionary(grouping: farrJson) { $0.userId }
-                .filter {
-                    // array first to group by dic
-                    // and filter current user
-                    if currentUser == $0.key {
-                        currentUserValue = $0.value
-                    }
-                    return currentUser != $0.key
-                }
-            // print(groupUserDic)
-            // 排序当前用户最上面
-            var allarr: [CartItem] = groupUserDic.flatMap { $0.value }
-            allarr.insert(contentsOf: currentUserValue, at: 0)
-            self.newCartList = allarr
+            let response = try JSONDecoder().decode(CartResponse.self, from: data)
+            let allItems = response.items.map({$0.value})
+            let myUserId = UserViewModel.shared.userid
+           
+            let groupUserDic = Dictionary(grouping: allItems) {$0.userId}
+            self.myAddToCart = groupUserDic["\(myUserId)"] ?? []
+            self.newCartList = myAddToCart + groupUserDic.flatMap({$0.value})
 
-            let numberString = "\(fjson.items.count)"
+            let numberString = "\(response.items.count)"
             self.numbelString = String(format: "N items in cart".localizedString, numberString)
-            self.badgeNum = fjson.items.count
-            self.totalStr = "\(fjson.total)"
+            self.badgeNum = response.items.count
+            self.totalStr = "\(response.total)"
         } catch {
             print(error)
         }

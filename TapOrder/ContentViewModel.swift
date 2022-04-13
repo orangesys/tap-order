@@ -14,8 +14,6 @@ enum RootPage {
 
 class ContentViewModel: ObservableObject {
     static let shared = ContentViewModel()
-
-//    @Published var rootPage = SignInWithApple.didExitUser() ? RootPage.main : RootPage.start
     var rootPagePublisher = PassthroughSubject<RootPage, Never>()
     private init() {
 //        KeyChainUtil.clearAppleID() // For test

@@ -13,7 +13,7 @@ struct TapOrderApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject var contentViewModel = ContentViewModel.shared
-    @State var rootPage: RootPage = .start
+    @State var rootPage: RootPage = SignInWithApple.didExitUser() ? RootPage.main : RootPage.start
     init() {
       
     }

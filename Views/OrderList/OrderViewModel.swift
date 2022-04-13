@@ -13,6 +13,7 @@ import Network
 class OrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     
     @Published var newOrderList =  [CartItem]()
+    @Published var myAddToCart =  [CartItem]()
     @Published var isError = false
     @Published var totalStr = ""
     
@@ -65,28 +66,16 @@ class OrderViewModel: ObservableObject, WebSocketConnectionDelegate {
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
         let data = string.data(using: .utf8)!
         do {
-            let fjson = try JSONDecoder().decode(CartResponse.self, from: data)
-            print("Text received \(string), \(fjson.items.count)")
-            //print(fjson)
-            //print(fjson.items.map({$0.value}))
-            let farrJson = fjson.items.map({$0.value})
-//            let currentUser = UserViewModel.shared.userid
-//            var currentUserValue = [CartItem]()
-//            let groupUserDic = Dictionary(grouping: farrJson) {$0.userId}
-//                .filter() {
-//                    // array first to group by dic
-//                    // and filter current user
-//                    if currentUser == $0.key {
-//                        currentUserValue = $0.value
-//                    }
-//                    return currentUser != $0.key
-//                }
-//            //print(groupUserDic)
-//            // 排序当前用户最上面
-//            var allarr:[CartItem] = groupUserDic.flatMap({$0.value})
-//            allarr.insert(contentsOf: currentUserValue, at: 0)
-            self.newOrderList = farrJson
-            self.totalStr = "\(fjson.total)"
+            let response = try JSONDecoder().decode(CartResponse.self, from: data)
+            print("Text received \(string), \(response.items.count)")
+            let allItems = response.items.map({$0.value})
+            let myUserId = UserViewModel.shared.userid
+           
+            let groupUserDic = Dictionary(grouping: allItems) {$0.userId}
+            self.myAddToCart = groupUserDic["\(myUserId)"] ?? []
+            
+            self.newOrderList = myAddToCart + groupUserDic.flatMap({$0.value})
+            self.totalStr = "\(response.total)"
         } catch {
             print(error)
         }

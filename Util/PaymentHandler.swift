@@ -15,6 +15,10 @@ class PaymentHandler: NSObject {
         .amex,
         .masterCard,
         .visa,
+        .JCB,
+        .chinaUnionPay,
+        .suica,
+        .quicPay,
     ]
 
     var paymentController: PKPaymentAuthorizationController?
@@ -36,8 +40,10 @@ class PaymentHandler: NSObject {
         paymentRequest.supportedNetworks = PaymentHandler.supportedNetworks
         if let applePayContext = STPApplePayContext(paymentRequest: paymentRequest, delegate: self) {
             // Present Apple Pay payment sheet
-            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.keyWindow else { return }
-            applePayContext.presentApplePay(from: window)
+//            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let window = windowScene.keyWindow else { return }
+            applePayContext.presentApplePay {
+                
+            }
         } else {
             // There is a problem with your Apple Pay configuration
             

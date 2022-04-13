@@ -8,7 +8,7 @@
 import Foundation
 
 struct CartResponse: Codable {
-    let items: [String:CartItem]
+    let items: [String: CartItem]
     let total: Int
 }
 
@@ -21,7 +21,7 @@ struct CartItem: Codable {
     let foodId: String
     let foodPrice: Int
     let foodPic: String
-    //let createAt: Date
+    // let createAt: Date
     let userId: String
     var count: Int
     let sid: String
@@ -31,11 +31,10 @@ struct CartItem: Codable {
         case foodPrice = "price"
         case foodPic = "image"
         case foodId = "sku_id"
-        case count = "count"
+        case count
         case userId = "customer_id"
         case sid = "uuid"
     }
-    
 }
 
 extension CartItem {
@@ -50,7 +49,7 @@ extension CartItem {
         foodPrice = try values.decodeIfPresent(Int.self, forKey: .foodPrice) ?? 0
         count = try values.decodeIfPresent(Int.self, forKey: .count) ?? 0
     }
-    
+
     // init(from decoder: Decoder) throws {
     //     let values = try decoder.container(keyedBy: CodingKeys.self)
     //     sid = try values.decodeIfPresent(UUID.self, forKey: .sid) ?? UUID() //json have not this key
@@ -73,11 +72,11 @@ struct CartItemSend: Codable {
     let foodId: Int
     let foodPrice: Double
     let foodPic: String
-    let createAt: [String:String] //[".sv":"timestamp"]
+    let createAt: [String: String] // [".sv":"timestamp"]
     let userId: String
 }
 
-//struct CartResponse: Codable {
+// struct CartResponse: Codable {
 //    let orderId: String
 //    struct OrderList: Codable {
 //        let birthday: String
@@ -85,4 +84,4 @@ struct CartItemSend: Codable {
 //        let name: String
 //    }
 //    let orderList: [OrderList]
-//}
+// }
