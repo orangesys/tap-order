@@ -11,7 +11,7 @@ import StripeCore
 @main
 struct TapOrderClipApp: App {
     @ObservedObject var contentViewModel = ContentViewModel.shared
-    @State var rootPage: RootPage = SignInWithApple.didExitUser() ? RootPage.main : RootPage.start
+    @State var needShowLogin: Bool = SignInWithApple.didExitUser()
     init() {
         #if DEBUG
         StripeAPI.defaultPublishableKey = "pk_test_ttdLzgFVASAg87YVXpbBl2Ku"
@@ -23,8 +23,8 @@ struct TapOrderClipApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(rootPage: $rootPage).onReceive(contentViewModel.rootPagePublisher) {
-                self.rootPage = $0
+            ContentView(needShowLogin: $needShowLogin).onReceive(contentViewModel.needShowLoginPublisher) {
+                self.needShowLogin = $0
             }
         }
     }

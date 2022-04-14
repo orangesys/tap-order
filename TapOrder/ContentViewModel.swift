@@ -14,8 +14,12 @@ enum RootPage {
 
 class ContentViewModel: ObservableObject {
     static let shared = ContentViewModel()
-    var rootPagePublisher = PassthroughSubject<RootPage, Never>()
+    var needShowLoginPublisher = PassthroughSubject<Bool, Never>()
     private init() {
 //        KeyChainUtil.clearAppleID() // For test
+    }
+    
+    func checkIfUserLogin() {
+        needShowLoginPublisher.send(!SignInWithApple.didExitUser())
     }
 }

@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var showWebView = false
     @State private var showWebView2 = false
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0x412F96)), Color(uiColor:UIColor(rgb: 0x944AB5).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color(uiColor: UIColor(rgb: 0x412F96)), Color(uiColor: UIColor(rgb: 0x944AB5).withAlphaComponent(0.85))]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea(.all) // Ignore just for the color
             .overlay(
                 VStack {
@@ -23,16 +23,17 @@ struct LoginView: View {
                     Circle()
                         .fill(Color.white)
                         .frame(width: 280, height: 280)
-                    //.offset(x:0,y: 100)
+                        // .offset(x:0,y: 100)
                         .overlay(
-                            VStack(spacing:5) {
+                            VStack(spacing: 5) {
                                 Image("chicken")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 200, height: 150)
                                 Text("No.#00001").font(.toOrderFont)
-                            }//.offset(x:0, y: 60)
-                            ,alignment: .center)
+                            }, // .offset(x:0, y: 60)
+                            alignment: .center
+                        )
                     Spacer()
                     Text("weather Joing  the exist order")
                         .font(.system(size: 27, weight: .medium))
@@ -43,16 +44,13 @@ struct LoginView: View {
                     
                     #if DEBUG
                     Button(action: {
-                        if let window = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.keyWindow {
-                            window.rootViewController = UIHostingController(rootView: MainView())
-                            window.makeKeyAndVisible()
-                        }
+                        ContentViewModel.shared.needShowLoginPublisher.send(false)
                     }) {
                         Text("Get Started")
                             .frame(minWidth: 220)
                             .font(.system(size: 24, weight: .semibold))
                             .padding()
-                            .foregroundColor(Color(uiColor: UIColor(rgb: 0x6644ab)))
+                            .foregroundColor(Color(uiColor: UIColor(rgb: 0x6644AB)))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(Color.red, lineWidth: 0)
@@ -77,10 +75,10 @@ struct LoginView: View {
                                         .frame(height: 1)
                                         .foregroundColor(.yellow),
                                     alignment: .bottom
-                            )
+                                )
                         }
                         .sheet(isPresented: $showWebView) {
-                            WebView(url:  URL(string: "https://tap-order-website.orangesys.io/policy/")!)
+                            WebView(url: URL(string: "https://tap-order-website.orangesys.io/policy/")!)
                         }
                         
                         Spacer()
@@ -94,49 +92,48 @@ struct LoginView: View {
                                         .frame(height: 1)
                                         .foregroundColor(.yellow),
                                     alignment: .bottom
-                            )
+                                )
                         }
                         .sheet(isPresented: $showWebView2) {
-                            WebView(url:  URL(string: "https://tap-order-website.orangesys.io/business/")!)
+                            WebView(url: URL(string: "https://tap-order-website.orangesys.io/business/")!)
                         }
                         Spacer()
                     }
                    
                     Spacer()
-                }
-                ,alignment: .top)
-        
+                },
+                alignment: .top
+            )
     }
     
     private func signInWithApple() {
         loginViewModel.signInWithApple()
-     }
+    }
 }
-
 
 struct WebView: UIViewRepresentable {
     var url: URL
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
     }
+
     func updateUIView(_ webView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
         webView.load(request)
     }
 }
 
-fileprivate struct QuickSignInWithApple: UIViewRepresentable {
+private struct QuickSignInWithApple: UIViewRepresentable {
     typealias UIViewType = ASAuthorizationAppleIDButton
     
     func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
-        let bt = ASAuthorizationAppleIDButton(type:.signIn, style: .white)
+        let bt = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
         bt.cornerRadius = 30
         return bt
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {}
 }
-
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {

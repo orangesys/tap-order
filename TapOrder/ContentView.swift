@@ -9,13 +9,13 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @Binding var rootPage: RootPage
+    @Binding var needShowLogin: Bool
     
     var body: some View {
-        if self.rootPage == .start {
+        MainView().sheet(isPresented: $needShowLogin) {
             LoginView()
-        } else {
-            MainView()
+        }.onAppear {
+            ContentViewModel.shared.checkIfUserLogin()
         }
     }
 }
@@ -24,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(rootPage: Binding.constant(.start))
+        ContentView(needShowLogin: Binding.constant(true))
     }
 }

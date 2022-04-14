@@ -148,6 +148,11 @@ class CartViewModel: ObservableObject, APIService {
 
     #if !TAPORDERCLIP
     func preparePaymentSheet() {
+        guard SignInWithApple.didExitUser() else {
+            ContentViewModel.shared.checkIfUserLogin()
+            return
+        }
+        
         let total = needPayValue()
         guard total > 0, paying == false else {
             doSomething()
@@ -205,6 +210,11 @@ class CartViewModel: ObservableObject, APIService {
     }
     #endif
     func callApplePay() {
+        guard SignInWithApple.didExitUser() else {
+            ContentViewModel.shared.checkIfUserLogin()
+            return
+        }
+        
         let total = needPayValue()
         guard total > 0, paying == false else {
             doSomething()

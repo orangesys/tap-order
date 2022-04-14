@@ -13,15 +13,15 @@ struct TapOrderApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @ObservedObject var contentViewModel = ContentViewModel.shared
-    @State var rootPage: RootPage = SignInWithApple.didExitUser() ? RootPage.main : RootPage.start
+    @State var needShowLogin: Bool = SignInWithApple.didExitUser()
     init() {
       
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(rootPage: $rootPage).onReceive(contentViewModel.rootPagePublisher) {
-                self.rootPage = $0
+            ContentView(needShowLogin: $needShowLogin).onReceive(contentViewModel.needShowLoginPublisher) {
+                self.needShowLogin = $0
             }
         }
     }

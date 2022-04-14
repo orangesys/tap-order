@@ -34,7 +34,7 @@ class LoginViewModel: ObservableObject {
                 }
             }, receiveValue: { user in
                 self.loginStatus = user.isNew ? .sucessNewLogin : .sucessNormalLogin
-                ContentViewModel.shared.rootPagePublisher.send(.main)
+                ContentViewModel.shared.needShowLoginPublisher.send(false)
             })
             .store(in: &cancellableSet)
 

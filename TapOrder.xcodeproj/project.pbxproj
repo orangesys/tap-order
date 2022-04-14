@@ -216,7 +216,6 @@
 		F8C9EA5827C9F7AB00B9949F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F8C9EA5F27CA1AB100B9949F /* TapOrderClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapOrderClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapOrderClipApp.swift; sourceTree = "<group>"; };
-		F8C9EA6327CA1AB100B9949F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8C9EA6527CA1AB200B9949F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8C9EA6827CA1AB200B9949F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8C9EA6A27CA1AB200B9949F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -396,7 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				F8C9EA6127CA1AB100B9949F /* TapOrderClipApp.swift */,
-				F8C9EA6327CA1AB100B9949F /* ContentView.swift */,
 				F8C9EA6B27CA1AB200B9949F /* TapOrderClip.entitlements */,
 				F8C9EA6527CA1AB200B9949F /* Assets.xcassets */,
 				F8C9EA6A27CA1AB200B9949F /* Info.plist */,
@@ -819,7 +817,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22041303;
+				CURRENT_PROJECT_VERSION = 22041501;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -858,7 +856,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrderClip/TapOrderClip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22041303;
+				CURRENT_PROJECT_VERSION = 22041501;
 				DEVELOPMENT_ASSET_PATHS = "\"TapOrderClip/Preview Content\"";
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
@@ -1012,7 +1010,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22041303;
+				CURRENT_PROJECT_VERSION = 22041501;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1052,7 +1050,7 @@
 				CODE_SIGN_ENTITLEMENTS = TapOrder/TapOrder.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22041303;
+				CURRENT_PROJECT_VERSION = 22041501;
 				DEVELOPMENT_TEAM = VBHPLCMQNB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
