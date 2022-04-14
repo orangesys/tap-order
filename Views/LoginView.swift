@@ -81,22 +81,22 @@ struct LoginView: View {
                             WebView(url: URL(string: "https://tap-order-website.orangesys.io/policy/")!)
                         }
                         
-                        Spacer()
-                        
-                        Button {
-                            showWebView2.toggle()
-                        } label: {
-                            Text("Business Cooperation").font(.system(size: 13, weight: .medium))
-                                .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
-                                    Rectangle()
-                                        .frame(height: 1)
-                                        .foregroundColor(.yellow),
-                                    alignment: .bottom
-                                )
-                        }
-                        .sheet(isPresented: $showWebView2) {
-                            WebView(url: URL(string: "https://tap-order-website.orangesys.io/business/")!)
-                        }
+//                        Spacer()
+//                        
+//                        Button {
+//                            showWebView2.toggle()
+//                        } label: {
+//                            Text("Business Cooperation").font(.system(size: 13, weight: .medium))
+//                                .foregroundColor(Color(uiColor: UIColor.systemYellow.withAlphaComponent(0.8))).overlay(
+//                                    Rectangle()
+//                                        .frame(height: 1)
+//                                        .foregroundColor(.yellow),
+//                                    alignment: .bottom
+//                                )
+//                        }
+//                        .sheet(isPresented: $showWebView2) {
+//                            WebView(url: URL(string: "https://tap-order-website.orangesys.io/business/")!)
+//                        }
                         Spacer()
                     }
                    

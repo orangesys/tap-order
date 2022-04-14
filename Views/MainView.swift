@@ -97,7 +97,7 @@ struct MainView: View {
                     case .connectus:
                         WebView(url: URL(string: "https://tap-order-website.orangesys.io/support/")!)
                     }
-                }.confirmationDialog("Info", isPresented: $showingOptions, titleVisibility: .visible) {
+                }.confirmationDialog("More", isPresented: $showingOptions, titleVisibility: .visible) {
                     Button("About Us") {
                         self.actionType = .aboutus
                     }
